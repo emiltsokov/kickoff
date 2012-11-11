@@ -19,15 +19,24 @@
 // BODY TEXT
 body {
 	font-family: @baseFontFamily;
-	font-size: @baseFontSize;
-	line-height: @baseLineHeight;
+	.font-size(@baseFontSize);
+	.line-height(@baseLineHeight);
 	color: @textColor;
 	background-color: @bodyBackground;
+
+	// Two ways to smoothen type, they are disabled by default. Enable only one of them if you need them.
+	// 1.
+	// -webkit-font-smoothing: antialiased;
+	//    -moz-font-smoothing: antialiased;
+	// font-smooth:always;
+
+	// 2.
+	// .opacity(99);
 }
 
 p {
 	font-family: @baseFontFamily;
-	.font-size(16);
+	.font-size(@baseFontSize);
 	.line-height(@baseLineHeight);
 	margin-top: 0;
 	margin-bottom: @baseLineHeight;
@@ -36,6 +45,7 @@ p {
 		color: @grayLight;
 	}
 }
+
 .lead {
 	margin-bottom: @baseLineHeight;
 	font-size: 20px;
@@ -173,7 +183,7 @@ dd {
 	line-height: @baseLineHeight;
 }
 dt {
-	font-weight: bold;
+	font-weight: @boldFontWeight;
 	line-height: @baseLineHeight - 1; // fix jank Helvetica Neue font bug
 }
 dd {
@@ -206,7 +216,7 @@ hr {
 
 // Emphasis
 strong, b {
-	font-weight: bold;
+	font-weight: @boldFontWeight;
 }
 em, i {
 	font-style: italic;
@@ -303,3 +313,12 @@ sub,sup {
 
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
+
+
+
+// =================
+// === UTILITIES ===
+// =================
+.text-centre, .text-center { text-align: center;}
+.text-left { text-align: left;}
+.text-right { text-align: right;}

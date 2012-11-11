@@ -1,10 +1,10 @@
-[Documentation table of contents](README.md)
+[Documentation table of contents](readme.md)
 
 # Miscellaneous
 
 ## .gitignore
 
-HTML5 Boilerplate includes a basic project-level `.gitignore`. This should
+Kickoff includes a basic project-level `.gitignore`. This should
 primarily be used to avoid certain project-level files and directories from
 being kept under source control. Different development-environments will
 benefit from different collections of ignores.
