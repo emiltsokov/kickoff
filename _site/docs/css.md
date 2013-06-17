@@ -1,3 +1,7 @@
+--
+layout: post
+---
+
 [Documentation table of contents](readme.md)
 
 # The CSS

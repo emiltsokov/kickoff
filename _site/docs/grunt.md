@@ -1,3 +1,7 @@
+--
+layout: post
+---
+
 [Documentation table of contents](readme.md)
 
 These docs are still incomplete. If you have any questions, please [file an issue](https://github.com/tmwagency/kickoff/issues/new)
@@ -22,7 +26,7 @@ Run `npm install -g grunt-cli`. This will put the grunt command in your system p
 Make sure you have Ruby installed, then run `gem install sass` (or possibly `sudo gem install sass`) - you can also install the pre-release version of Sass using `gem install sass --pre`. This will install it globally on your machine so Grunt has access to it.
 
 ### Step 4 - Install LiveReload browser extension
-In order to have your browser's styles refresh when a Sass file is modified you will need to install the [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) (there are versions for Chrome, Safari and Firefox). 
+In order to have your browser's styles refresh when a Sass file is modified you will need to install the [LiveReload browser extension](http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-) (there are versions for Chrome, Safari and Firefox).
 
 ### Step 5 - Checkout Kickoff
 Checkout the latest version of Kickoff there using `git clone https://github.com/tmwagency/kickoff.git ProjectName`
@@ -35,7 +39,7 @@ Out of the box, Kickoff is setup to use 3 Grunt tasks, but many more can be used
 
 Running `grunt` in the command line will do a one-time build using the default setup.
 
-Running `grunt watch` will watch your working directory for any changes and build, compile or run any task that related to that file type. For example, editing a `.scss` file will effectively run the `grunt sass:dev` sub-task which compiles the sass to css. Changing any javascript will effectively run the `grunt uglify` task. 
+Running `grunt watch` will watch your working directory for any changes and build, compile or run any task that related to that file type. For example, editing a `.scss` file will effectively run the `grunt sass:dev` sub-task which compiles the sass to css. Changing any javascript will effectively run the `grunt uglify` task.
 
 #### Grunt is now setup!
 

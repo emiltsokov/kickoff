@@ -1955,11 +1955,16 @@ input[type="button"].btn-block {
   background-color: #e67e22;
   text-align: center;
   color: #fff;
-  padding: 100px 0;
+  padding: 80px 0;
   margin-bottom: 50px;
 }
 .masthead a, .masthead h1 {
   color: #fff;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 3px 6px;
 }
 
 .ir {

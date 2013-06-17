@@ -1,3 +1,7 @@
+--
+layout: post
+---
+
 Kickoff | [Documentation table of contents](readme.md)
 
 # Usage
