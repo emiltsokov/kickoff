@@ -1,0 +1,79 @@
+// =======================
+// === APP.scss        ===
+// === Your app styles ===
+// =======================
+
+
+// ================
+// === MASTHEAD ===
+// ================
+.masthead {
+	background-color: $orange;
+	text-align: center;
+	color: #fff;
+	padding: 100px 0;
+	margin-bottom: 50px;
+
+	a, h1 {
+		color: #fff;
+	}
+}
+
+// ==============
+// === FOOTER ===
+// ==============
+
+
+
+// ======================
+// === HOME / LANDING ===
+// ======================
+
+
+
+// ===========================================
+// === Media queries for responsive design ===
+// ===========================================
+// NOTE: these will need to be adjusted, possibly moved into another file
+
+// Retina media Queries
+// Credit: http://dev.mattnt.com/retina-results.html
+@media print,
+	(-o-min-device-pixel-ratio: 5/4),
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 120dpi) {
+
+	// * {
+	// 	background-image: url(@imgSprite2x);
+	// 	background-size: @imgSpriteDimensions;
+	// }
+
+}
+
+// === 400> ===
+@include respond-min($breakpoint-narrow) {
+
+}
+// === end 400> ===
+
+
+
+// === 768> ===
+@include respond-min($breakpoint-mid) {
+
+}
+// === end 768> ===
+
+
+// === 992> ===
+@include respond-min($breakpoint-wide) {
+
+}
+// === end 992> ===
+
+
+// === 1382> ===
+@include respond-min($breakpoint-huge) {
+
+}
+// === end 1382> ===

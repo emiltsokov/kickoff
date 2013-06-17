@@ -1,0 +1,33 @@
+{
+  "name": "Kickoff",
+  "title": "Kickoff",
+  "description": "TMW's front-end framework",
+  "version": "0.5.1",
+  "homepage": "https://github.com/tmwagency/kickoff",
+  "author": {
+    "name": "Zander Martineau",
+    "url": "http://martineau.tv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tmwagency/kickoff.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tmwagency/kickoff/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-devtools": "~0.1.0-7",
+    "grunt-contrib-sass": "~0.3.0",
+    "grunt-contrib-jshint": "~0.5.4",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt-contrib-uglify": "~0.2.1",
+    "grunt-contrib-copy": "~0.4.1"
+  },
+  "keywords": []
+}

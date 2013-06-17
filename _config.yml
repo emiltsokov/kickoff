@@ -1,0 +1,14 @@
+markdown: rdiscount
+pygments: true
+relative_permalinks: false
+include: ['.htaccess']
+exclude: ['node_modules', 'scss', 'Gruntfile.js', 'package.json', '*.sublime-project', '*.sublime-workspace']
+timezone: Europe/London
+
+paginate: 8
+paginate_path: /page:num
+
+# Vars
+name: Zander Martineau
+email: zander@martineau.tv
+socialusername: MrMartineau

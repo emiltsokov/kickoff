@@ -1,0 +1,28 @@
+watch: {
+  scss: {
+    	options: {
+			nospawn: true,
+			interrupt: true
+		},
+		files: ['resources/scss/**/*.scss'],
+		tasks: ['sass:dev']
+	},
+
+	js: {
+		options: {
+			nospawn: true,
+			interrupt: true
+		},
+		files: [
+			'resources/js/*.js',
+			'resources/js/libs/**/*.js'
+		],
+		tasks: ['uglify']
+	},
+	livereload: {
+		options: { livereload: true },
+		files: [
+			'resources/css/*.css'
+		]
+	}
+}

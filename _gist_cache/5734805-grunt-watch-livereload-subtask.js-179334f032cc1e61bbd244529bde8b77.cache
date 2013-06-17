@@ -1,0 +1,8 @@
+livereload: {
+	options: { livereload: true },
+	files: [
+		// When these files are changed, livereload is triggered
+		// Make sure this directory is the same as the one your site points to
+		'resources/css/styles.css'
+	]
+}
