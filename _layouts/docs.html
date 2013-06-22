@@ -1,13 +1,20 @@
 ---
 layout: default
 ---
-
 <article class="entry">
 	<h2 class="entry--title">{{ page.title }}</h2>
 
+	{% if page.subtitle %}<h3>{{ page.subtitle }}</h3>{% endif %}
 	{{ content }}
 
+	<footer>
+		[Documentation table of contents](readme.md)
+
+		These docs are still incomplete. If you have any questions, please [file an issue](https://github.com/tmwagency/kickoff/issues/new)
+	</footer>
 </article>
+
+
 
 <!-- Pagination links -->
 <div class="pagination">

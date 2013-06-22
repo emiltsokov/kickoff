@@ -1,5 +1,6 @@
 {% include html_start.html %}
-	<body>
+
+	<body{% if page.body-class %} class="{{ page.body-class }}"{% endif %}{% if page.prettyprint == true %} onload="prettyPrint()"{% endif %}>
 
 		<!--  === MASTHEAD ===  -->
 		{% include masthead.html %}
@@ -7,6 +8,31 @@
 		<!--  === MAIN CONTENT ===  -->
 		<section class="container" role="main">
 			{{ content }}
+
+			<footer class="credits">
+				<h3>To get started, simply checkout the framework using Git or SVN:</h3>
+				<code class="code-lrg" data-before="GIT:">
+					git clone https://github.com/tmwagency/kickoff.git folder-name
+				</code>
+				<code class="code-lrg" data-before="SVN:">
+					svn checkout https://github.com/tmwagency/kickoff folder-name
+				</code>
+
+				<h3 class="text-centre">The kickoff stack</h3>
+
+				<div class="stack-logos text-centre">
+					<a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="/kickoff/img/stack-logos/HTML5.svg" alt="HTML5 logo"></a>
+					<a href="http://gruntjs.com"><img src="/kickoff/img/stack-logos/Grunt.svg" alt="Grunt logo"></a>
+					<a href="http://sass-lang.com"><img src="/kickoff/img/stack-logos/sass.png" alt="Sass logo"></a>
+					<a href="http://jquery.org"><img src="/kickoff/img/stack-logos/jQuery.svg" alt="jQuery logo"></a>
+				</div>
+				<p class="text-centre">Read more about them in our <a href="/kickoff/docs/home.html">documentation</a></p>
+
+				<p class="text-centre">
+				Kickoff is maintained by <a href="http://mrmartineau.co.uk">Zander Martineau</a> and <a href="http://dragongraphics.co.uk">Ashley Nolan</a></p>
+				<p class="text-centre">Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+			</footer>
+
 		</section>
 
 {% include html_end.html %}
