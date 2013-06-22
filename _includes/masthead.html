@@ -1,11 +1,12 @@
 <header class="masthead">
-	<h1><a href="/">Kickoff</a></h1>
-	<p>Kickoff is <a href="http://tmw.co.uk"><abbr title="Tullo Marshall Warren">TMW</abbr>'s</a> front-end framework</p>
+	<h1><a href="/kickoff/">Kickoff</a></h1>
+	<h2>Kickoff is <a href="http://tmw.co.uk"><abbr title="Tullo Marshall Warren">TMW</abbr>'s</a> front-end framework</h2>
 
 	<nav class="nav">
-		<a href="/">Overview</a>
-		<a href="/docs/home.html">Documentation</a>
-		<a href="/blog">Blog</a>
-		<a href="https://github.com/tmwagency/kickoff/">View on Github</a>
+		<a href="/kickoff/"{% if page.navgroup == "home" %} class="is-active"{% endif %}>Overview</a>
+		<a href="/kickoff/docs/home.html"{% if page.navgroup == "docs" %} class="is-active"{% endif %}>Documentation</a>
+		<a href="/kickoff/demos/"{% if page.navgroup == "demo" %} class="is-active"{% endif %}>Demos</a>
+		<!-- <a href="/kickoff/blog"{% if page.navgroup == "blog" %} class="is-active"{% endif %}>Blog</a> -->
+		<a href="https://github.com/tmwagency/kickoff/" class="github-link" target="_blank">View on Github</a>
 	</nav>
 </header>
