@@ -13,7 +13,7 @@ $gray                         : #7f8c8d;
 
 // Colour Scheme
 $color-primary                : #34495e;
-$color-secondary              : $green;
+$color-secondary              : $orange;
 $color-highlight              : #ff9600;
 $color-muted                  : #eef;
 $color-note                   : #666;
@@ -61,8 +61,8 @@ $inactive-tab                 : #95a5a6;
 $active-tab                   : $green;
 
 // Code
-$color-code                   : #d14;
-$color-code-background        : #fbefc0;
+$color-code                   : #fff;
+$color-code-background        : lighten($color-primary, 20%);
 $color-pre                    : #222;
 $color-pre-background         : #f7f7f9;
 
@@ -115,4 +115,4 @@ $info-background               : #d9edf7;
 $info-border                   : darken(adjust-hue($info-background, -10), 7%);
 
 // <hr> border colour
-$hrBorder                     : lighten(#000, 70%)er;
+$hrBorder                     : lighten($color-primary, 15%);

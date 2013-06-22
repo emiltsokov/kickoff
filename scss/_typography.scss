@@ -69,7 +69,6 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
-	color: $color-headings;
 	text-rendering: optimizelegibility; // Fix the character spacing for headings
 
 	& small {
@@ -142,6 +141,10 @@ a {
 		color: $color-link-active;
 		//text-decoration: underline;
 	}
+}
+
+p a:link {
+	font-weight: $bold-font-weight;
 }
 
 
@@ -230,7 +233,7 @@ dd {
 
 // Horizontal rules
 hr {
-	margin: ($base-line-height + px) 0;
+	margin: 40px 0;
 	border: 0;
 	border-top: 1px solid $hrBorder;
 	border-bottom: 1px solid #fff;

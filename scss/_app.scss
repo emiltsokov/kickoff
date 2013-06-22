@@ -3,6 +3,36 @@
 // === Your app styles ===
 // =======================
 
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+a {
+	@include transition(all 300ms ease-in-out);
+}
+
+.container {
+	padding-top: 50px;
+
+	:first-child {
+		margin-top: 0;
+	}
+}
+
+.giant-logo {
+	@include font-size(1000);
+	position: fixed;
+	top: 0px; left: 0;
+	z-index: -1;
+	text-align: center;
+	font-weight: $bold-font-weight;
+	color: #f1f1f1;
+	@include square(0px);
+	@include transform-origin(0%, 0%);
+	@include rotate(44deg);
+	@include user-select(none);
+}
 
 // ================
 // === MASTHEAD ===
@@ -11,32 +41,88 @@
 	background-color: $orange;
 	text-align: center;
 	color: #fff;
-	padding: 80px 0;
-	margin-bottom: 50px;
+	padding: 60px 0;
 
-	a, h1 {
+	a, h1, h2 {
 		color: #fff;
+	}
+
+	h1 {
+		margin-top: 0;
 	}
 }
 
 .nav {
 	a {
 		display: inline-block;
-		padding: 3px 6px;
+		padding: 3px 9px;
+		@include border-radius(3px);
+		font-weight: $bold-font-weight;
+		margin: 0 5px;
+
+		&:hover {
+			background-color: rgba(#fff, 0.3);
+		}
+
+		&.is-active {
+			background-color: #fff;
+			color: $orange;
+		}
 	}
 }
 
-// ==============
-// === FOOTER ===
-// ==============
+.github-link {
+	background-color: #000;
+}
+
+// Footer
+.credits {
+	margin: 80px 0;
+	border-top: 2px solid $color-primary;
+	padding-top: 20px;
+}
+
+// Stack logos
+.stack-logos {
+	width: 50%;
+	margin: 10px auto;
+	@include clearfix;
+	@extend .unstyled;
+	text-align: center;
+	font-weight: $bold-font-weight;
+
+	a {
+		width: 24%;
+		// height: 140px;
+		// padding: 20px;
+		display: inline-block;
+		padding: 0 20px;
+		vertical-align: baseline;
+	}
+}
 
 
+// DEMOS
+.grid-block-link {
+	display: block;
+	min-height: 130px;
+	text-align: center;
 
-// ======================
-// === HOME / LANDING ===
-// ======================
+	&:hover {
+		background-color: $orange;
+		color: #fff;
+	}
+}
 
 
+.entry--title {
+	margin-top: 0;
+	border-bottom: 2px solid $color-primary;
+}
+
+[data-before]:before {
+	content: attr(data-before);
+}
 
 // ===========================================
 // === Media queries for responsive design ===

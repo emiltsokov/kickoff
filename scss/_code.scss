@@ -22,6 +22,33 @@ code {
 	background-color: $color-code-background;
 }
 
+.code-lrg {
+	line-height: 1.5;
+	display: block;
+	text-align: left;
+	padding: 10px 10px 10px 90px;
+	margin: 10px 0;
+	position: relative;
+
+	&:before {
+		content: attr(data-before);
+		position: absolute;
+		top: 0; left: 0; bottom: 0;
+		width: 70px;
+		padding: 10px 0;
+		background-color: $color-primary;
+		display: block;
+		text-align: center;
+		@include border-radius(3px 0 0 3px);
+		font-weight: $bold-font-weight;
+
+	}
+}
+
+.code-lrg + .code-lrg {
+	// margin-top: 25px;
+}
+
 // Blocks of code
 pre {
 	display: block;
