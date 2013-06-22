@@ -21,5 +21,5 @@ navgroup: docs
 
 ## Development
 
-* [Extending and customizing Kickoff](extend.md) — Going further with
+* [Extending and customizing Kickoff](extend.html) — Going further with
   the boilerplate.
