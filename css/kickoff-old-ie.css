@@ -280,14 +280,50 @@ table {
 }
 
 .span1, .mq-alpha-resize-to1 {
-  width: 31.85185185%;
+  width: 6.2962963%;
 }
 
 .span2, .mq-alpha-resize-to2 {
-  width: 65.92592593%;
+  width: 14.81481481%;
 }
 
 .span3, .mq-alpha-resize-to3 {
+  width: 23.33333333%;
+}
+
+.span4, .mq-alpha-resize-to4 {
+  width: 31.85185185%;
+}
+
+.span5, .mq-alpha-resize-to5 {
+  width: 40.37037037%;
+}
+
+.span6, .mq-alpha-resize-to6 {
+  width: 48.88888889%;
+}
+
+.span7, .mq-alpha-resize-to7 {
+  width: 57.40740741%;
+}
+
+.span8, .mq-alpha-resize-to8 {
+  width: 65.92592593%;
+}
+
+.span9, .mq-alpha-resize-to9 {
+  width: 74.44444444%;
+}
+
+.span10, .mq-alpha-resize-to10 {
+  width: 82.96296296%;
+}
+
+.span11, .mq-alpha-resize-to11 {
+  width: 91.48148148%;
+}
+
+.span12, .mq-alpha-resize-to12 {
   width: 100%;
 }
 
@@ -314,7 +350,7 @@ table {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 22px;
@@ -324,7 +360,7 @@ body {
 }
 
 p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
   line-height: 22px;
@@ -336,8 +372,7 @@ p {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-family: inherit;
-  font-weight: bold;
-  color: #34495e;
+  font-weight: 700;
   text-rendering: optimizelegibility;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
@@ -413,6 +448,10 @@ a:active {
   color: #19232d;
 }
 
+p a:link {
+  font-weight: 700;
+}
+
 ul {
   list-style-type: disc;
 }
@@ -448,7 +487,7 @@ ul ul, ul ol, ol ul, ol ol {
   margin-bottom: 0;
 }
 
-.unstyled, form ul, .tabs, .tabs-content {
+.unstyled, form ul, .tabs, .tabs-content, .stack-logos {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -466,7 +505,7 @@ dd {
 }
 
 dt {
-  font-weight: bold;
+  font-weight: 700;
   line-height: 21px;
   line-height: 1.3125rem;
 }
@@ -485,14 +524,14 @@ dd {
 }
 
 hr {
-  margin: 22px 0;
+  margin: 40px 0;
   border: 0;
-  border-top: 1px solid #b3b3b3 er;
+  border-top: 1px solid #4f6f8f;
   border-bottom: 1px solid #fff;
 }
 
 strong, b {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 em, i {
@@ -687,7 +726,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 label {
@@ -1365,12 +1404,39 @@ table {
 }
 
 table .span1 {
-  width: 31.85185185%;
+  width: 6.2962963%;
 }
 table .span2 {
-  width: 65.92592593%;
+  width: 14.81481481%;
 }
 table .span3 {
+  width: 23.33333333%;
+}
+table .span4 {
+  width: 31.85185185%;
+}
+table .span5 {
+  width: 40.37037037%;
+}
+table .span6 {
+  width: 48.88888889%;
+}
+table .span7 {
+  width: 57.40740741%;
+}
+table .span8 {
+  width: 65.92592593%;
+}
+table .span9 {
+  width: 74.44444444%;
+}
+table .span10 {
+  width: 82.96296296%;
+}
+table .span11 {
+  width: 91.48148148%;
+}
+table .span12 {
   width: 100%;
 }
 
@@ -1380,7 +1446,7 @@ pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 13px;
   font-size: 0.8125rem;
-  color: #dd1144;
+  color: white;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -o-border-radius: 3px;
@@ -1390,8 +1456,34 @@ pre {
 
 code {
   padding: 2px 4px;
-  color: #dd1144;
-  background-color: #fbefc0;
+  color: white;
+  background-color: #587ca0;
+}
+
+.code-lrg {
+  line-height: 1.5;
+  display: block;
+  text-align: left;
+  padding: 10px 10px 10px 90px;
+  margin: 10px 0;
+  position: relative;
+}
+.code-lrg:before {
+  content: attr(data-before);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  padding: 10px 0;
+  background-color: #34495e;
+  display: block;
+  text-align: center;
+  -webkit-border-radius: 3px 0 0 3px;
+  -moz-border-radius: 3px 0 0 3px;
+  -o-border-radius: 3px 0 0 3px;
+  border-radius: 3px 0 0 3px;
+  font-weight: 700;
 }
 
 pre {
@@ -1951,20 +2043,132 @@ input[type="button"].btn-block {
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+a {
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.container {
+  padding-top: 50px;
+}
+.container :first-child {
+  margin-top: 0;
+}
+
+.giant-logo {
+  font-size: 1000px;
+  font-size: 62.5rem;
+  position: fixed;
+  top: 0px;
+  left: 0;
+  z-index: -1;
+  text-align: center;
+  font-weight: 700;
+  color: #f1f1f1;
+  height: 0px;
+  width: 0px;
+  -webkit-transform-origin: 0%, 0%;
+  -moz-transform-origin: 0%, 0%;
+  -o-transform-origin: 0%, 0%;
+  -ms-transform-origin: 0%, 0%;
+  transform-origin: 0%, 0%;
+  -webkit-transform: rotate(44deg);
+  -moz-transform: rotate(44deg);
+  -o-transform: rotate(44deg);
+  -ms-transform: rotate(44deg);
+  transform: rotate(44deg);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .masthead {
   background-color: #e67e22;
   text-align: center;
   color: #fff;
-  padding: 80px 0;
-  margin-bottom: 50px;
+  padding: 60px 0;
 }
-.masthead a, .masthead h1 {
+.masthead a, .masthead h1, .masthead h2 {
   color: #fff;
+}
+.masthead h1 {
+  margin-top: 0;
 }
 
 .nav a {
   display: inline-block;
-  padding: 3px 6px;
+  padding: 3px 9px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: 700;
+  margin: 0 5px;
+}
+.nav a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.nav a.is-active {
+  background-color: #fff;
+  color: #e67e22;
+}
+
+.github-link {
+  background-color: #000;
+}
+
+.credits {
+  margin: 80px 0;
+  border-top: 2px solid #34495e;
+  padding-top: 20px;
+}
+
+.stack-logos {
+  width: 50%;
+  margin: 10px auto;
+  *zoom: 1;
+  text-align: center;
+  font-weight: 700;
+}
+.stack-logos:before, .stack-logos:after {
+  content: " ";
+  display: table;
+}
+.stack-logos:after {
+  clear: both;
+}
+.stack-logos a {
+  width: 24%;
+  display: inline-block;
+  padding: 0 20px;
+  vertical-align: baseline;
+}
+
+.grid-block-link {
+  display: block;
+  min-height: 130px;
+  text-align: center;
+}
+.grid-block-link:hover {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.entry--title {
+  margin-top: 0;
+  border-bottom: 2px solid #34495e;
+}
+
+[data-before]:before {
+  content: attr(data-before);
 }
 
 .ir {
