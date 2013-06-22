@@ -1,11 +1,8 @@
---
+---
 layout: docs
 navgroup: docs
+title: Usage
 ---
-
-Kickoff | [Documentation table of contents](readme.md)
-
-# Usage
 
 Once you have cloned or downloaded Kickoff, creating a site or app
 usually involves the following:

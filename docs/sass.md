@@ -1,13 +1,8 @@
---
+---
 layout: docs
 navgroup: docs
+title: Sass
 ---
-
-[Documentation table of contents](readme.md)
-
-These docs are still incomplete. If you have any questions, please email zmartineau@tmw.co.uk
-
-# SASS
 
 Kickoff is made with [SASS](http://sass-lang.com/) at its core ( we used to use [Less](http://lesscss.org/) which is now used on legacy projects), a dynamic stylesheet language created by, [Hampton Catlin](http://www.hamptoncatlin.com/). It makes developing systems-based CSS faster, easier, and more fun.
 

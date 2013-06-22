@@ -349,24 +349,28 @@ table {
   margin: 0 auto;
 }
 
+html {
+  font-size: 20px;
+}
+
 body {
   font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   color: #444444;
   background-color: white;
 }
 
 p {
   font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   margin-top: 0;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -379,56 +383,59 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
   font-weight: normal;
   color: #4f6f8f;
 }
+h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
+  font-size: inherit;
+}
 
 h1, .h1, .alpha {
   font-size: 51px;
-  font-size: 3.1875rem;
-  line-height: 44px;
-  line-height: 2.75rem;
-  margin-top: 22px;
-  margin-bottom: 44px;
+  font-size: 2.55rem;
+  line-height: 56px;
+  line-height: 2.8rem;
+  margin-top: 28px;
+  margin-bottom: 56px;
 }
 
 h2, .h2, .beta {
   font-size: 28px;
-  font-size: 1.75rem;
-  line-height: 44px;
-  line-height: 2.75rem;
-  margin-top: 44px;
-  margin-bottom: 22px;
+  font-size: 1.4rem;
+  line-height: 56px;
+  line-height: 2.8rem;
+  margin-top: 56px;
+  margin-bottom: 28px;
 }
 
 h3, .h3, .gamma {
   font-size: 21px;
-  font-size: 1.3125rem;
-  line-height: 22px;
-  line-height: 1.375rem;
-  margin-top: 22px;
+  font-size: 1.05rem;
+  line-height: 28px;
+  line-height: 1.4rem;
+  margin-top: 28px;
   margin-bottom: 0px;
 }
 
 h4, .h4, .delta,
 h5, .h5, .epsilon,
 h6, .h6, .zeta {
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 h4, .h4, .delta {
-  font-size: 16px;
+  font-size: 20px;
   font-size: 1rem;
 }
 
 h5, .h5, .epsilon {
   font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
 }
 
 h6, .h6, .zeta {
   font-size: 11px;
-  font-size: 0.6875rem;
+  font-size: 0.55rem;
   color: #b3b3b3;
   text-transform: uppercase;
 }
@@ -462,10 +469,10 @@ ol {
 
 ul, ol {
   padding: 0;
-  margin: 0 0 22px 22px;
+  margin: 0 0 28px 28px;
 }
 ul ul, ul ol, ol ul, ol ol {
-  margin-left: 44px;
+  margin-left: 56px;
 }
 ul ul, ol ul {
   list-style-type: circle;
@@ -480,8 +487,8 @@ ul ol ol, ol ol ol {
   list-style-type: lower-roman;
 }
 ul li, ol li {
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
 }
 ul ul, ul ol, ol ul, ol ol {
   margin-bottom: 0;
@@ -495,19 +502,19 @@ ul ul, ul ol, ol ul, ol ol {
 }
 
 dl {
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 
 dt,
 dd {
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
 }
 
 dt {
   font-weight: 700;
-  line-height: 21px;
-  line-height: 1.3125rem;
+  line-height: 27px;
+  line-height: 1.35rem;
 }
 .dl-horizontal dt {
   float: left;
@@ -517,7 +524,7 @@ dt {
 }
 
 dd {
-  margin-left: 22px;
+  margin-left: 28px;
 }
 .dl-horizontal dd {
   margin-left: 240px;
@@ -554,21 +561,21 @@ abbr.initialism {
 
 blockquote {
   padding-left: 10px;
-  margin: 22px;
+  margin: 28px;
   border-left: 4px solid #cccccc;
 }
 blockquote p {
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 20px;
   font-size: 1rem;
   font-weight: 300;
-  line-height: 27.5px;
-  line-height: 1.71875rem;
+  line-height: 35px;
+  line-height: 1.75rem;
 }
 blockquote small {
   display: block;
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   color: #b3b3b3;
 }
 blockquote small:before {
@@ -593,9 +600,9 @@ blockquote:after {
 
 address {
   display: block;
-  margin-bottom: 22px;
-  line-height: 22px;
-  line-height: 1.375rem;
+  margin-bottom: 28px;
+  line-height: 28px;
+  line-height: 1.4rem;
   font-style: normal;
 }
 
@@ -663,8 +670,8 @@ samp {
 }
 
 .page-header {
-  padding-bottom: 21px;
-  margin: 22px 0;
+  padding-bottom: 27px;
+  margin: 28px 0;
   border-bottom: 1px solid #b3b3b3;
 }
 
@@ -673,7 +680,7 @@ samp {
 }
 
 form {
-  margin: 0 0 22px;
+  margin: 0 0 28px;
 }
 
 fieldset {
@@ -683,11 +690,11 @@ fieldset {
 }
 
 .control-group {
-  margin-top: 11px;
+  margin-top: 14px;
   list-style-type: none;
 }
 legend + .control-group {
-  margin-top: 22px;
+  margin-top: 28px;
   -webkit-margin-top-collapse: separate;
 }
 
@@ -695,17 +702,17 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 22px;
-  font-size: 24px;
+  margin-bottom: 28px;
+  font-size: 30px;
   font-size: 1.5rem;
-  line-height: 44px;
-  line-height: 2.75rem;
+  line-height: 56px;
+  line-height: 2.8rem;
   color: #4d4d4d;
   border: 0;
   border-bottom: 1px solid #eee;
 }
 legend small {
-  font-size: 12px;
+  font-size: 15px;
   font-size: 0.75rem;
   color: #b3b3b3;
 }
@@ -715,10 +722,10 @@ input,
 button,
 select,
 textarea {
-  font-size: 16px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   font-weight: normal;
 }
 
@@ -753,13 +760,13 @@ select,
 .uneditable-input,
 .file-wrapper {
   width: 210px;
-  height: 33px;
+  height: 42px;
   padding: 4px;
   margin-bottom: 9px;
-  font-size: 16px;
+  font-size: 20px;
   font-size: 1rem;
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   color: #4d4d4d;
   background-color: #FFF;
   border: 1px solid #cccccc;
@@ -836,7 +843,7 @@ select {
   *margin-top: 4px;
   /* For IE7, add top margin to align select with labels */
   line-height: 28px;
-  line-height: 1.75rem;
+  line-height: 1.4rem;
   background-color: white;
 }
 select[multiple], select[size] {
@@ -1078,7 +1085,7 @@ textarea:focus:required:invalid:focus {
 }
 
 .form-horizontal .control-group {
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   *zoom: 1;
 }
 .form-horizontal .control-group:before, .form-horizontal .control-group:after {
@@ -1105,7 +1112,7 @@ textarea:focus:required:invalid:focus {
   *padding-left: 160px;
 }
 .form-horizontal .help-block {
-  margin-top: 11px;
+  margin-top: 14px;
   margin-bottom: 0;
 }
 .form-horizontal .form-actions {
@@ -1153,9 +1160,9 @@ textarea:focus:required:invalid:focus {
 }
 
 .form-actions {
-  padding: 21px 20px 22px;
-  margin-top: 22px;
-  margin-bottom: 22px;
+  padding: 27px 20px 28px;
+  margin-top: 28px;
+  margin-bottom: 28px;
   background-color: whitesmoke;
   border-top: 1px solid #ddd;
   *zoom: 1;
@@ -1203,7 +1210,7 @@ textarea:focus:required:invalid:focus {
 
 .help-block {
   display: block;
-  margin-bottom: 11px;
+  margin-bottom: 14px;
 }
 
 .help-inline {
@@ -1242,11 +1249,11 @@ textarea:focus:required:invalid:focus {
 .input-append .add-on {
   width: auto;
   min-width: 16px;
-  height: 22px;
+  height: 28px;
   padding: 4px 5px;
   font-weight: normal;
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   text-align: center;
   text-shadow: 0 1px 0 #fff;
   vertical-align: middle;
@@ -1327,12 +1334,12 @@ table {
 
 .table {
   width: 100%;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 .table th, .table td {
   padding: 8px;
-  line-height: 22px;
-  line-height: 1.375rem;
+  line-height: 28px;
+  line-height: 1.4rem;
   text-align: left;
   vertical-align: top;
   border-top: 1px solid #dddddd;
@@ -1445,7 +1452,7 @@ pre {
   padding: 0 3px 2px;
   font-family: Menlo, Monaco, "Courier New", monospace;
   font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 0.65rem;
   color: white;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -1488,10 +1495,10 @@ code {
 
 pre {
   display: block;
-  padding: 10.5px;
-  margin: 0 0 11px;
-  line-height: 22px;
-  line-height: 1.375rem;
+  padding: 13.5px;
+  margin: 0 0 14px;
+  line-height: 28px;
+  line-height: 1.4rem;
   color: #222222;
   background-color: #f7f7f9;
   border: 1px solid #ccc;
@@ -1506,7 +1513,7 @@ pre {
   word-wrap: break-word;
 }
 pre.prettyprint {
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 pre code {
   padding: 0;
@@ -1656,7 +1663,7 @@ ul.centred li, ul.centered li {
 
 .tabs {
   *zoom: 1;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   border-bottom: 2px solid #1abc9c;
 }
 .tabs:before, .tabs:after {
@@ -1701,7 +1708,7 @@ ul.centred li, ul.centered li {
 
 .alert {
   padding: 8px 35px 8px 14px;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
@@ -1721,7 +1728,7 @@ ul.centred li, ul.centered li {
   position: relative;
   top: -2px;
   right: -21px;
-  line-height: 22px;
+  line-height: 28px;
 }
 
 .alert-success {
@@ -1767,7 +1774,7 @@ ul.centred li, ul.centered li {
   float: right;
   font-size: 20px;
   font-weight: bold;
-  line-height: 22px;
+  line-height: 28px;
   color: #000;
   text-shadow: 0 1px 0 white;
   zoom: 1;
@@ -1857,8 +1864,8 @@ button.close {
 }
 
 .btn-large {
-  font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 22px;
+  font-size: 1.1rem;
   line-height: 3.5;
   height: 3.5em;
   padding-right: 1.5em;
@@ -1871,7 +1878,7 @@ button.close {
 
 .btn-small {
   font-size: 13px;
-  font-size: 0.8125rem;
+  font-size: 0.65rem;
   line-height: 1.5;
   height: 1.5em;
   padding-right: 0.5em;
@@ -2064,7 +2071,7 @@ a {
 
 .giant-logo {
   font-size: 1000px;
-  font-size: 62.5rem;
+  font-size: 50rem;
   position: fixed;
   top: 0px;
   left: 0;
@@ -2101,17 +2108,24 @@ a {
 }
 .masthead h1 {
   margin-top: 0;
+  margin-bottom: 20px;
+}
+.masthead h2 {
+  margin-top: 20px;
 }
 
 .nav a {
   display: inline-block;
   padding: 3px 9px;
+  font-weight: 700;
+  margin: 0 5px;
+  font-size: 16px;
+  font-size: 0.8rem;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   -o-border-radius: 3px;
   border-radius: 3px;
-  font-weight: 700;
-  margin: 0 5px;
+  line-height: 1.3;
 }
 .nav a:hover {
   background-color: rgba(255, 255, 255, 0.3);
@@ -2238,15 +2252,15 @@ a {
 }
 
 .mb1 {
-  margin-bottom: 16 !important;
+  margin-bottom: 20 !important;
 }
 
 .mb2 {
-  margin-bottom: 24 !important;
+  margin-bottom: 30 !important;
 }
 
 .mb3 {
-  margin-bottom: 30 !important;
+  margin-bottom: 37.5 !important;
 }
 
 .mt0 {
@@ -2254,15 +2268,15 @@ a {
 }
 
 .mt1 {
-  margin-top: 16 !important;
+  margin-top: 20 !important;
 }
 
 .mt2 {
-  margin-top: 24 !important;
+  margin-top: 30 !important;
 }
 
 .mt3 {
-  margin-top: 30 !important;
+  margin-top: 37.5 !important;
 }
 
 @media print {

@@ -1,11 +1,8 @@
---
+---
 layout: docs
 navgroup: docs
+title: Frequently asked questions
 ---
-
-[Documentation table of contents](readme.md)
-
-# Frequently asked questions
 
 ### Why is the URL for jQuery without "http"?
 
@@ -48,15 +45,12 @@ installed.
 Use the following CSS to prevent Skype from formatting the numbers on your
 page:
 
-```css
-span.skype_pnh_container {
-    display: none !important;
-}
-
-span.skype_pnh_print_container {
-    display: inline !important;
-}
-```
+	span.skype_pnh_container {
+	    display: none !important;
+	}
+	span.skype_pnh_print_container {
+	    display: inline !important;
+	}
 
 
 ### Do I need to upgrade my sites each time a new version of Kickoff is released?

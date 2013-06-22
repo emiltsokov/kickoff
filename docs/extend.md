@@ -1,12 +1,8 @@
---
+---
 layout: docs
 navgroup: docs
+title: Extend and customise Kickoff
 ---
-
-[Documentation table of contents](readme.md)
-
-# Extend and customise Kickoff
-
 Here is some useful advice for how you can make your project with HTML5
 Boilerplate even better. We don't want to include it all by default, as not
 everything fits with everyone's needs.

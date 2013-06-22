@@ -29,7 +29,7 @@ $support-FF36                 : false;
 
 // Base sizes
 // Set this in pixels, the font-size mixin will convert to REMS
-$base-font-size                : 16;
+$base-font-size                : 20;
 $base-leading                  : 1.4;
 $base-line-height              : round($base-font-size * $base-leading);
 

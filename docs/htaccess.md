@@ -1,11 +1,8 @@
 --
 layout: docs
 navgroup: docs
+title: .htaccess
 ---
-
-[Documentation table of contents](readme.md)
-
-# .htaccess
 
 In Apache HTTP server, `.htaccess` (hypertext access) is the configuration file
 that allows for web server configuration. HTML5 Boilerplate includes a number

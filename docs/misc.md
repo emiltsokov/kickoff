@@ -1,9 +1,7 @@
---
+---
 layout: docs
 navgroup: docs
 ---
-
-[Documentation table of contents](readme.md)
 
 # Miscellaneous
 

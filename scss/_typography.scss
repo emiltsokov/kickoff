@@ -27,6 +27,9 @@
 // http://modularscale.com/scale/?px1=16&px2=&ra1=1.333&ra2=0
 // ------------------------------------------------------------------------------
 
+html {
+	font-size: $base-font-size + px;
+}
 
 // Body text
 body {
@@ -74,6 +77,10 @@ h1, h2, h3, h4, h5, h6 {
 	& small {
 		font-weight: normal;
 		color: lighten($color-headings, 15%);
+	}
+
+	code {
+		font-size: inherit;
 	}
 }
 

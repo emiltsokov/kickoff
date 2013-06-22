@@ -1,11 +1,8 @@
---
+---
 layout: docs
 navgroup: docs
+title: CSS
 ---
-
-[Documentation table of contents](readme.md)
-
-# The CSS
 
 The Kickoff starting CSS includes:
 
