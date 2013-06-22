@@ -1,8 +1,8 @@
 --
-layout: post
+layout: docs
+navgroup: docs
+title: To do
 ---
-
-# To do
 
 
 ## The CSS / LESS

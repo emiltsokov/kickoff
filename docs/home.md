@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: docs
+title: Kickoff documentation
+navgroup: docs
 ---
-
-# Kickoff documentation:
 
 ## Getting started
 
@@ -16,10 +16,7 @@ layout: post
 * [SASS](sass.html) — A guide to the default SASS.
 * [Grunt](grunt.html) — A guide to using [Grunt.js](http://gruntjs.com) with Kickoff
 * [JavaScript](js.html) — A guide to the default JavaScript.
-* [.htaccess](htaccess.html) — All about the Apache web server config (also see
-  our [alternative server configs](https://github.com/h5bp/server-configs)).
-* [crossdomain.xml](crossdomain.html) — An introduction to making use of
-  crossdomain requests.
+* [.htaccess](htaccess.html) — All about the Apache web server config (also see our [alternative server configs](https://github.com/h5bp/server-configs)).
 * [Everything else](misc.html).
 
 ## Development

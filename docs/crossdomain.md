@@ -1,5 +1,6 @@
 --
 layout: post
+navgroup: docs
 ---
 
 [Documentation table of contents](readme.md)

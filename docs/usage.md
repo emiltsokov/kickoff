@@ -1,5 +1,6 @@
 --
-layout: post
+layout: docs
+navgroup: docs
 ---
 
 Kickoff | [Documentation table of contents](readme.md)

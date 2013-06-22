@@ -1,10 +1,9 @@
 --
-layout: post
+layout: docs
+navgroup: docs
+title: The HTML
+subtitle:
 ---
-
-[Documentation table of contents](readme.md)
-
-# The HTML
 
 ## Conditional `html` classes
 

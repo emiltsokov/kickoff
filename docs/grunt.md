@@ -1,15 +1,9 @@
---
-layout: post
 ---
-
-[Documentation table of contents](readme.md)
-
-These docs are still incomplete. If you have any questions, please [file an issue](https://github.com/tmwagency/kickoff/issues/new)
-
-# Grunt.js
-
-Kickoff has support for Grunt, the Javascript task runner.
-
+layout: docs
+navgroup: docs
+title: "Grunt.js"
+subtitle: "Kickoff has support for Grunt, the Javascript task runner."
+---
 ## Setup
 
 Setting up Kickoff to use Grunt is extremely simple, follow these simple steps.
