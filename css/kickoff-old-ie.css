@@ -2216,6 +2216,9 @@ a {
   font-size: 7.5rem;
   line-height: 0.6;
 }
+.grid-block-link :last-child {
+  margin-bottom: 0;
+}
 
 .entry--title {
   margin-top: 0;

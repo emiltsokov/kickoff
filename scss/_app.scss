@@ -59,6 +59,10 @@ a {
 	h2 {
 		margin-top: 20px;
 	}
+
+	a:after {
+		// font-size: 30px;
+	}
 }
 
 .nav {
@@ -131,6 +135,10 @@ a {
 	.asset-font {
 		@include font-size(150);
 		line-height: 0.6;
+	}
+
+	:last-child {
+		margin-bottom: 0;
 	}
 }
 
