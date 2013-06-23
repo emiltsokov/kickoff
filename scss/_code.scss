@@ -9,7 +9,7 @@ code,
 pre {
 	padding: 0 3px 2px;
 	font-family: $mono-font-family;
-	@include font-size(13);
+	@include font-size(14);
 	color: $color-code;
 	@include border-radius(3px);
 	tab-size: 3;

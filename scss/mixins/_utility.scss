@@ -44,7 +44,7 @@
 
 // @font-face
 // @include font-face(proxima-nova, /css/fonts/proxima-nova, normal, italic, false);
-@mixin font-face( $family-name, $font-path, $font-weight:normal, $font-style:normal, $include-svg:false ) {
+@mixin font-face($family-name, $font-path, $font-weight:normal, $font-style:normal, $include-svg:false ) {
 	@font-face {
 		font-family: $family-name;
 		src: url('${font-path}.eot');

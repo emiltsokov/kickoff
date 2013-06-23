@@ -26,6 +26,8 @@
 // Here is the same result from modularscale.com.
 // http://modularscale.com/scale/?px1=16&px2=&ra1=1.333&ra2=0
 // ------------------------------------------------------------------------------
+@include font-face(entypo, /css/fonts/entypo, normal, false);
+@include font-face(entypo-social, /css/fonts/entypo-social, normal, false);
 
 html {
 	font-size: $base-font-size + px;
@@ -384,4 +386,20 @@ samp {
 
 .page-header h1 {
 	line-height: 1;
+}
+
+.asset-font {
+	font-family: 'entypo';
+}
+
+[data-icon-before]:before {
+	content: attr(data-icon-before);
+	margin-right: 4px;
+	@extend .asset-font;
+}
+
+[data-icon-after]:after {
+	content: attr(data-icon-after);
+	margin-left: 4px;
+	@extend .asset-font;
 }

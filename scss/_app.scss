@@ -18,6 +18,10 @@ a {
 	:first-child {
 		margin-top: 0;
 	}
+
+	p a:link, ul a:link {
+		font-weight: $bold-font-weight;
+	}
 }
 
 .giant-logo {
@@ -68,7 +72,7 @@ a {
 		line-height: 1.3;
 
 		&:hover {
-			background-color: rgba(#fff, 0.3);
+			background-color: darken($orange, 10%);
 		}
 
 		&.is-active {
@@ -79,7 +83,7 @@ a {
 }
 
 .github-link {
-	background-color: #000;
+	background-color: darken($orange, 20%);
 }
 
 // Footer
@@ -119,6 +123,15 @@ a {
 		background-color: $orange;
 		color: #fff;
 	}
+
+	h3 {
+		margin-top: 0;
+	}
+
+	.asset-font {
+		@include font-size(150);
+		line-height: 0.6;
+	}
 }
 
 
@@ -127,8 +140,9 @@ a {
 	border-bottom: 2px solid $color-primary;
 }
 
-[data-before]:before {
-	content: attr(data-before);
+// Docs footer
+.docs-footer {
+	margin-top: 50px;
 }
 
 // ===========================================
