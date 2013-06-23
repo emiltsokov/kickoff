@@ -9,8 +9,3 @@ paginate: 8
 paginate_path: /page:num
 
 destination: ./kickoff
-
-# Vars
-name: Zander Martineau
-email: zander@martineau.tv
-socialusername: MrMartineau
