@@ -31,7 +31,7 @@ a {
 	z-index: -1;
 	text-align: center;
 	font-weight: $bold-font-weight;
-	color: #f1f1f1;
+	color: #fafafa;
 	@include square(0px);
 	@include transform-origin(0%, 0%);
 	@include rotate(44deg);
