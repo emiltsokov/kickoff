@@ -5,7 +5,9 @@ title: Editing this website
 ---
 
 ### Before you start
+* Ruby v2 is needed. Update using [rvm](http://rvm.io/) then install the packages below
 * Install Jekyll globally - `sudo gem install jekyll`
+* Install rdiscount - `sudo gem install rdiscount`
 * Install Sass globally - `sudo gem install sass -pre`
 * Install Node from [nodejs.org](http://nodejs.org/)
 * Install Grunt CLI - `npm install -g grunt-cli`
@@ -24,4 +26,4 @@ Run `jekyll build --watch` and `grunt watch`
 
 #### Please note
 
-The Kickoff site resides at [tmwagency.github.io/kickoff/](http://tmwagency.github.io/kickoff/) and Jekyll builds to `/kickoff/` wherever you run it. Make sure your localhost points to `kickoff-docs`
+The Kickoff site resides at [tmwagency.github.io/kickoff/](http://tmwagency.github.io/kickoff/) and Jekyll builds to `/kickoff/` wherever you run it. Make sure your localhost points to `kickoff-docs` then browse to `http://your-localhost.dev/kickoff/`
