@@ -2179,7 +2179,6 @@ a {
 }
 
 .stack-logos {
-  width: 50%;
   margin: 10px auto;
   *zoom: 1;
   text-align: center;
@@ -2193,9 +2192,9 @@ a {
   clear: both;
 }
 .stack-logos a {
-  width: 24%;
+  width: 70px;
   display: inline-block;
-  padding: 0 20px;
+  margin: 0 20px;
   vertical-align: baseline;
 }
 

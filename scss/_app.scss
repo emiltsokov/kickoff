@@ -99,7 +99,6 @@ a {
 
 // Stack logos
 .stack-logos {
-	width: 50%;
 	margin: 10px auto;
 	@include clearfix;
 	@extend .unstyled;
@@ -107,11 +106,11 @@ a {
 	font-weight: $bold-font-weight;
 
 	a {
-		width: 24%;
+		width: 70px;
 		// height: 140px;
 		// padding: 20px;
 		display: inline-block;
-		padding: 0 20px;
+		margin: 0 20px;
 		vertical-align: baseline;
 	}
 }
