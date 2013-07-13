@@ -7,6 +7,7 @@ module.exports = function (grunt) {
 	var jsFileList = [
 		'js/helpers.js',
 		'js/plugins.js',
+		'js/libs/plugins/skeleton.tabs.js',
 		'js/script.js'
 	];
 	var distDir = 'js/dist/';

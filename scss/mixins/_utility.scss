@@ -47,12 +47,12 @@
 @mixin font-face( $family-name, $font-path, $font-weight:normal, $font-style:normal, $include-svg:false ) {
 	@font-face {
 		font-family: $family-name;
-		src: url('${font-path}.eot');
-		src: url('${font-path}.eot?#iefix')				format('embedded-opentype'),
-			 url('${font-path}.woff')					format('woff'),
-			 url('${font-path}.ttf')					format('truetype')
+		src: url("#{$font-path}/#{$family-name}.eot");
+		src: url("#{$font-path}/#{$family-name}.eot?#iefix") format("embedded-opentype"),
+			 url("#{$font-path}/#{$family-name}.woff") format("woff"),
+			 url("#{$font-path}/#{$family-name}.ttf") format("truetype")
 			 // @if $include-svg == true {
-				,url('${font-path}.svg#{$family-name}') format('svg');
+				,url("#{$font-path}/#{$family-name}.svg#{$family-name}") format("svg");
 			 // }
 		font-weight: $font-weight;
 		font-style: $font-style;

@@ -26,8 +26,8 @@
 // Here is the same result from modularscale.com.
 // http://modularscale.com/scale/?px1=16&px2=&ra1=1.333&ra2=0
 // ------------------------------------------------------------------------------
-@include font-face(entypo, /css/fonts/entypo, normal, false);
-@include font-face(entypo-social, /css/fonts/entypo-social, normal, false);
+@include font-face(entypo, fonts/entypo, normal, false);
+@include font-face(entypo-social, fonts/entypo-social, normal, false);
 
 html {
 	font-size: $base-font-size + px;
@@ -244,7 +244,7 @@ dd {
 hr {
 	margin: 40px 0;
 	border: 0;
-	border-top: 1px solid $hrBorder;
+	border-top: 1px solid $hr-border;
 	border-bottom: 1px solid #fff;
 }
 
