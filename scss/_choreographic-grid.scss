@@ -197,7 +197,7 @@ $nestedColumnPadding  : false  !default; // Remove padding on nested columns so 
 // ===========================================
 
 // === 768> ===
-@include respond-min($breakpoint-mid) {
+@include respond-min($breakpoint-narrow) {
 	// NAME THIS MEDIA QUERY
 	$mediaQueryName : 'mq-alpha';
 
