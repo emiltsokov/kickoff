@@ -5,10 +5,7 @@ module.exports = function (grunt) {
 	// ====================
 	// == Edit this section
 	var jsFileList = [
-		'js/helpers.js',
-		'js/plugins.js',
-		'js/libs/plugins/skeleton.tabs.js',
-		'js/script.js'
+		'js/libs/plugins/skeleton.tabs.js'
 	];
 	var distDir = 'js/dist/';
 	var jsFile = 'app.min.js';

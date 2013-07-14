@@ -88,7 +88,7 @@ The central part of the boilerplate template is pretty much empty. This is inten
 
 ### Google CDN for jQuery
 
-The Google CDN version of the jQuery JavaScript library is referenced towards the bottom of the page using a protocol-independent path (read more about this in the [FAQ](faq.md). A local fallback of jQuery is included for rare instances when the CDN version might not be available, and to facilitate offline development.
+The Google CDN version of the jQuery JavaScript library is referenced towards the bottom of the page using a protocol-independent path (read more about this in the [FAQ](faq.html). A local fallback of jQuery is included for rare instances when the CDN version might not be available, and to facilitate offline development.
 
 Regardless of which JavaScript library you choose to use, it is well worth the time and effort to look up and reference the Google CDN (Content Delivery Network) version. Your users may already have this version cached in their browsers, and Google's CDN is likely to deliver the asset faster than your server.
 
