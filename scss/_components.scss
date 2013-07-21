@@ -173,6 +173,7 @@ ul.centred, ul.centered {
 	@extend .unstyled;
 	margin-bottom: $base-line-height + px;
 	border-bottom: 2px solid $active-tab;
+	@include font-size(16);
 
 	&.is-right {
 		& li {

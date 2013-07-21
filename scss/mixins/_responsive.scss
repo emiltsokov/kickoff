@@ -13,7 +13,7 @@ $fix-mqs: false !default; //assign false if no value set already
 	}
 	@else {
 		// Otherwise, output it using a regular media query
-		@media screen and (min-width: $width-em) {
+		@media screen and (min-width: $width + px) {
 			@content;
 		}
 	}

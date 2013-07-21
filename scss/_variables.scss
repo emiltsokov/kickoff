@@ -89,9 +89,9 @@ $nestedColumnPadding          : false ; // Remove padding on nested columns so t
 
 // Choose your grid options
 $debugQueries                 : false ; // Show the media query debugger at the top of the viewport
-$usingPushPullColumns         : false  ; // Allow columns to be pushed & pulled
-$usingOffsetcolumns           : false  ; // Allow columns to be offset
-$usingSplitsAndShunts         : false  ; // Use Splits & Shunts for responsive web design
+$usingPushPullColumns         : true  ; // Allow columns to be pushed & pulled
+$usingOffsetcolumns           : true  ; // Allow columns to be offset
+$usingSplitsAndShunts         : true  ; // Use Splits & Shunts for responsive web design
 
 
 

@@ -152,6 +152,54 @@ a {
 	margin-top: 50px;
 }
 
+
+// Choreographic Grid Demo
+#show-grid-button {
+	position: fixed;
+	bottom: 3px; right: 3px; left: 3px;
+	z-index: 10;
+}
+// .show-grid .grid-test .col {
+// 	border: 1px solid rgba($color-primary, 0.2);
+// 	margin-bottom: 10px;
+// }
+
+.show-grid .grid-test .col {
+	background-color: rgba($color-primary,0.1);
+	box-shadow:inset 0 1px 1px rgba($color-primary,.25);
+	@include border-radius(5px);
+}
+.show-grid .grid-test .row {
+	margin-bottom: 20px;
+}
+.show-grid .grid-test .split .col {
+	background-color: rgba($blue, 0.3);
+}
+.show-grid .grid-test .shunt {
+	background-color: rgba($red, 0.2);
+}
+.show-grid .grid-test [class*="pull"] {
+	background-color: rgba($green, 0.3);
+}
+.show-grid .grid-test [class*="push"] {
+	background-color: rgba($yellow, 0.3);
+}
+.show-grid .grid-test [class*="offset"] {
+	background-color: rgba($orange, 0.4);
+}
+
+.col.centred {
+	text-align: center;
+}
+
+.class-tag {
+	display: none;
+}
+.show-grid .class-tag {
+	position: absolute;
+	top: -6px; right: 0;
+	display: block;
+}
 // ===========================================
 // === Media queries for responsive design ===
 // ===========================================

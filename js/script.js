@@ -11,34 +11,50 @@ var TMW = window.TMW || {};
 (function($) {
 
 	$(function() {
-		// Any globals go here in CAPS (but avoid if possible)
-
-		// follow a singleton pattern
-		// (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript)
 
 		TMW.SiteSetup.init();
 
 	});// END DOC READY
-
-	/* optional triggers
-
-	// WINDOW.LOAD
-	$(window).load(function() {
-
-	});
-
-	// WINDOW.RESIZE
-	$(window).resize(function() {
-
-	});
-
-	*/
 
 })(jQuery);
 
 TMW.SiteSetup = {
 
 	init : function () {
-		// console.debug('Kickoff is running');
+		TMW.Demos.init();
 	}
 };
+
+TMW.Demos = {
+	init : function() {
+		this.grids();
+	},
+
+	grids : function() {
+		// $('.grid-test .col.centred').each(function() {
+		// 	var $spanName = $(this).attr('class'),
+		// 		$html = $(this).html();
+		// 	$(this).html($html + $spanName);
+		// });
+
+		// $('.grid-test .split > div').each(function() {
+		// 	var $spanName = $(this).attr('class');
+		// 	$(this).text('split ' + $spanName);
+		// });
+
+		// Show the grid
+		$('#show-grid-button').click(function() {
+			if ( $('body').hasClass('show-grid') ) {
+				$('body').removeClass('show-grid');
+				$(this).text('Show Grid');
+				console.log('show grid');
+			} else {
+				$('body').addClass('show-grid');
+				$(this).text('Hide Grid');
+				console.log('hide grid');
+			}
+		});
+	}
+
+
+}

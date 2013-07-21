@@ -106,37 +106,15 @@ $nestedColumnPadding  : false  !default; // Remove padding on nested columns so 
 	@if $gridGutterWidth > 0 {
 		margin-left: gutterCalc();
 	}
-	@if $gridColumnPadding > 0 {
-		padding: paddingCalc();
-	}
 	float: left;
-	min-height: 1px;
-	position: relative;
 	clear: none;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	box-sizing: border-box;
+
 	&:first-child {
 		margin-left: 0;
 	}
 
 	& + &:last-child { float: right; }
 	& + &.end { float: left; }
-}
-
-@mixin clearfix {
-	*zoom: 1;
-
-	&:before,
-	&:after {
-		content: " ";
-		display: table;
-	}
-
-	&:after {
-		clear: both;
-	}
 }
 
 @mixin media-query($mq-title: 'mobile', $bgcolor: transparentize(yellow, .4)) {
@@ -183,6 +161,19 @@ $nestedColumnPadding  : false  !default; // Remove padding on nested columns so 
 	}
 }
 
+.col {
+	min-height: 1px;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+
+	@if $gridColumnPadding > 0 {
+		padding: paddingCalc();
+	}
+}
+
 // MEDIA QUERY DEBUGGER
 @if $debugQueries == true {
 	body:before {
@@ -197,7 +188,7 @@ $nestedColumnPadding  : false  !default; // Remove padding on nested columns so 
 // ===========================================
 
 // === 768> ===
-@include respond-min($breakpoint-narrow) {
+@include respond-min($breakpoint-mid) {
 	// NAME THIS MEDIA QUERY
 	$mediaQueryName : 'mq-alpha';
 
@@ -242,6 +233,9 @@ $nestedColumnPadding  : false  !default; // Remove padding on nested columns so 
 			.row > .pull#{$i}	{ @include pull($i); }
 		}
 	}
+
+	.#{$mediaQueryName}-end { float: right; }
+	.#{$mediaQueryName}-end { float: left; }
 
 	// ====================================
 	// === SPLITTING COLUMNS & SHUNTING ===
