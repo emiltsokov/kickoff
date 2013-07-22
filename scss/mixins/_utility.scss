@@ -13,6 +13,19 @@
 	}
 }
 
+.clearfix {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display: table;
+		content: " ";
+		zoom: 1;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
 // REM
 // @include rem(margin, $base-font-size);
 @mixin rem($property, $sizeValue: $base-font-size){

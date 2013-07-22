@@ -1,12 +1,15 @@
 {% include html_start.html %}
-	<body class="section-home">
+
+	<body{% if page.body-class %} class="{{ page.body-class }}"{% endif %}{% if page.prettyprint == true %} onload="prettyPrint()"{% endif %}>
 
 		<!--  === MASTHEAD ===  -->
-		{% include masthead.html %}
+		{% include masthead-home.html %}
 
 		<!--  === MAIN CONTENT ===  -->
-		<section id="main" role="main">
+		<section class="container" role="main">
 			{{ content }}
+
+			{% include footer.html %}
 		</section>
 
 {% include html_end.html %}
