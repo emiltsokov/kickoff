@@ -4,8 +4,7 @@
 // =======================
 
 html {
-	overflow-y: scroll;
-	overflow-x: hidden;
+	// overflow-y: scroll;
 }
 
 a {
@@ -70,22 +69,17 @@ a {
 
 .masthead-all {
 	background-color: $orange;
-	text-align: center;
 	color: #fff;
+	text-align: center;
 
 	.logo {
-		float: left;
 		margin: 0;
 		@include font-size(30);
-	}
-
-	.nav {
-		float: right;
+		text-align: center;
 	}
 
 	.container {
-		padding: 0;
-		line-height: 50px;
+		padding: 5px;
 	}
 }
 
@@ -110,6 +104,42 @@ a {
 	}
 }
 
+.main-nav {
+	@extend .unstyled;
+	@include clearfix;
+
+	> li {
+		display: inline-block;
+		position: relative;
+	}
+
+	a:after {
+		display: none;
+	}
+}
+
+.sub-nav {
+	position:absolute;
+	display: none;
+	top: 100%;
+	width: 200px;
+	background-color: $orange;
+	@extend .unstyled;
+	@include border-radius(0 0 5px 5px);
+	padding: 5px 0;
+	z-index: 100;
+
+	li {
+		float: none;
+	}
+
+	a {
+		text-align: left;
+		color: #fff;
+		display: block;
+	}
+}
+
 .github-link {
 	background-color: darken($orange, 20%);
 }
@@ -119,6 +149,11 @@ a {
 	margin: 80px 0;
 	border-top: 2px solid $color-primary;
 	padding-top: 20px;
+}
+
+.social-links a {
+	display: block;
+	margin-bottom: 5px;
 }
 
 // Stack logos
@@ -253,7 +288,49 @@ a {
 
 // === 768> ===
 @include respond-min($breakpoint-mid) {
+	body {
+		padding-top: 50px;
 
+		&.page-home {
+			padding-top: 0;
+		}
+	}
+	.masthead-all {
+		background-color: $orange;
+		color: #fff;
+		position: fixed;
+		top: 0; right: 0; left: 0;
+
+		.logo {
+			float: left;
+			margin: 0;
+			@include font-size(30);
+			text-align: left;
+		}
+
+		.nav {
+			float: right;
+		}
+
+		.container {
+			padding: 0;
+			line-height: 50px;
+		}
+	}
+
+	.main-nav {
+		> li {
+			&:hover {
+				.sub-nav {
+					display: block;
+				}
+			}
+		}
+
+		a:after {
+			display: inherit;
+		}
+	}
 }
 // === end 768> ===
 

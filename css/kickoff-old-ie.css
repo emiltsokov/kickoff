@@ -852,7 +852,7 @@ ul ul, ul ol, ol ul, ol ol {
   margin-bottom: 0;
 }
 
-.unstyled, form ul, .tabs, .tabs-content, .stack-logos {
+.unstyled, form ul, .tabs, .tabs-content, .main-nav, .sub-nav, .stack-logos {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -1038,7 +1038,7 @@ samp {
 }
 
 .asset-font, [data-icon-before]:before, [data-icon-after]:after {
-  font-family: 'entypo';
+  font-family: 'entypo', 'entypo-social';
 }
 
 [data-icon-before]:before {
@@ -2423,11 +2423,6 @@ button.close {
   -webkit-appearance: none;
 }
 
-html {
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
 a {
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
@@ -2495,21 +2490,17 @@ a {
 
 .masthead-all {
   background-color: #e67e22;
-  text-align: center;
   color: #fff;
+  text-align: center;
 }
 .masthead-all .logo {
-  float: left;
   margin: 0;
   font-size: 30px;
   font-size: 1.5rem;
-}
-.masthead-all .nav {
-  float: right;
+  text-align: center;
 }
 .masthead-all .container {
-  padding: 0;
-  line-height: 50px;
+  padding: 5px;
 }
 
 .nav a {
@@ -2533,6 +2524,47 @@ a {
   color: #e67e22;
 }
 
+.main-nav {
+  *zoom: 1;
+}
+.main-nav:before, .main-nav:after {
+  display: table;
+  content: " ";
+  zoom: 1;
+}
+.main-nav:after {
+  clear: both;
+}
+.main-nav > li {
+  display: inline-block;
+  position: relative;
+}
+.main-nav a:after {
+  display: none;
+}
+
+.sub-nav {
+  position: absolute;
+  display: none;
+  top: 100%;
+  width: 200px;
+  background-color: #e67e22;
+  -webkit-border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -o-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  z-index: 100;
+}
+.sub-nav li {
+  float: none;
+}
+.sub-nav a {
+  text-align: left;
+  color: #fff;
+  display: block;
+}
+
 .github-link {
   background-color: #924d10;
 }
@@ -2541,6 +2573,11 @@ a {
   margin: 80px 0;
   border-top: 2px solid #34495e;
   padding-top: 20px;
+}
+
+.social-links a {
+  display: block;
+  margin-bottom: 5px;
 }
 
 .stack-logos {
@@ -2648,6 +2685,43 @@ a {
   top: -6px;
   right: 0;
   display: block;
+}
+
+body {
+  padding-top: 50px;
+}
+body.page-home {
+  padding-top: 0;
+}
+
+.masthead-all {
+  background-color: #e67e22;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.masthead-all .logo {
+  float: left;
+  margin: 0;
+  font-size: 30px;
+  font-size: 1.5rem;
+  text-align: left;
+}
+.masthead-all .nav {
+  float: right;
+}
+.masthead-all .container {
+  padding: 0;
+  line-height: 50px;
+}
+
+.main-nav > li:hover .sub-nav {
+  display: block;
+}
+.main-nav a:after {
+  display: inherit;
 }
 
 .ir {

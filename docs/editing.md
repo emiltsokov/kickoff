@@ -8,7 +8,7 @@ title: Editing this website
 * Ruby v2 is needed. Update using [rvm](http://rvm.io/) then install the packages below
 * Install Jekyll globally - `sudo gem install jekyll`
 * Install rdiscount - `sudo gem install rdiscount`
-* Install Sass globally - `sudo gem install sass -pre`
+* Install Sass globally - `sudo gem install sass --pre`
 * Install Node from [nodejs.org](http://nodejs.org/)
 * Install Grunt CLI - `npm install -g grunt-cli`
 
@@ -21,6 +21,10 @@ Run `git clone https://github.com/tmwagency/kickoff.git -b gh-pages kickoff-docs
 Run `cd kickoff-docs`
 
 ### Step 3
+
+Run `npm install` to install all Grunt's dependencies
+
+### Step 4
 
 Run `jekyll build --watch` and `grunt watch`
 
