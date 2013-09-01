@@ -1848,6 +1848,7 @@ code {
   padding: 10px 10px 10px 90px;
   margin: 10px 0;
   position: relative;
+  word-wrap: break-word;
 }
 .code-lrg:before {
   content: attr(data-before);
@@ -2480,14 +2481,21 @@ a {
 
 .masthead-home {
   text-align: center;
-  padding: 60px 0;
+  padding: 20px 0;
+}
+.masthead-home .container {
+  padding-top: 0;
 }
 .masthead-home .logo {
   margin-top: 0;
   margin-bottom: 20px;
 }
 .masthead-home h2 {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-size: 1rem;
+  line-height: 1.1;
 }
 
 .masthead-all {
@@ -2695,6 +2703,20 @@ a {
   }
   body.page-home {
     padding-top: 0;
+  }
+
+  .masthead-home {
+    padding: 60px 0;
+  }
+  .masthead-home .logo {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .masthead-home h2 {
+    margin-top: 20px;
+    font-size: 28px;
+    font-size: 1.4rem;
+    line-height: 1.5;
   }
 
   .masthead-all {

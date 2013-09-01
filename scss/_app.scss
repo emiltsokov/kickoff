@@ -55,7 +55,11 @@ a {
 
 .masthead-home {
 	text-align: center;
-	padding: 60px 0;
+	padding: 20px 0;
+
+	.container {
+		padding-top: 0;
+	}
 
 	.logo {
 		margin-top: 0;
@@ -63,7 +67,10 @@ a {
 	}
 
 	h2 {
-		margin-top: 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		@include font-size(20);
+		line-height: 1.1;
 	}
 }
 
@@ -295,6 +302,22 @@ a {
 			padding-top: 0;
 		}
 	}
+
+	.masthead-home {
+		padding: 60px 0;
+
+		.logo {
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+
+		h2 {
+			margin-top: 20px;
+			@include font-size(28);
+			line-height: 1.5;
+		}
+	}
+
 	.masthead-all {
 		background-color: $orange;
 		color: #fff;
