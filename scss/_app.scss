@@ -173,11 +173,15 @@ a {
 
 	a {
 		width: 70px;
-		// height: 140px;
-		// padding: 20px;
 		display: inline-block;
 		margin: 0 20px;
 		vertical-align: baseline;
+
+		&:before {
+			font-size: 60px;
+			line-height: 0.7;
+			vertical-align: top;
+		}
 	}
 }
 
