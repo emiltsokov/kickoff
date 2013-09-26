@@ -193,10 +193,6 @@ input {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  -ms-box-sizing: content-box;
-  box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -718,16 +714,42 @@ samp {
   margin-left: 4px;
 }
 
+/* ==========================================================================
+   Forms
+   * Generic form styles
+   * Form inputs and groups
+   * Form field feedback states
+   * Horizontal & vertical forms
+   * Horizontal-specific styles
+   ========================================================================== */
+/* ==========================================================================
+   Generic form styles
+   * Demo: http://tmwagency.github.io/kickoff/demos/forms.html#layout-example-labels-above
+   * Code: https://gist.github.com/mrmartineau/6712577#file-labels-above-inputs-html
+   Usage:
+    <ul>
+    	<li class="form-controlGroup">
+    		<label for="name" class="form-controlGroup-label">Name</label>
+    		<div class="form-controlGroup-input">
+    			<input type="text" id="name" placeholder="Zander Martineau" />
+    		</div>
+    	</li>
+    </ul>
+   ========================================================================== */
 form {
   margin: 0 0 28px;
 }
 
+/* Fieldset */
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
 }
 
+/* ==========================================================================
+   Form inputs and groups
+   ========================================================================== */
 .form-controlGroup {
   margin-top: 14px;
   list-style-type: none;
@@ -735,25 +757,6 @@ fieldset {
 legend + .form-controlGroup {
   margin-top: 28px;
   -webkit-margin-top-collapse: separate;
-}
-
-legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 28px;
-  font-size: 30px;
-  font-size: 1.5rem;
-  line-height: 1.4;
-  color: #4d4d4d;
-  border: 0;
-  border-bottom: 1px solid #eee;
-  white-space: normal;
-}
-legend small {
-  font-size: 15px;
-  font-size: 0.75rem;
-  color: #b3b3b3;
 }
 
 label,
@@ -883,13 +886,6 @@ input[type="submit"] {
 }
 
 select {
-  width: 220px;
-  height: 28px;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
-  *margin-top: 4px;
-  /* For IE7, add top margin to align select with labels */
-  line-height: 28px;
-  line-height: 1.4rem;
   background-color: white;
 }
 select[multiple], select[size] {
@@ -901,6 +897,25 @@ textarea {
   resize: vertical;
 }
 
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 28px;
+  font-size: 30px;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #4d4d4d;
+  border: 0;
+  border-bottom: 1px solid #eee;
+  white-space: normal;
+}
+legend small {
+  font-size: 15px;
+  font-size: 0.75rem;
+  color: #b3b3b3;
+}
+
 .radio,
 .checkbox {
   padding-left: 18px;
@@ -908,8 +923,10 @@ textarea {
 .radio input[type="radio"], .radio input[type="checkbox"],
 .checkbox input[type="radio"],
 .checkbox input[type="checkbox"] {
-  float: left;
   margin-left: -18px;
+  margin-right: 5px;
+  vertical-align: middle;
+  display: inline;
 }
 
 .control--inline {
@@ -929,7 +946,7 @@ textarea {
 
 input,
 textarea,
-.file-wrapper {
+.fileWrapper {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -o-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -994,6 +1011,7 @@ textarea[class*="span"] {
 
 .fileWrapper input {
   width: 90%;
+  line-height: 0;
 }
 
 input[disabled], input[readonly],
@@ -1021,6 +1039,86 @@ textarea:focus:required:invalid:focus {
   box-shadow: 0 0 6px #f8b9b7;
 }
 
+/*
+   Both horizontal & vertical forms
+   ========================================================================== */
+.form--inline input, .form--inline textarea, .form--inline select, .form--inline .form-helpInline,
+.form--horizontal input,
+.form--horizontal textarea,
+.form--horizontal select,
+.form--horizontal .form-helpInline {
+  display: inline-block;
+  margin-bottom: 0;
+}
+.form--inline .hide,
+.form--horizontal .hide {
+  display: none;
+}
+
+/*
+   Inline & search forms specific styles
+   ========================================================================== */
+.form--inline > * {
+  margin-right: 10px;
+  vertical-align: top;
+}
+.form--inline > *:last-child {
+  margin-right: 0;
+}
+.form--inline label {
+  display: inline-block;
+}
+.form--inline .radio, .form--inline .checkbox {
+  padding-left: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.form--inline .radio input[type="radio"], .form--inline .checkbox input[type="checkbox"] {
+  margin-left: 0;
+  margin-right: 3px;
+}
+
+/*
+   Search input
+   ========================================================================== */
+.form--search-input {
+  padding-left: 14px;
+  padding-right: 14px;
+  margin-bottom: 0;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -o-border-radius: 100px;
+  border-radius: 100px;
+}
+
+/*
+   Form actions
+   ========================================================================== */
+.form-actions {
+  padding: 27px 20px 28px;
+  margin-top: 28px;
+  margin-bottom: 28px;
+  background-color: whitesmoke;
+  border-top: 1px solid #ddd;
+  zoom: 1;
+}
+.form-actions:before, .form-actions:after {
+  display: table;
+  content: " ";
+}
+.form-actions:after {
+  clear: both;
+}
+.form-actions .btn, .form-actions .tabs a, .tabs .form-actions a {
+  margin-right: 10px;
+}
+.form-actions .btn:last-child, .form-actions .tabs a:last-child, .tabs .form-actions a:last-child {
+  margin-right: 0;
+}
+
+/*
+   Form field feedback states
+   ========================================================================== */
 .form-controlGroup.form-controlGroup--warning > label,
 .form-controlGroup.form-controlGroup--warning .help-block,
 .form-controlGroup.form-controlGroup--warning .help-inline {
@@ -1102,114 +1200,10 @@ textarea:focus:required:invalid:focus {
   border-color: #468847;
 }
 
-.form--search input, .form--search textarea, .form--search select, .form--search .form-helpInline,
-.form--inline input,
-.form--inline textarea,
-.form--inline select,
-.form--inline .form-helpInline,
-.form--horizontal input,
-.form--horizontal textarea,
-.form--horizontal select,
-.form--horizontal .form-helpInline {
-  display: inline-block;
-  margin-bottom: 0;
-}
-.form--search .hide,
-.form--inline .hide,
-.form--horizontal .hide {
-  display: none;
-}
-
-.form--horizontal .form-controlGroup {
-  margin-bottom: 28px;
-  zoom: 1;
-}
-.form--horizontal .form-controlGroup:before, .form--horizontal .form-controlGroup:after {
-  display: table;
-  content: " ";
-}
-.form--horizontal .form-controlGroup:after {
-  clear: both;
-}
-.form--horizontal .form-controlGroup-label, .form--horizontal .form-controlGroup label {
-  float: left;
-  width: 140px;
-  padding-top: 5px;
-  text-align: right;
-}
-.form--horizontal .form-controlGroup-input, .form--horizontal .form-controlGroup div {
-  margin-left: 160px;
-}
-.form--horizontal .form-controlGroup-input:first-child, .form--horizontal .form-controlGroup div:first-child {
-  *padding-left: 160px;
-}
-.form--horizontal .form-helpBlock {
-  margin-top: 14px;
-  margin-bottom: 0;
-}
-.form--horizontal .form-actions {
-  padding-left: 160px;
-}
-
-.form--search > *,
-.form--inline > * {
-  margin-right: 10px;
-}
-.form--search > *:last-child,
-.form--inline > *:last-child {
-  margin-right: 0;
-}
-.form--search label,
-.form--inline label {
-  display: inline-block;
-}
-.form--search .radio, .form--search .checkbox,
-.form--inline .radio,
-.form--inline .checkbox {
-  padding-left: 0;
-  margin-bottom: 0;
-  vertical-align: middle;
-}
-.form--search .radio input[type="radio"], .form--search .checkbox input[type="checkbox"],
-.form--inline .radio input[type="radio"],
-.form--inline .checkbox input[type="checkbox"] {
-  float: left;
-  margin-left: 0;
-  margin-right: 3px;
-}
-
-.form--search-input {
-  padding-left: 14px;
-  padding-right: 14px;
-  margin-bottom: 0;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -o-border-radius: 100px;
-  border-radius: 100px;
-}
-
-.form-actions {
-  padding: 27px 20px 28px;
-  margin-top: 28px;
-  margin-bottom: 28px;
-  background-color: whitesmoke;
-  border-top: 1px solid #ddd;
-  zoom: 1;
-}
-.form-actions:before, .form-actions:after {
-  display: table;
-  content: " ";
-}
-.form-actions:after {
-  clear: both;
-}
-.form-actions .btn, .form-actions .tabs a, .tabs .form-actions a {
-  margin-right: 10px;
-}
-.form-actions .btn:last-child, .form-actions .tabs a:last-child, .tabs .form-actions a:last-child {
-  margin-right: 0;
-}
-
+/*
+   Placeholder text
+   * Gets special styles; can't be bundled together though for some reason
+   ========================================================================== */
 :-ms-input-placeholder {
   color: #b3b3b3;
 }
@@ -1236,6 +1230,46 @@ textarea:focus:required:invalid:focus {
   display: inline-block;
   vertical-align: middle;
   padding-left: 5px;
+}
+
+/* ==========================================================================
+   Horizontal-specific styles
+   * add .form--horizontal to the <form> element
+   * Demo: http://tmwagency.github.io/kickoff/demos/forms.html#layout-example-labels-inline
+   * Code: https://gist.github.com/mrmartineau/6712577#file-labels-inline-html
+   ========================================================================== */
+.form--horizontal .form-controlGroup {
+  margin-bottom: 28px;
+  zoom: 1;
+}
+.form--horizontal .form-controlGroup:before, .form--horizontal .form-controlGroup:after {
+  display: table;
+  content: " ";
+}
+.form--horizontal .form-controlGroup:after {
+  clear: both;
+}
+.form--horizontal .form-controlGroup-label {
+  float: left;
+  width: 140px;
+  padding-top: 5px;
+  text-align: right;
+}
+.form--horizontal .form-controlGroup-input {
+  margin-left: 160px;
+}
+.form--horizontal .form-controlGroup-input:first-child {
+  *padding-left: 160px;
+}
+.form--horizontal .form-controlGroup .fileWrapper {
+  margin-left: 0;
+}
+.form--horizontal .form-helpBlock {
+  margin-top: 14px;
+  margin-bottom: 0;
+}
+.form--horizontal .form-actions {
+  padding-left: 160px;
 }
 
 table {
@@ -1447,10 +1481,6 @@ pre code {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 .btn, .tabs a, .btn:hover, .tabs a:hover, .btn:active, .tabs a:active, .btn:focus, .tabs a:focus, .btn:visited, .tabs a:visited {
   text-decoration: none;
@@ -1533,12 +1563,12 @@ input[type="button"].btn--block {
 }
 
 .btn--primary {
-  background-color: #34495e;
+  background-color: #e67e22;
   color: #fff !important;
   text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
 }
 .btn--primary:hover {
-  background-color: #2c3e50;
+  background-color: #bf6516;
 }
 
 .btn--link,
@@ -1638,10 +1668,6 @@ svg:not(:root) {
 
 img, object, embed, video {
   max-width: 100%;
-}
-
-#map_canvas img, .map_canvas img {
-  max-width: none !important;
 }
 
 /*
@@ -1788,7 +1814,7 @@ img, object, embed, video {
 .tabs {
   zoom: 1;
   margin-bottom: 28px;
-  border-bottom: 2px solid #1abc9c;
+  border-bottom: 2px solid #e67e22;
 }
 .tabs:before, .tabs:after {
   display: table;
@@ -1812,15 +1838,18 @@ img, object, embed, video {
   margin: 0 5px;
 }
 .tabs a {
-  background-color: #95a5a6;
+  background-color: #dddddd;
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
   -o-border-radius: 4px 4px 0 0;
   border-radius: 4px 4px 0 0;
-  color: #fff;
+  color: #989898;
+  text-shadow: 0 1px 0px #fff;
 }
 .tabs a.is-active {
-  background-color: #1abc9c;
+  background-color: #e67e22;
+  color: #fff;
+  text-shadow: 0 -1px 0px #bf6516;
 }
 
 .l-tabsContent > li {
@@ -1980,6 +2009,8 @@ a {
 }
 
 .masthead {
+  position: relative;
+  z-index: 100;
   background-color: #e67e22;
   color: #fff;
 }
@@ -2211,6 +2242,14 @@ a {
   top: -6px;
   right: 0;
   display: block;
+}
+
+/*
+   Style Github Gist embeds
+   ========================================================================== */
+.gist-file {
+  font-size: 14px;
+  tab-size: 3;
 }
 
 body {
