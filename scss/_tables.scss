@@ -24,7 +24,7 @@ table {
 	& th,
 	& td {
 		padding: 8px;
-		@include line-height($base-line-height);
+		line-height: $base-leading;
 		text-align: left;
 		vertical-align: top;
 		border-top: 1px solid $table-border;
@@ -57,7 +57,7 @@ table {
 // CONDENSED TABLE W/ HALF PADDING
 // -------------------------------
 
-.table-condensed {
+.table--condensed {
 	& th,
 	& td {
 		padding: 4px 5px;
@@ -68,7 +68,7 @@ table {
 // BORDERED VERSION
 // ----------------
 
-.table-bordered {
+.table--bordered {
 	border: 1px solid $table-border;
 	border-left: 0;
 	border-collapse: separate; // Done so we can round those corners!
@@ -115,7 +115,7 @@ table {
 // --------------
 
 // Default zebra-stripe styles (alternating gray and transparent backgrounds)
-.table-striped {
+.table--striped {
 	& tbody {
 		& tr:nth-child(odd) {
 			& td,
@@ -136,16 +136,5 @@ table {
 		& th {
 			background-color: $table-background-hover;
 		}
-	}
-}
-
-
-// TABLE CELL SIZING
-// -----------------
-
-// Change the columns
-table {
-	@for $i from 1 to $gridColumnCount + 1 {
-		& .span#{$i} { @include column($i); }
 	}
 }

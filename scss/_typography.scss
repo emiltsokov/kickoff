@@ -29,15 +29,19 @@
 @include font-face(entypo, fonts/entypo, normal, false);
 @include font-face(entypo-social, fonts/entypo-social, normal, false);
 
+// 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+// www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
 html {
 	font-size: $base-font-size + px;
+	-webkit-text-size-adjust: 100%; /* 2 */
+	-ms-text-size-adjust: 100%; /* 2 */
 }
 
 // Body text
 body {
 	font-family: $base-font-family;
 	@include font-size($base-font-size);
-	@include line-height($base-line-height);
+	line-height: $base-leading;
 	color: $color-text;
 	background-color: $color-background;
 
@@ -56,7 +60,6 @@ body {
 p {
 	font-family: $base-font-family;
 	@include font-size($base-font-size);
-	@include line-height($base-line-height);
 	margin-top: 0;
 	margin-bottom: $base-line-height + px;
 
@@ -74,15 +77,12 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0;
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
+	color: $color-headings;
 	text-rendering: optimizelegibility; // Fix the character spacing for headings
 
 	& small {
 		font-weight: normal;
 		color: lighten($color-headings, 15%);
-	}
-
-	code {
-		font-size: inherit;
 	}
 }
 
@@ -91,29 +91,26 @@ h1, h2, h3, h4, h5, h6 {
 
 h1, .h1, .alpha {
 	@include font-size(51);
-	@include line-height($base-line-height * 2);
+	line-height: $base-leading * 2;
 	margin-top: $base-line-height + px;
 	margin-bottom: ($base-line-height * 2) + px;
 }
 
 h2, .h2, .beta {
 	@include font-size(28);
-	@include line-height($base-line-height * 2);
 	margin-top: ($base-line-height * 2) + px;
 	margin-bottom: $base-line-height + px;
 }
 
 h3, .h3, .gamma {
 	@include font-size(21);
-	@include line-height($base-line-height);
 	margin-top: $base-line-height + px;
 	margin-bottom: 0px;
 }
 
-h4, .h4,, .delta,
+h4, .h4, .delta,
 h5, .h5, .epsilon,
 h6, .h6, .zeta {
-	@include line-height($base-line-height);
 	margin-top: 0;
 	margin-bottom: 0;
 }
@@ -152,10 +149,6 @@ a {
 	}
 }
 
-p a:link {
-	font-weight: $bold-font-weight;
-}
-
 
 // === Lists ===
 // default list styles
@@ -187,17 +180,14 @@ ul, ol {
 		}
 	}
 
-	& li {
-		@include line-height($base-line-height);
-	}
-
 	& ul,
 	& ol {
 		margin-bottom: 0;
 	}
 }
 
-.unstyled {
+.unstyled,
+nav ul, nav ol {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -210,14 +200,8 @@ dl {
 	margin-bottom: $base-line-height + px;
 }
 
-dt,
-dd {
-	@include line-height($base-line-height);
-}
-
 dt {
 	font-weight:$bold-font-weight;
-	@include line-height($base-line-height - 1); // fix jank Helvetica Neue font bug
 
 	// Horizontal layout (like forms)
 	.dl-horizontal & {
@@ -242,7 +226,7 @@ dd {
 
 // Horizontal rules
 hr {
-	margin: 40px 0;
+	margin: ($base-line-height + px) 0;
 	border: 0;
 	border-top: 1px solid $hr-border;
 	border-bottom: 1px solid #fff;
@@ -279,12 +263,10 @@ blockquote {
 		margin-bottom: 0;
 		@include font-size($base-font-size);
 		font-weight: 300;
-		@include line-height($base-line-height * 1.25);
 	}
 
 	& small {
 		display: block;
-		@include line-height($base-line-height);
 		color: lighten(#000, 70%);
 
 		&:before {
@@ -319,7 +301,6 @@ blockquote {
 address {
 	display: block;
 	margin-bottom: $base-line-height + px;
-	@include line-height($base-line-height);
 	font-style: normal;
 }
 
@@ -347,7 +328,7 @@ mark {
 // gist.github.com/413930
 sub, sup {
 	font-size: 75%;
-	@include line-height(0);
+	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
 }
@@ -366,27 +347,14 @@ samp {
 .text-right { text-align: right;}
 
 ::-moz-selection {
-	color: lighten($color-selection, 55%);
-	background: $color-selection;
+	color: $color-selection;
+	background: $color-selection-bg;
 }
-
 ::selection {
-	color: lighten($color-selection, 55%);
-	background: $color-selection;
+	color: $color-selection;
+	background: $color-selection-bg;
 }
 
-
-
-// Page header
-.page-header {
-	padding-bottom: $base-line-height - 1 + px;
-	margin: ($base-line-height + px) 0;
-	border-bottom: 1px solid lighten(#000, 70%);
-}
-
-.page-header h1 {
-	line-height: 1;
-}
 
 .asset-font {
 	font-family: 'entypo', 'entypo-social';

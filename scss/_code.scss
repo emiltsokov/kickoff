@@ -1,8 +1,7 @@
-// =================
-// === CODE.scss ===
-// =================
-// * Code typography styles for the <code> and <pre> elements
-// ----------------------------------------------------------
+/* ==========================================================================
+   Preformatted code
+   Code typography styles for the <code> and <pre> elements
+   ========================================================================== */
 
 // Inline and block code styles
 code,
@@ -55,7 +54,7 @@ pre {
 	display: block;
 	padding: ($base-line-height - 1) / 2 + px;
 	margin: 0 0 ($base-line-height / 2 + px);
-	@include line-height($base-line-height);
+	line-height: $base-leading;
 	color: $color-pre;
 	background-color: $color-pre-background;
 	border: 1px solid #ccc; // fallback for IE7-8
@@ -81,7 +80,7 @@ pre {
 }
 
 // Enable scrollable blocks of code
-.pre-scrollable {
+.pre--scrollable {
 	max-height: 340px;
 	overflow-y: scroll;
 }

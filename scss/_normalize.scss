@@ -1,10 +1,13 @@
-// ======================
-// === NORMALIZE.scss ===
-// ======================
-// http://github.com/necolas/normalize.css
-// Kickoff uses an amended version of this file.
+/* ==========================================================================
+   Normalize - CSS reset
 
-* {
+   http://github.com/necolas/normalize.css
+   Kickoff uses an amended version of this file.
+   ========================================================================== */
+
+*,
+*:before,
+*:after {
 	@include box-sizing(border-box);
 }
 
@@ -21,7 +24,8 @@ hgroup,
 main,
 nav,
 section,
-summary {
+summary,
+main {
 	display: block;
 }
 

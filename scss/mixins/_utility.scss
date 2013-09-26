@@ -1,25 +1,15 @@
+/* ==========================================================================
+   Utlity Mixins
+   ========================================================================== */
 // Clearfix
 // Other clearfix options: https://github.com/stubbornella/oocss/blob/master/oocss/src/components/utils/_clearfix-me.scss
 @mixin clearfix {
-	*zoom: 1;
-	&:before,
-	&:after {
-		display: table;
-		content: " ";
-		zoom: 1;
-	}
-	&:after {
-		clear: both;
-	}
-}
+	zoom: 1;
 
-.clearfix {
-	*zoom: 1;
 	&:before,
 	&:after {
 		display: table;
 		content: " ";
-		zoom: 1;
 	}
 	&:after {
 		clear: both;
@@ -34,9 +24,9 @@
 	#{$property}: $remValue + rem;
 }
 
-// =========================
-// === TYPOGRAPHY MIXINS ===
-// =========================
+/* ==========================================================================
+   Typography mixins
+   ========================================================================== */
 // REM font size
 // @include font-size(16);
 @mixin font-size($sizeValue: $base-font-size){
@@ -61,11 +51,11 @@
 	@font-face {
 		font-family: $family-name;
 		src: url("#{$font-path}/#{$family-name}.eot");
-		src: url("#{$font-path}/#{$family-name}.eot?#iefix") format("embedded-opentype"),
-			 url("#{$font-path}/#{$family-name}.woff") format("woff"),
-			 url("#{$font-path}/#{$family-name}.ttf") format("truetype")
+		src: url("#{$font-path}/#{$family-name}.eot?#iefix")				format("embedded-opentype"),
+			 url("#{$font-path}/#{$family-name}.woff")					format("woff"),
+			 url("#{$font-path}/#{$family-name}.ttf")					format("truetype")
 			 // @if $include-svg == true {
-				,url("#{$font-path}/#{$family-name}.svg#{$family-name}") format("svg");
+				,url("#{$font-path}.svg#{$family-name}") format("svg");
 			 // }
 		font-weight: $font-weight;
 		font-style: $font-style;
