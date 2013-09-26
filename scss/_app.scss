@@ -41,6 +41,8 @@ a {
 // === MASTHEAD ===
 // ================
 .masthead {
+	position: relative;
+	z-index: 100;
 	background-color: $orange;
 	color: #fff;
 
@@ -276,6 +278,20 @@ a {
 	top: -6px; right: 0;
 	display: block;
 }
+
+/*
+   Style Github Gist embeds
+   ========================================================================== */
+.gist-file {
+	font-size: 14px;
+	tab-size: 3;
+}
+
+
+
+
+
+
 // ===========================================
 // === Media queries for responsive design ===
 // ===========================================

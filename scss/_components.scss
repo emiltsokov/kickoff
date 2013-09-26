@@ -29,11 +29,9 @@ img {
 svg:not(:root) { overflow: hidden; }
 
 // FLASH/VIDEO
-img,object,embed,video{
+img, object, embed, video{
 	max-width:100%;
 }
-
-#map_canvas img, .map_canvas img { max-width: none!important; }
 
 
 /*
