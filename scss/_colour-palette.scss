@@ -41,13 +41,13 @@ $btn-background               : #fff;
 $btn-background-highlight     : darken(#fff, 10%);
 $btn-border                   : #ccc;
 
-$btn-primary-background       : $color-primary;
-$btn-primary-background-highlight: #2c3e50;
+$btn-primary-background       : $orange;
+$btn-primary-background-highlight: darken($orange, 10%);
 
 
 // Tabs
-$inactive-tab                 : #95a5a6;
-$active-tab                   : $green;
+$inactive-tab                 : #ddd;
+$active-tab                   : $orange;
 
 // Code
 $color-code                   : #fff;
