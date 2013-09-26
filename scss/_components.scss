@@ -200,10 +200,13 @@ img, object, embed, video{
 		background-color: $inactive-tab;
 		@extend .btn;
 		@include border-radius(4px 4px 0 0);
-		color: #fff;
+		color: #989898;
+		text-shadow: 0 1px 0px #fff;
 
 		&.is-active {
 			background-color: $active-tab;
+			color: #fff;
+			text-shadow: 0 -1px 0px darken($orange, 10%);
 		}
 	}
 }
