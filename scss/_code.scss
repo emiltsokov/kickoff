@@ -22,6 +22,10 @@ code {
 	background-color: $color-code-background;
 }
 
+pre code {
+	text-shadow: none;
+}
+
 .code-lrg {
 	line-height: 1.5;
 	display: block;

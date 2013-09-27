@@ -1781,6 +1781,10 @@ code {
   background-color: #587ca0;
 }
 
+pre code {
+  text-shadow: none;
+}
+
 .code-lrg {
   line-height: 1.5;
   display: block;
