@@ -90,9 +90,9 @@ $gridColumnPaddingUnit        : 'px'   ; // [in pixels or percent] Specify your 
 $nestedColumnPadding          : false ; // Remove padding on nested columns so they are aligned correctly. Set this to [false] to enable it.
 
 // Choose your grid options
-$usingPushPullColumns         : false  ; // Allow columns to be pushed & pulled
-$usingOffsetcolumns           : false  ; // Allow columns to be offset
-$usingSplitsAndShunts         : false  ; // Use Splits & Shunts for responsive web design
+$usingPushPullColumns         : true  ; // Allow columns to be pushed & pulled
+$usingOffsetcolumns           : true  ; // Allow columns to be offset
+$usingSplitsAndShunts         : true  ; // Use Splits & Shunts for responsive web design
 
 
 

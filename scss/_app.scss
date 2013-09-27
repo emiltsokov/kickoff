@@ -233,40 +233,40 @@ a {
 
 // Choreographic Grid Demo
 #show-grid-button {
-	position: fixed;
-	bottom: 3px; right: 3px; left: 3px;
-	z-index: 10;
+	// position: fixed;
+	// bottom: 3px; right: 3px; left: 3px;
+	// z-index: 10;
 }
-// .show-grid .grid-test .col {
+// .show-grid .grid-test .g-col {
 // 	border: 1px solid rgba($color-primary, 0.2);
 // 	margin-bottom: 10px;
 // }
 
-.show-grid .grid-test .col {
+.show-grid .grid-test .g-col {
 	background-color: rgba($color-primary,0.1);
 	box-shadow:inset 0 1px 1px rgba($color-primary,.25);
 	@include border-radius(5px);
 }
-.show-grid .grid-test .row {
+.show-grid .grid-test .g-row {
 	margin-bottom: 20px;
 }
-.show-grid .grid-test .split .col {
+.show-grid .grid-test .g-split .g-col {
 	background-color: rgba($blue, 0.3);
 }
-.show-grid .grid-test .shunt {
+.show-grid .grid-test .g-shunt {
 	background-color: rgba($red, 0.2);
 }
-.show-grid .grid-test [class*="pull"] {
+.show-grid .grid-test [class*="g-pull"] {
 	background-color: rgba($green, 0.3);
 }
-.show-grid .grid-test [class*="push"] {
+.show-grid .grid-test [class*="g-push"] {
 	background-color: rgba($yellow, 0.3);
 }
-.show-grid .grid-test [class*="offset"] {
+.show-grid .grid-test [class*="g-offset"] {
 	background-color: rgba($orange, 0.4);
 }
 
-.g-col.centred {
+.g-col.g-centered {
 	text-align: center;
 }
 
@@ -277,6 +277,10 @@ a {
 	position: absolute;
 	top: -6px; right: 0;
 	display: block;
+
+	code {
+		@include font-size(11);
+	}
 }
 
 /*
