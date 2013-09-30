@@ -84,7 +84,7 @@ module.exports = function (grunt) {
 		watch: {
 			scss: {
 				files: ['scss/**/*.scss'],
-				tasks: 'sass:dev'
+				tasks: ['sass:dev', 'jekyll']
 			},
 
 			js: {
@@ -93,15 +93,46 @@ module.exports = function (grunt) {
 					'js/*.js',
 					'js/libs/**/*.js'
 				],
-				tasks: ['uglify']
+				tasks: ['uglify', 'jekyll']
 			},
+
+			text: {
+				files: [
+					'**/*.md',
+					'**/*.html',
+					'*.html'
+				],
+				tasks: ['jekyll']
+			},
+
+			// copy: {
+			// 	files : [
+			// 		'css/*.css',
+			// 		'**/*.md',
+			// 		'**/*.html'
+			// 	],
+			// 	tasks: ['copy']
+			// },
+
 			livereload: {
 				options: { livereload: true },
 				files: [
 					'css/*.css'
 				]
 			}
-		}
+		},
+
+		jekyll : {
+			src: '',
+			dest: 'kickoff'
+		},
+
+		copy: {
+			main: {
+				src: 'src/*',
+				dest: 'dest/',
+			},
+		},
 	});
 
 	// Load some stuff
@@ -110,6 +141,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-jekyll');
 
 	// =============
 	// === Tasks ===

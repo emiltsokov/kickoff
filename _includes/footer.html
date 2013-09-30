@@ -1,13 +1,15 @@
-<footer class="credits">
-	<h3>To get started, simply checkout the framework using Git or SVN:</h3>
-	<code class="code-lrg" data-before="GIT:">
-		git clone https://github.com/tmwagency/kickoff.git your-project-folder
-	</code>
-	<code class="code-lrg" data-before="SVN:">
-		svn checkout https://github.com/tmwagency/kickoff your-project-folder
-	</code>
-	<p>..or with the Github desktop app on <a href="github-mac://openRepo/https://github.com/tmwagency/kickoff">Mac</a> or <a href="github-windows://openRepo/https://github.com/tmwagency/kickoff">Windows</a>
-	</p>
+<footer class="g-container credits">
+	{% if page.navgroup != "home" %}
+		<h3>To get started, simply checkout the framework using Git or SVN:</h3>
+		<code class="code-lrg" data-before="GIT:">
+			git clone https://github.com/tmwagency/kickoff.git your-project-folder
+		</code>
+		<code class="code-lrg" data-before="SVN:">
+			svn checkout https://github.com/tmwagency/kickoff your-project-folder
+		</code>
+		<p>..or with the Github desktop app on <a href="github-mac://openRepo/https://github.com/tmwagency/kickoff">Mac</a> or <a href="github-windows://openRepo/https://github.com/tmwagency/kickoff">Windows</a>
+		</p>
+	{% endif %}
 
 	<div class="g-row">
 		<div class="g-col g-span8">

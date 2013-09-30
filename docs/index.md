@@ -1,12 +1,20 @@
 ---
 layout: docs
-title: Kickoff documentation
+title: Get started
+subtitle:
 navgroup: docs
 ---
+## Download Kickoff
 
-### Getting started
+There are a few easy ways to quickly get started with Kickoff, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.
 
-#### Want to use Grunt?
+### Download from:
+
+* Github: [.zip](https://github.com/tmwagency/kickoff/archive/master.zip)
+* Git clone: `git clone https://github.com/tmwagency/kickoff.git your-project-folder`
+* SVN checkout: `svn checkout https://github.com/tmwagency/kickoff your-project-folder`
+
+## Using Grunt?
 [Ruby](https://www.ruby-lang.org/en/) v2 is needed. Update using [rvm](http://rvm.io/) or [brew](http://brew.sh) (if you use a Mac) then install the packages below
 
 * Install Sass globally - `sudo gem install sass --pre`
@@ -17,19 +25,22 @@ navgroup: docs
 
 When using Grunt with Kickoff, source maps are created for both the Javascript and Sass. Javascript is compiled to the `/js/dist` and Sass is compiled to the `/css` folder.
 
-#### Using Git?
+### Using Git?
 Kickoff's [.gitignore](https://github.com/tmwagency/kickoff/blob/master/.gitignore#L28) file ignores the `/dist` folder and `.map` files by default. You will want to uncomment these lines if you are compiling these on the server; think continuous integration.
 
+
+## Need more help?
+
 * [Usage](usage.html) — Overview of the project contents.
-* [FAQ](faq.html) — Frequently asked questions, along with their answers.
+<!-- * [FAQ](faq.html) — Frequently asked questions, along with their answers. -->
 
-### Markup
+<!-- ### Markup -->
 
-* [HTML](html.html) — A guide to the default HTML.
+<!-- * [HTML](html.html) — A guide to the default HTML. -->
 
 ### Presentation
 
-* [CSS](css.html) — A guide to the default CSS
+<!-- * [CSS](css.html) — A guide to the default CSS -->
 * [Sass](sass.html) — A guide to the default Sass
 * [The Choreographic Grid](grid.html) — A guide to the Kickoff's grid framework
 <!-- * [Typography](typography.html) — A more in-depth guide to Kickoff's type styles -->

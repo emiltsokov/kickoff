@@ -1,15 +1,17 @@
 ---
 layout: default
 ---
-<article class="entry">
-	<h2 class="entry--title">{{ page.title }}</h2>
+<section class="wideBoy default">
+	<div class="g-container">
+		<h1 class="entry--title">{{ page.title }}</h1>
+		{% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
+	</div>
+</section>
 
-	{% if page.subtitle %}<h3>{{ page.subtitle }}</h3>{% endif %}
+<article class="g-container entry">
 	{{ content }}
 
 	<footer class="docs-footer alert">
-		<a href="/kickoff/docs/">Documentation table of contents</a>
-		<br>
 		These docs are still incomplete. If you have any questions, please <a href="https://github.com/tmwagency/kickoff/issues/new">file an issue</a> on Github.
 	</footer>
 </article>

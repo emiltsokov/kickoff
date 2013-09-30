@@ -6,8 +6,6 @@ title: Usage
 
 Kickoff is not meant to be too prescriptive; we don't want to force developers into a certain coding style. At it's heart lies the CSS framework (built with the `.scss` version of Sass) so, if you wanted to, you could just include that.
 
-We have included a
-
 
 Once you have cloned or downloaded Kickoff, creating a site or app usually involves the following:
 

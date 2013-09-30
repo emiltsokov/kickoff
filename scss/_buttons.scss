@@ -140,6 +140,16 @@ input[type="button"] {
 	}
 }
 
+.btn--bright {
+	background-color: #fff;
+	color: $orange !important;
+	font-weight: bold;
+
+	&:hover{
+		background-color: #f1f1f1;
+	}
+}
+
 // Link buttons
 // --------------------------------------------------
 

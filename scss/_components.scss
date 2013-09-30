@@ -51,51 +51,6 @@ img, object, embed, video{
 	& li {
 		display: block;
 		height: auto;
-		float: left;
-	}
-
-	&.l-blockGrid--twoUp {
-		margin-left: -4%;
-
-		& li {
-			margin-left: 4%;
-			width: 46%;
-			margin-bottom: 4%;
-			//&:nth-child(2n+1) {clear: left;}
-		}
-	}
-
-	&.l-blockGrid--threeUp {
-		margin-left: -2%;
-
-		& li {
-			margin-left: 2%;
-			width: 31.3%;
-			margin-bottom: 2%;
-			//&:nth-child(3n+1) {clear: left;}
-		}
-	}
-
-	&.l-blockGrid--fourUp {
-		margin-left: -2%;
-
-		& li {
-			margin-left: 2%;
-			width: 23%;
-			margin-bottom: 2%;
-			//&:nth-child(4n+1) {clear: left;}
-		}
-	}
-
-	&.l-blockGrid--fiveUp {
-		margin-left: -1.5%;
-
-		& li {
-			margin-left: 1.5%;
-			width: 18.5%;
-			margin-bottom: 1.5%;
-			//&:nth-child(5n+1) {clear: left;}
-		}
 	}
 }
 
@@ -330,3 +285,59 @@ button.alertClose {
 	border: 0;
 	-webkit-appearance: none;
 }
+
+// === <$breakpoint-single-col ===
+@include respond-min($breakpoint-single-col) {
+	.l-blockGrid {
+		& li {
+			display: block;
+			height: auto;
+			float: left;
+		}
+
+		&.l-blockGrid--twoUp {
+			margin-left: -4%;
+
+			& li {
+				margin-left: 4%;
+				width: 46%;
+				margin-bottom: 4%;
+				//&:nth-child(2n+1) {clear: left;}
+			}
+		}
+
+		&.l-blockGrid--threeUp {
+			margin-left: -2%;
+
+			& li {
+				margin-left: 2%;
+				width: 31.3%;
+				margin-bottom: 2%;
+				//&:nth-child(3n+1) {clear: left;}
+			}
+		}
+
+		&.l-blockGrid--fourUp {
+			margin-left: -2%;
+
+			& li {
+				margin-left: 2%;
+				width: 23%;
+				margin-bottom: 2%;
+				//&:nth-child(4n+1) {clear: left;}
+			}
+		}
+
+		&.l-blockGrid--fiveUp {
+			margin-left: -1.5%;
+
+			& li {
+				margin-left: 1.5%;
+				width: 18.5%;
+				margin-bottom: 1.5%;
+				//&:nth-child(5n+1) {clear: left;}
+			}
+		}
+	}
+}
+// === end <$breakpoint-single-col ===

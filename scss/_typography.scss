@@ -74,15 +74,15 @@ p {
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
-	margin: 0;
+	// margin: 0;
 	font-family: $headings-font-family;
 	font-weight: $headings-font-weight;
-	color: $color-headings;
+	// color: $color-headings;
 	text-rendering: optimizelegibility; // Fix the character spacing for headings
 
 	& small {
 		font-weight: normal;
-		color: lighten($color-headings, 15%);
+		// color: lighten($color-headings, 15%);
 	}
 }
 
@@ -92,20 +92,20 @@ h1, h2, h3, h4, h5, h6 {
 h1, .h1, .alpha {
 	@include font-size(51);
 	line-height: $base-leading * 2;
-	margin-top: $base-line-height + px;
-	margin-bottom: ($base-line-height * 2) + px;
+	// margin-top: $base-line-height + px;
+	// margin-bottom: ($base-line-height * 2) + px;
 }
 
 h2, .h2, .beta {
 	@include font-size(28);
-	margin-top: ($base-line-height * 2) + px;
-	margin-bottom: $base-line-height + px;
+	// margin-top: ($base-line-height * 2) + px;
+	// margin-bottom: $base-line-height + px;
 }
 
 h3, .h3, .gamma {
 	@include font-size(21);
-	margin-top: $base-line-height + px;
-	margin-bottom: 0px;
+	// margin-top: $base-line-height + px;
+	// margin-bottom: 0px;
 }
 
 h4, .h4, .delta,

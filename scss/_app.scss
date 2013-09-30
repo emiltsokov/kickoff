@@ -12,7 +12,7 @@ a {
 }
 
 .g-container {
-	padding-top: 50px;
+	// padding-top: 50px;
 
 	:first-child {
 		margin-top: 0;
@@ -45,6 +45,7 @@ a {
 	z-index: 100;
 	background-color: $orange;
 	color: #fff;
+	border-bottom: 3px solid darken($orange, 10%);
 
 	a, h1, h2 {
 		color: #fff;
@@ -161,7 +162,7 @@ a {
 
 // Footer
 .credits {
-	margin: 80px 0;
+	margin: 50px auto;
 	border-top: 2px solid $color-primary;
 	padding-top: 20px;
 }
@@ -171,8 +172,56 @@ a {
 	margin-bottom: 5px;
 }
 
-// Stack logos
-.stack-logos {
+
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+.bigBoy {
+	background-color: $orange;
+
+	h1 {
+		margin-bottom: 0;
+	}
+	h2 {
+		margin-top: 0;
+	}
+}
+
+.wideBoy {
+	padding: 50px 0;
+
+	&, a:link, h3, h4 {
+		color: #fff;
+	}
+
+	&.default {
+		background-color: $orange;
+	}
+}
+
+
+.linkList {
+	margin: 30px 0;
+}
+
+.contribute {
+	background-color: $gray;
+	overflow: hidden;
+}
+
+
+/*
+   Tech stack
+   ========================================================================== */
+.techStack {
+	background-color: $gray;
+
+	:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.stackLogos {
 	margin: 10px auto;
 	@include clearfix;
 	@extend .unstyled;
@@ -180,21 +229,24 @@ a {
 	font-weight: $bold-font-weight;
 
 	a {
-		width: 70px;
+		min-width: 70px;
+		max-width: 160px;
 		display: inline-block;
-		margin: 0 20px;
-		vertical-align: baseline;
+	}
 
-		&:before {
-			font-size: 60px;
-			line-height: 0.7;
-			vertical-align: top;
-		}
+	img {
+		@include border-radius(5px);
+		vertical-align: top;
+		max-height: 145px;
+		margin-bottom: 5px;
 	}
 }
 
 
-// DEMOS
+
+/* ==========================================================================
+   Demos
+   ========================================================================== */
 .grid-block-link {
 	display: block;
 	min-height: 130px;
@@ -219,29 +271,16 @@ a {
 	}
 }
 
-
-.entry--title {
-	margin-top: 0;
-	border-bottom: 2px solid $color-primary;
+.entry {
+	padding-top: 50px;
 }
-
-// Docs footer
-.docs-footer {
-	margin-top: 50px;
+.entry--title {
+	// border-bottom: 2px solid #fff;
+	margin-bottom: 0;
 }
 
 
 // Choreographic Grid Demo
-#show-grid-button {
-	// position: fixed;
-	// bottom: 3px; right: 3px; left: 3px;
-	// z-index: 10;
-}
-// .show-grid .grid-test .g-col {
-// 	border: 1px solid rgba($color-primary, 0.2);
-// 	margin-bottom: 10px;
-// }
-
 .show-grid .grid-test .g-col {
 	background-color: rgba($color-primary,0.1);
 	box-shadow:inset 0 1px 1px rgba($color-primary,.25);
@@ -266,7 +305,7 @@ a {
 	background-color: rgba($orange, 0.4);
 }
 
-.g-col.g-centered {
+.grid-test .g-col.g-centered {
 	text-align: center;
 }
 
@@ -286,9 +325,10 @@ a {
 /*
    Style Github Gist embeds
    ========================================================================== */
-.gist-file {
+.gist .gist-file {
 	font-size: 14px;
 	tab-size: 3;
+	text-align: left;
 }
 
 
