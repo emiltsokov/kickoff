@@ -4,7 +4,7 @@ navgroup: docs
 title: Sass
 ---
 
-Kickoff is made with [Sass](http://sass-lang.com/) at its core (we used to use [Less](http://lesscss.org/) on legacy projects), a dynamic stylesheet language created by, [Hampton Catlin](http://www.hamptoncatlin.com/). It makes developing systems-based CSS faster, easier, and more fun.
+Kickoff is made with [Sass](http://sass-lang.com/) at its core, it makes developing systems-based CSS faster, easier, and more fun.
 
 ### Why Sass?
 
