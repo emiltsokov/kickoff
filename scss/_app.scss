@@ -190,7 +190,6 @@ a {
 
 	h1 {
 		margin-bottom: 0;
-		// @include font-size(80);
 	}
 	h2 {
 		margin-top: 0;
@@ -438,6 +437,7 @@ a {
 	.bigBoy.wideBoy {
 		h1 {
 			@include font-size(80);
+			line-height: 3;
 		}
 		h2 {
 			@include font-size(28);

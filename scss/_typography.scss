@@ -365,3 +365,22 @@ samp {
 	color: $color-selection;
 	background: $color-selection-bg;
 }
+
+
+@include font-face(entypo, fonts/entypo, normal, false);
+@include font-face(entypo-social, fonts/entypo-social, normal, false);
+.asset-font {
+	font-family: 'entypo', 'entypo-social';
+}
+
+[data-icon-before]:before {
+	content: attr(data-icon-before);
+	margin-right: 4px;
+	@extend .asset-font;
+}
+
+[data-icon-after]:after {
+	content: attr(data-icon-after);
+	margin-left: 4px;
+	@extend .asset-font;
+}
