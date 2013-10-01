@@ -794,28 +794,34 @@ textarea {
 }
 
 /* Framework styles */
-@font-face {
-  font-family: entypo;
-  src: url("fonts/entypo/entypo.eot");
-  src: url("fonts/entypo/entypo.eot?#iefix") format("embedded-opentype"), url("fonts/entypo/entypo.woff") format("woff"), url("fonts/entypo/entypo.ttf") format("truetype"), url("fonts/entypo.svgentypo") format("svg");
-  font-weight: normal;
-  font-style: false;
-}
+/* ==========================================================================
+   Typography
 
-@font-face {
-  font-family: entypo-social;
-  src: url("fonts/entypo-social/entypo-social.eot");
-  src: url("fonts/entypo-social/entypo-social.eot?#iefix") format("embedded-opentype"), url("fonts/entypo-social/entypo-social.woff") format("woff"), url("fonts/entypo-social/entypo-social.ttf") format("truetype"), url("fonts/entypo-social.svgentypo-social") format("svg");
-  font-weight: normal;
-  font-style: false;
-}
+   * Body text
+   * Base
+   * Paragraphs
+   * Headings
+   * Lists
+   * Quotes
+   * Links
+   * Helper classes
+   
+   Body font size, leadings etc have been set in _variables.scss.
+   The default typography has been built using gridlover.net with these settings:
+   * Body font size    : 16
+   * Body line height  : 1.4
 
+   Resources:
+   * http://www.gridlover.net/
+   * http://modularscale.com/
+   * http://lamb.cc/typograph/
+   ========================================================================== */
 html {
   font-size: 20px;
   -webkit-text-size-adjust: 100%;
-  /* 2 */
+  /* 1 */
   -ms-text-size-adjust: 100%;
-  /* 2 */
+  /* 1 */
 }
 
 body {
@@ -827,6 +833,9 @@ body {
   background-color: white;
 }
 
+/* 
+   Paragraphs
+   ========================================================================== */
 p {
   font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -835,7 +844,11 @@ p {
   margin-bottom: 28px;
 }
 
+/*
+   Headings
+   ========================================================================== */
 h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   font-family: inherit;
   font-weight: 700;
   text-rendering: optimizelegibility;
@@ -845,19 +858,24 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1, .h1, .alpha {
-  font-size: 51px;
-  font-size: 2.55rem;
-  line-height: 2.8;
+  font-size: 36px;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 56px;
 }
 
 h2, .h2, .beta {
-  font-size: 28px;
-  font-size: 1.4rem;
+  font-size: 30px;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 28px;
 }
 
 h3, .h3, .gamma {
-  font-size: 21px;
-  font-size: 1.05rem;
+  font-size: 24px;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0px;
 }
 
 h4, .h4, .delta,
@@ -873,18 +891,29 @@ h4, .h4, .delta {
 }
 
 h5, .h5, .epsilon {
-  font-size: 12px;
-  font-size: 0.6rem;
+  font-size: 16px;
+  font-size: 0.8rem;
 }
 
 h6, .h6, .zeta {
-  font-size: 11px;
-  font-size: 0.55rem;
-  color: #b3b3b3;
+  font-size: 14px;
+  font-size: 0.7rem;
   text-transform: uppercase;
 }
 
-a, a:link {
+* + h1, * + .h1, * + .alpha,
+* + h2, * + .h2, * + .beta,
+* + h3, * + .h3, * + .gamma,
+* + h4, * + .h4, * + .delta,
+* + h5, * + .h5, * + .epsilon,
+* + h6, * + .h6, * + .zeta {
+  margin-top: 28px;
+}
+
+/*
+   Links
+   ========================================================================== */
+a {
   color: #34495e;
   text-decoration: none;
 }
@@ -892,13 +921,16 @@ a:visited {
   color: #34495e;
   text-decoration: none;
 }
-a:hover {
+a:hover, a:focus {
   color: #19232d;
 }
 a:active {
   color: #19232d;
 }
 
+/*
+   Lists
+   ========================================================================== */
 ul {
   list-style-type: disc;
 }
@@ -938,6 +970,9 @@ nav ul, nav ol {
   list-style-image: none;
 }
 
+/* 
+   Definition lists
+   ========================================================================== */
 dl {
   margin-bottom: 28px;
 }
@@ -959,6 +994,9 @@ dd {
   margin-left: 240px;
 }
 
+/* 
+   Miscellaneous rules
+   ========================================================================== */
 hr {
   margin: 28px 0;
   border: 0;
@@ -988,6 +1026,9 @@ abbr.initialism {
   text-transform: uppercase;
 }
 
+/* 
+   Blockquotes
+   ========================================================================== */
 blockquote {
   padding-left: 10px;
   margin: 28px;
@@ -1069,6 +1110,9 @@ samp {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
+/* 
+   Utilities
+   ========================================================================== */
 .text-centre, .text-center {
   text-align: center;
 }
@@ -1089,20 +1133,6 @@ samp {
 ::selection {
   color: white;
   background: #34495e;
-}
-
-.asset-font, [data-icon-before]:before, [data-icon-after]:after {
-  font-family: 'entypo', 'entypo-social';
-}
-
-[data-icon-before]:before {
-  content: attr(data-icon-before);
-  margin-right: 4px;
-}
-
-[data-icon-after]:after {
-  content: attr(data-icon-after);
-  margin-left: 4px;
 }
 
 /* ==========================================================================
@@ -2045,11 +2075,12 @@ input[type="button"].btn--block {
 /* ==========================================================================
    Components:
    * Embedded content
-   * Block grids
    * Centred list
    * Floated lists
    * Wells
-   * Alerts
+   * Tabs
+   * Media Object
+   * Block grids
    ========================================================================== */
 /*
    Embedded content
@@ -2073,32 +2104,6 @@ svg:not(:root) {
 
 img, object, embed, video {
   max-width: 100%;
-}
-
-/*
-   Block grids
-   These are 2-up, 3-up, 4-up and 5-up ULs, suited for repeating blocks of content. Add 'mobile' to them to switch them just like the layout grid (one item per line) on phones. For IE7/8 compatibility blockGrid items need to be the same height. You can optionally uncomment the lines below to support arbitrary height, but know that IE7/8 do not support :nth-child.
-
-   Usage:
-   <ul class="l-blockGrid l-blockGrid--twoUp">
-       <li></li>
-   </ul>
-   ========================================================================== */
-.l-blockGrid {
-  display: block;
-  list-style-type: none;
-  zoom: 1;
-}
-.l-blockGrid:before, .l-blockGrid:after {
-  display: table;
-  content: " ";
-}
-.l-blockGrid:after {
-  clear: both;
-}
-.l-blockGrid li {
-  display: block;
-  height: auto;
 }
 
 /*
@@ -2232,101 +2237,73 @@ img, object, embed, video {
 }
 
 /*
-   Alerts
-   ========================================================================== */
-.alert {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: 28px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  background-color: #fcf8e3;
-  border: 1px solid #fbeed5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
-}
-.alert,
-.alert h4 {
-  color: #c09853;
-}
-.alert h4 {
-  margin: 0;
-}
-.alert .alertClose {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: 1.4;
+	Media Object
+
+	* Place any image- and text-like content side-by-side, as per:
+	* stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+	* E.g.:
+	*
+	<div class="media">
+		<img src="http://placekitten.com/100/100" alt="" class="media-img>"
+		<p class="media-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+	========================================================================== */
+.media {
+  display: block;
 }
 
-.alert--success {
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
-  color: #468847;
-}
-.alert--success h4 {
-  color: #468847;
+.media-img {
+  float: left;
+  margin-right: 28px;
 }
 
-.alert--error {
-  background-color: #f2dede;
-  border-color: #eed3d7;
-  color: #b94a48;
-}
-.alert--error h4 {
-  color: #b94a48;
-}
-
-.alert--info {
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-  color: #3a87ad;
-}
-.alert--info h4 {
-  color: #3a87ad;
+/**
+ * Reversed image location (right instead of left).
+ */
+.media-img--rev {
+  float: right;
+  margin-left: 28px;
 }
 
-.alert--block {
-  padding-top: 14px;
-  padding-bottom: 14px;
+.media-img img,
+.media-img--rev img {
+  display: block;
 }
-.alert--block > p,
-.alert--block > ul {
+
+.media-body {
+  overflow: hidden;
+}
+
+.media-body,
+.media-body > :last-child {
   margin-bottom: 0;
-}
-.alert--block p + p {
-  margin-top: 5px;
 }
 
 /*
-   Close buttons
-   ========================================================================== */
-.alertClose {
-  float: right;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1.4;
-  color: #000;
-  text-shadow: 0 1px 0 white;
-  zoom: 1;
-  filter: alpha(opacity=20);
-  opacity: 0.2;
-}
-.alertClose:hover, .alertClose:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  zoom: 1;
-  filter: alpha(opacity=40);
-  opacity: 0.4;
-}
+   Block grids
+   These are 2-up, 3-up, 4-up and 5-up ULs, suited for repeating blocks of content. Add 'mobile' to them to switch them just like the layout grid (one item per line) on phones. For IE7/8 compatibility blockGrid items need to be the same height. You can optionally uncomment the lines below to support arbitrary height, but know that IE7/8 do not support :nth-child.
 
-button.alertClose {
-  padding: 0;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
-  -webkit-appearance: none;
+   Usage:
+   <ul class="l-blockGrid l-blockGrid--twoUp">
+       <li></li>
+   </ul>
+   ========================================================================== */
+.l-blockGrid {
+  display: block;
+  list-style-type: none;
+  zoom: 1;
+}
+.l-blockGrid:before, .l-blockGrid:after {
+  display: table;
+  content: " ";
+}
+.l-blockGrid:after {
+  clear: both;
+}
+.l-blockGrid li {
+  display: block;
+  height: auto;
 }
 
 .l-blockGrid li {
@@ -2415,6 +2392,9 @@ a {
   user-select: none;
 }
 
+/* ==========================================================================
+   Masthead
+   ========================================================================== */
 .masthead {
   position: relative;
   z-index: 100;
@@ -2500,6 +2480,9 @@ a {
   display: inline-block;
   position: relative;
 }
+.main-nav > li:hover {
+  background-color: #bf6516;
+}
 .main-nav a:after {
   display: none;
 }
@@ -2516,6 +2499,7 @@ a {
   border-radius: 0 0 5px 5px;
   padding: 5px 0;
   z-index: 100;
+  background-color: #bf6516;
 }
 .sub-nav li {
   float: none;
@@ -2524,6 +2508,9 @@ a {
   text-align: left;
   color: #fff;
   display: block;
+}
+.sub-nav a:hover {
+  border-color: #924d10;
 }
 
 .github-link {
@@ -2552,6 +2539,11 @@ a {
 }
 .bigBoy h2 {
   margin-top: 0;
+  font-size: 20px;
+  font-size: 1rem;
+}
+.bigBoy h2 br {
+  display: none;
 }
 
 .wideBoy {
@@ -2626,7 +2618,7 @@ a {
 .grid-block-link h3 {
   margin-top: 0;
 }
-.grid-block-link .asset-font, .grid-block-link [data-icon-before]:before, .grid-block-link [data-icon-after]:after {
+.grid-block-link .asset-font {
   font-size: 150px;
   font-size: 7.5rem;
   line-height: 0.6;
@@ -2704,6 +2696,10 @@ a {
   text-align: left;
 }
 
+.bigBoy h2 br {
+  display: inherit;
+}
+
 body {
   padding-top: 50px;
 }
@@ -2757,6 +2753,24 @@ body.page-home {
   font-size: 1.1rem;
   vertical-align: baseline;
   line-height: 0.4;
+}
+
+.bigBoy.wideBoy h1 {
+  font-size: 80px;
+  font-size: 4rem;
+}
+.bigBoy.wideBoy h2 {
+  font-size: 28px;
+  font-size: 1.4rem;
+}
+
+.wideBoy h1 {
+  font-size: 51px;
+  font-size: 2.55rem;
+}
+.wideBoy h2 {
+  font-size: 28px;
+  font-size: 1.4rem;
 }
 
 /* Examples */

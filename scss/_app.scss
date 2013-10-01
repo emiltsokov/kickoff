@@ -37,9 +37,9 @@ a {
 	@include user-select(none);
 }
 
-// ================
-// === MASTHEAD ===
-// ================
+/* ==========================================================================
+   Masthead
+   ========================================================================== */
 .masthead {
 	position: relative;
 	z-index: 100;
@@ -127,6 +127,10 @@ a {
 	> li {
 		display: inline-block;
 		position: relative;
+
+		&:hover {
+			background-color: darken($orange, 10%);
+		}
 	}
 
 	a:after {
@@ -144,6 +148,7 @@ a {
 	@include border-radius(0 0 5px 5px);
 	padding: 5px 0;
 	z-index: 100;
+	background-color: darken($orange, 10%);
 
 	li {
 		float: none;
@@ -153,6 +158,10 @@ a {
 		text-align: left;
 		color: #fff;
 		display: block;
+
+		&:hover {
+			border-color: darken($orange, 20%);
+		}
 	}
 }
 
@@ -181,9 +190,15 @@ a {
 
 	h1 {
 		margin-bottom: 0;
+		// @include font-size(80);
 	}
 	h2 {
 		margin-top: 0;
+		@include font-size(20);
+
+		br {
+			display: none;
+		}
 	}
 }
 
@@ -275,7 +290,6 @@ a {
 	padding-top: 50px;
 }
 .entry--title {
-	// border-bottom: 2px solid #fff;
 	margin-bottom: 0;
 }
 
@@ -339,31 +353,23 @@ a {
 // ===========================================
 // === Media queries for responsive design ===
 // ===========================================
-// NOTE: these will need to be adjusted, possibly moved into another file
 
-// Retina media Queries
-// Credit: http://dev.mattnt.com/retina-results.html
-@media print,
-	(-o-min-device-pixel-ratio: 5/4),
-	(-webkit-min-device-pixel-ratio: 1.25),
-	(min-resolution: 120dpi) {
-
-	// * {
-	// 	background-image: url(@imgSprite2x);
-	// 	background-size: @imgSpriteDimensions;
-	// }
-
-}
-
-// === 400> ===
+// === $breakpoint-narrow> ===
 @include respond-min($breakpoint-narrow) {
+	.bigBoy {
+		h2 {
 
+			br {
+				display: inherit;
+			}
+		}
+	}
 }
-// === end 400> ===
+// === end $breakpoint-narrow> ===
 
 
 
-// === 768> ===
+// === $breakpoint-mid> ===
 @include respond-min($breakpoint-mid) {
 	body {
 		padding-top: 50px;
@@ -428,5 +434,23 @@ a {
 			line-height: 0.4;
 		}
 	}
+
+	.bigBoy.wideBoy {
+		h1 {
+			@include font-size(80);
+		}
+		h2 {
+			@include font-size(28);
+		}
+	}
+
+	.wideBoy {
+		h1 {
+			@include font-size(51);
+		}
+		h2 {
+			@include font-size(28);
+		}
+	}
 }
-// === end 768> ===
+// === end $breakpoint-mid> ===

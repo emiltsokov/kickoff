@@ -1,11 +1,12 @@
 /* ==========================================================================
    Components:
    * Embedded content
-   * Block grids
    * Centred list
    * Floated lists
    * Wells
-   * Alerts
+   * Tabs
+   * Media Object
+   * Block grids
    ========================================================================== */
 
 /*
@@ -31,27 +32,6 @@ svg:not(:root) { overflow: hidden; }
 // FLASH/VIDEO
 img, object, embed, video{
 	max-width:100%;
-}
-
-
-/*
-   Block grids
-   These are 2-up, 3-up, 4-up and 5-up ULs, suited for repeating blocks of content. Add 'mobile' to them to switch them just like the layout grid (one item per line) on phones. For IE7/8 compatibility blockGrid items need to be the same height. You can optionally uncomment the lines below to support arbitrary height, but know that IE7/8 do not support :nth-child.
-
-   Usage:
-   <ul class="l-blockGrid l-blockGrid--twoUp">
-       <li></li>
-   </ul>
-   ========================================================================== */
-.l-blockGrid {
-	display: block;
-	list-style-type: none;
-	@include clearfix;
-
-	& li {
-		display: block;
-		height: auto;
-	}
 }
 
 
@@ -180,110 +160,67 @@ img, object, embed, video{
 
 
 /*
-   Alerts
-   ========================================================================== */
-.alert {
-	padding: 8px 35px 8px 14px;
-	margin-bottom: $base-line-height + px;
-	text-shadow: 0 1px 0 rgba(255,255,255,.5);
-	background-color: $warning-background;
-	border: 1px solid $warning-border;
-	@include border-radius(4px);
+	Media Object
 
-	&,
-	h4 {
-		// Specified for the h4 to prevent conflicts of changing $headings-color
-		color: $warning-text;
-	}
-	h4 {
-		margin: 0;
-	}
+	* Place any image- and text-like content side-by-side, as per:
+	* stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+	* E.g.:
+	*
+	<div class="media">
+		<img src="http://placekitten.com/100/100" alt="" class="media-img>"
+		<p class="media-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+		sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	</div>
+	========================================================================== */
 
-	// Adjust close link position
-	.alertClose {
-		position: relative;
-		top: -2px;
-		right: -21px;
-		line-height: $base-leading;
-	}
+.media {
+	display: block;
+}
+.media-img {
+	float: left;
+	margin-right: $base-line-height + px;
 }
 
-
-// Alternate styles
-.alert--success {
-	background-color: $success-background;
-	border-color: $success-border;
-	color: $success-text;
-
-	h4 {
-		color: $success-text;
-	}
-}
-.alert--error {
-	background-color: $error-background;
-	border-color: $error-border;
-	color: $error-text;
-
-	h4 {
-		color: $error-text;
-	}
-}
-.alert--info {
-	background-color: $info-background;
-	border-color: $info-border;
-	color: $info-text;
-
-	h4 {
-		color: $info-text;
-	}
+/**
+ * Reversed image location (right instead of left).
+ */
+.media-img--rev {
+	float: right;
+	margin-left: $base-line-height + px;
 }
 
-
-// Block alerts
-.alert--block {
-	padding-top: 14px;
-	padding-bottom: 14px;
-
-	> p,
-	> ul {
-		margin-bottom: 0;
-	}
-	p + p {
-		margin-top: 5px;
-	}
+.media-img img,
+.media-img--rev img{
+	display: block;
 }
+
+.media-body{
+	overflow: hidden;
+}
+.media-body,
+.media-body > :last-child{
+	margin-bottom:0;
+}
+
 
 /*
-   Close buttons
+   Block grids
+   These are 2-up, 3-up, 4-up and 5-up ULs, suited for repeating blocks of content. Add 'mobile' to them to switch them just like the layout grid (one item per line) on phones. For IE7/8 compatibility blockGrid items need to be the same height. You can optionally uncomment the lines below to support arbitrary height, but know that IE7/8 do not support :nth-child.
+
+   Usage:
+   <ul class="l-blockGrid l-blockGrid--twoUp">
+       <li></li>
+   </ul>
    ========================================================================== */
+.l-blockGrid {
+	display: block;
+	list-style-type: none;
+	@include clearfix;
 
-.alertClose {
-	float: right;
-	font-size: 20px;
-	font-weight: bold;
-	line-height: $base-leading;
-	color: #000;
-	text-shadow: 0 1px 0 rgba(255,255,255,1);
-	@include opacity(20);
-
-	&:hover,
-	&:focus {
-		color: #000;
-		text-decoration: none;
-		cursor: pointer;
-		@include opacity(40);
+	& li {
+		display: block;
+		height: auto;
 	}
-}
-
-// Additional properties for button version
-// iOS requires the button element instead of an anchor tag.
-// If you want the anchor version, it requires `href="#"`.
-button.alertClose {
-	padding: 0;
-	cursor: pointer;
-	background: transparent;
-	border: 0;
-	-webkit-appearance: none;
 }
 
 // === <$breakpoint-single-col ===

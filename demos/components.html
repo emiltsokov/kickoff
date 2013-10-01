@@ -2,190 +2,158 @@
 layout: demo
 body-class: show-grid
 navgroup: demo
-title: Components <small>styling</small>
-prettyprint: true
+title: Components
 ---
 
 <h2>1. Default Buttons</h2>
 <p>Button styles can be applied to anything with the <code>.btn</code> class applied. However, typically you'll want to apply these to only <code>&lt;a></code> and <code>&lt;button></code> elements for the best rendering.</p>
 
 <h4>Button sizes</h4>
-<p>Fancy larger or smaller buttons? Add <code>.btn-large</code>, or <code>.btn-small</code> for additional sizes.</p>
+<p>Fancy larger or smaller buttons? Add <code>.btn--large</code>, or <code>.btn--small</code> for additional sizes.</p>
 
-<ul class="tabs is-right">
-	<li><a href="#layout-example-default-buttons" class="is-active">Example</a></li>
-	<li><a href="#code-example-default-buttons">Code</a></li>
-</ul>
-<ul class="tabs-content">
-	<li id="layout-example-default-buttons" class="is-active well">
-<h4>Large buttons</h4>
-<a href="#" class="btn btn-success btn-large">Success</a>
-<input type="submit" value="Primary" class="btn btn-primary btn-large" />
-<input type="submit" value="Disabled" class="btn btn-large" disabled />
-<button type="reset" class="btn btn-large">Reset</button>
+<div class="g-row">
+	<div class="g-span9 g-col g-centered">
+		<ul class="tabs tabs--alignCenter">
+			<li><a href="#layout-example-default-buttons" class="is-active">Example</a></li>
+			<li><a href="#code-example-default-buttons">Code</a></li>
+		</ul>
+		<ul class="l-tabsContent">
+			<li id="layout-example-default-buttons" class="is-active well">
+				<h3>Normal buttons</h3>
+				<a href="#" class="btn">Anchor</a>
+				<input type="submit" value="Primary" class="btn btn--primary" />
+				<input type="submit" value="Disabled" class="btn" disabled />
+				<button type="reset" class="btn">Reset</button>
 
-<h4>Normal buttons</h4>
-<a href="#" class="btn">Anchor</a>
-<input type="submit" value="Primary" class="btn btn-primary" />
-<input type="submit" value="Disabled" class="btn" disabled />
-<button type="reset" class="btn">Reset</button>
+				<h3>Large buttons</h3>
+				<a href="#" class="btn btn-success btn--large">Success</a>
+				<input type="submit" value="Primary" class="btn btn--primary btn--large" />
+				<input type="submit" value="Disabled" class="btn btn--large" disabled />
+				<button type="reset" class="btn btn--large">Reset</button>
 
-<h4>Small buttons</h4>
-<a href="#" class="btn btn-small">Anchor</a>
-<input type="submit" value="Primary" class="btn btn-primary btn-small" />
-<input type="submit" value="Disabled" class="btn btn-small" disabled />
-<button type="reset" class="btn btn-small">Reset</button>
-	</li>
+				<h3>Small buttons</h3>
+				<a href="#" class="btn btn--small">Anchor</a>
+				<input type="submit" value="Primary" class="btn btn--primary btn--small" />
+				<input type="submit" value="Disabled" class="btn btn--small" disabled />
+				<button type="reset" class="btn btn--small">Reset</button>
+			</li>
 
-	<li id="code-example-default-buttons">
-		<b><code>HTML</code></b>
-<pre class="prettyprint lang-html linenums"><code>&lt;h4&gt;Large buttons&lt;/h4&gt;
-&lt;a href="#" class="btn btn-success btn-large"&gt;Success&lt;/a&gt;
-&lt;input type="submit" value="Primary" class="btn btn-primary btn-large" /&gt;
-&lt;input type="submit" value="Disabled" class="btn btn-large" disabled /&gt;
-&lt;button type="reset" class="btn btn-large"&gt;Reset&lt;/button&gt;
+			<li id="code-example-default-buttons">
+				<script src="https://gist.github.com/mrmartineau/6775655.js?file=button-sizes.html"></script>
+			</li>
+		</ul>
 
-&lt;h4&gt;Normal buttons&lt;/h4&gt;
-&lt;a href="#" class="btn"&gt;Anchor&lt;/a&gt;
-&lt;input type="submit" value="Primary" class="btn btn-primary" /&gt;
-&lt;input type="submit" value="Disabled" class="btn" disabled /&gt;
-&lt;button type="reset" class="btn"&gt;Reset&lt;/button&gt;
-
-&lt;h4&gt;Small buttons&lt;/h4&gt;
-&lt;a href="#" class="btn btn-small"&gt;Anchor&lt;/a&gt;
-&lt;input type="submit" value="Primary" class="btn btn-primary btn-small" /&gt;
-&lt;input type="submit" value="Disabled" class="btn btn-small" disabled /&gt;
-&lt;button type="reset" class="btn btn-small"&gt;Reset&lt;/button&gt;</code></pre>
-	</li>
-</ul>
-<!-- END EXAMPLE -->
+	</div>
+</div>
 
 <hr>
 
 <h2>2. Pill Buttons</h2>
-<div class="row">
-	<div class="span4 col">
-		<p>Button styles can be applied to anything with the <code>.btn</code> class applied. However, typically you'll want to apply these to only <code>&lt;a></code> and <code>&lt;button></code> elements for the best rendering.</p>
-	</div>
-	<div class="span8 col">
-		<ul class="tabs is-right">
+<p>Add the <code>.btn--pill</code> class to any <code>.btn</code>.</p>
+
+<div class="g-row">
+	<div class="g-span9 g-col g-centered">
+		<ul class="tabs tabs--alignCenter">
 			<li><a href="#layout-example-pill-buttons" class="is-active">Example</a></li>
 			<li><a href="#code-example-pill-buttons">Code</a></li>
 		</ul>
-		<ul class="tabs-content">
+		<ul class="l-tabsContent">
 			<li id="layout-example-pill-buttons" class="is-active well">
-<h4>Pill buttons</h4>
-<a href="#" class="btn btn-pill btn-primary">Pill</a>
-<a href="#" class="btn btn-pill btn-warning">This is a Pill</a>
-<h2>This is <a href="#" class="btn btn-primary btn-natural btn-pill"> a button </a> in a heading!</h2>
+				<h4>Pill buttons</h4>
+				<a href="#" class="btn btn--pill btn--primary">Pill</a>
+				<a href="#" class="btn btn--pill btn-warning">This is a Pill</a>
+				<h2>This is <a href="#" class="btn btn--primary btn-natural btn--pill"> a button </a> in a heading!</h2>
 
-<p>This is <a href="#" class="btn btn-primary btn-natural btn-pill"> a button </a> in a paragraph!</p>
+				<p>This is <a href="#" class="btn btn--primary btn-natural btn--pill"> a button </a> in a paragraph!</p>
 			</li>
 
 			<li id="code-example-pill-buttons">
-				<b><code>HTML</code></b>
-<pre class="prettyprint lang-html linenums"><code>&lt;h4&gt;Pill buttons&lt;/h4&gt;
-&lt;a href="#" class="btn btn-pill btn-primary"&gt;Pill&lt;/a&gt;
-&lt;a href="#" class="btn btn-pill btn-warning"&gt;This is a Pill&lt;/a&gt;
-&lt;h2&gt;This is &lt;a href="#" class="btn btn-primary btn-natural btn-pill"&gt; a button &lt;/a&gt; in a heading!&lt;/h2&gt;
-
-&lt;p&gt;This is &lt;a href="#" class="btn btn-primary btn-natural btn-pill"&gt; a button &lt;/a&gt; in a paragraph!&lt;/p&gt;</code></pre>
+				<script src="https://gist.github.com/mrmartineau/6775655.js?file=pill-buttons.html"></script>
 			</li>
 		</ul>
+
 	</div>
 </div>
-<!-- END EXAMPLE -->
 
 <hr>
 
-<h2>3. Button states</h2>
-<div class="row">
-	<div class="span4 col">
-		<p>The default Kickoff button set has 7 states.</p>
-	</div>
-	<div class="span8 col">
-		<ul class="tabs is-right">
-			<li><a href="#layout-example-button-states" class="is-active">Example</a></li>
-			<li><a href="#code-example-button-states">Code</a></li>
+<h2>3. Media Object</h2>
+<p>Place any image- and text-like content side-by-side, as per: <a href="stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code">media object</a></p>
+
+<div class="g-row">
+	<div class="g-span9 g-col g-centered">
+		<ul class="tabs tabs--alignCenter">
+			<li><a href="#layout-example-media" class="is-active">Example</a></li>
+			<li><a href="#code-example-media">Code</a></li>
 		</ul>
-		<ul class="tabs-content">
-			<li id="layout-example-button-states" class="is-active well">
-				<h4>Button colours</h4>
-				<a href="#" class="btn">Default</a> <a href="#" class="btn btn-primary">Primary</a> <a href="#" class="btn btn-warning">Warning</a> <a href="#" class="btn btn-danger">Danger</a> <a href="#" class="btn btn-success">Success</a> <a href="#" class="btn btn-info">Info</a> <a href="#" class="btn btn-inverse">Inverse</a>
+		<ul class="l-tabsContent">
+			<li id="layout-example-media" class="is-active">
+				<div class="media clearfix">
+					<img src="http://placekitten.com/100/100" alt="" class="media-img">
+					<p class="media-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
+				<div class="media clearfix">
+					<img src="http://placekitten.com/100/100" alt="" class="media-img--rev">
+					<p class="media-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+					sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+				</div>
 			</li>
 
-			<li id="code-example-button-states">
-				<b><code>HTML</code></b>
-<pre class="prettyprint lang-html linenums"><code>&lt;h4&gt;Button colours&lt;/h4&gt;
-&lt;a href="#" class="btn"&gt;Default&lt;/a&gt;
-&lt;a href="#" class="btn btn-primary"&gt;Primary&lt;/a&gt;
-&lt;a href="#" class="btn btn-warning"&gt;Warning&lt;/a&gt;
-&lt;a href="#" class="btn btn-danger"&gt;Danger&lt;/a&gt;
-&lt;a href="#" class="btn btn-success"&gt;Success&lt;/a&gt;
-&lt;a href="#" class="btn btn-info"&gt;Info&lt;/a&gt;
-&lt;a href="#" class="btn btn-inverse"&gt;Inverse&lt;/a&gt;</code></pre>
+			<li id="code-example-media">
+				<script src="https://gist.github.com/mrmartineau/6775655.js?file=media-object.html"></script>
 			</li>
 		</ul>
 
 	</div>
 </div>
-<!-- END EXAMPLE -->
 
 <hr>
 
-<h2>4. Validation messages</h2>
-<div class="row">
-	<div class="span4 col">
-		<p>Kickoff includes some simple validation messages</p>
-	</div>
-	<div class="span8 col">
-		<ul class="tabs is-right">
-			<li><a href="#layout-example-alerts" class="is-active">Example</a></li>
-			<li><a href="#code-example-alerts">Code</a></li>
+<h2>3. Tabs</h2>
+<p>Place any image- and text-like content side-by-side, as per: <a href="stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code">media object</a></p>
+
+<div class="g-row">
+	<div class="g-span9 g-col g-centered">
+		<ul class="tabs tabs--alignCenter">
+			<li><a href="#layout-example-tabs" class="is-active">Example</a></li>
+			<li><a href="#code-example-tabs">Code</a></li>
 		</ul>
-		<ul class="tabs-content">
-			<li id="layout-example-alerts" class="is-active well">
-				<h4>Default</h4>
-				<div class="alert">
-					<strong>Warning!</strong> Best check yo self, you're not looking too good.
-				</div>
-				<h4>Success</h4>
-				<div class="alert alert-success">
-					<strong>Warning!</strong> Best check yo self, you're not looking too good.
-				</div>
-				<h4>Error</h4>
-				<div class="alert alert-error">
-					<strong>Warning!</strong> Best check yo self, you're not looking too good.
-				</div>
-				<h4>Alert block</h4>
-				<div class="alert alert-block">
-					<h4>Warning!</h4>
-					This version allows for more text inside the message box. Add the class <code>alert-block</code> to use this style.
-				</div>
+		<ul class="l-tabsContent">
+			<li id="layout-example-tabs" class="is-active">
+				<!-- Default, left-aligned tabs -->
+				<ul class="tabs">
+					<li><a href="#tabs-example-1" class="is-active">Tab 1</a></li>
+					<li><a href="#tabs-example-2">Tab 2</a></li>
+				</ul>
+				<!-- Centre-aligned tabs -->
+				<ul class="tabs tabs--alignCenter">
+					<li><a href="#tabs-example-1" class="is-active">Tab 1</a></li>
+					<li><a href="#tabs-example-2">Tab 2</a></li>
+				</ul>
+				<!-- Right-aligned tabs -->
+				<ul class="tabs tabs--alignRight">
+					<li><a href="#tabs-example-1" class="is-active">Tab 1</a></li>
+					<li><a href="#tabs-example-2">Tab 2</a></li>
+				</ul>
+
+				<!-- Tabs Content -->
+				<ul class="l-tabsContent">
+					<li id="tabs-example-1" class="is-active">
+						Tab 1 content
+					</li>
+
+					<li id="tabs-example-2">
+						Tab 2 content
+					</li>
+				</ul>
 			</li>
 
-			<li id="code-example-alerts">
-				<b><code>HTML</code></b>
-<pre class="prettyprint lang-html linenums"><code>&lt;h4&gt;Default&lt;/h4&gt;
-&lt;div class="alert"&gt;
-	&lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you're not looking too good.
-&lt;/div&gt;
-&lt;h4&gt;Success&lt;/h4&gt;
-&lt;div class="alert alert-success"&gt;
-	&lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you're not looking too good.
-&lt;/div&gt;
-&lt;h4&gt;Error&lt;/h4&gt;
-&lt;div class="alert alert-error"&gt;
-	&lt;strong&gt;Warning!&lt;/strong&gt; Best check yo self, you're not looking too good.
-&lt;/div&gt;
-&lt;h4&gt;Alert block&lt;/h4&gt;
-&lt;div class="alert alert-block"&gt;
-	&lt;h4&gt;Warning!&lt;/h4&gt;
-	This version allows for more text inside the message box. Add the class &lt;code&gt;alert-block&lt;/code&gt; to use this style.
-&lt;/div&gt;</code></pre>
+			<li id="code-example-tabs">
+				<script src="https://gist.github.com/mrmartineau/6775655.js?file=tabs.html"></script>
 			</li>
 		</ul>
 
 	</div>
 </div>
-<!-- END EXAMPLE -->
+
