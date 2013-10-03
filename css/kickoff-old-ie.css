@@ -2029,12 +2029,14 @@ input[type="button"].btn--block {
 }
 
 .btn--bright {
-  background-color: #fff;
-  color: #e67e22 !important;
+  background-color: transparent;
+  border: 3px solid #fff;
+  line-height: 3.2;
+  color: #fff !important;
   font-weight: bold;
 }
 .btn--bright:hover {
-  background-color: #f1f1f1;
+  border-color: #924d10;
 }
 
 .btn--link,
@@ -2381,11 +2383,15 @@ img, object, embed, video {
    * e.g. Create a partials directory with _header.scss, _footer.scss etc
    * e.g. Create a pages directory with _home.scss, _contact.scss etc
    ========================================================================== */
+html {
+  overflow-y: scroll;
+}
+
 a {
-  -webkit-transition: all 300ms ease-in-out;
-  -moz-transition: all 300ms ease-in-out;
-  -o-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
 }
 
 .g-container :first-child {
@@ -2511,9 +2517,6 @@ a {
   display: inline-block;
   position: relative;
 }
-.main-nav > li:hover {
-  background-color: #bf6516;
-}
 .main-nav a:after {
   display: none;
 }
@@ -2580,8 +2583,12 @@ a {
 .wideBoy {
   padding: 50px 0;
 }
-.wideBoy, .wideBoy a:link, .wideBoy h3, .wideBoy h4 {
+.wideBoy, .wideBoy a:link, .wideBoy a:visited, .wideBoy h3, .wideBoy h4 {
   color: #fff;
+}
+.wideBoy a:hover,
+.wideBoy a:active {
+  color: #924d10;
 }
 .wideBoy.default {
   background-color: #e67e22;
@@ -2622,7 +2629,6 @@ a {
 .stackLogos a {
   min-width: 70px;
   max-width: 160px;
-  display: inline-block;
 }
 .stackLogos img {
   -webkit-border-radius: 5px;

@@ -141,12 +141,17 @@ input[type="button"] {
 }
 
 .btn--bright {
-	background-color: #fff;
-	color: $orange !important;
+	background-color: transparent;
+	border: 3px solid #fff;
+	line-height: 3.2;
+	color: #fff !important;
+	// background-color: #fff;
+	// color: $orange !important;
 	font-weight: bold;
 
 	&:hover{
-		background-color: #f1f1f1;
+		border-color: darken($orange, 20%);
+		// color: darken($orange, 20%) !important;
 	}
 }
 

@@ -4,11 +4,11 @@
 // =======================
 
 html {
-	// overflow-y: scroll;
+	overflow-y: scroll;
 }
 
 a {
-	@include transition(all 300ms ease-in-out);
+	@include transition(all 150ms ease-in-out);
 }
 
 .g-container {
@@ -129,7 +129,7 @@ a {
 		position: relative;
 
 		&:hover {
-			background-color: darken($orange, 10%);
+			// background-color: darken($orange, 10%);
 		}
 	}
 
@@ -204,8 +204,13 @@ a {
 .wideBoy {
 	padding: 50px 0;
 
-	&, a:link, h3, h4 {
+	&, a:link, a:visited, h3, h4 {
 		color: #fff;
+	}
+
+	a:hover,
+	a:active {
+		color: darken($orange, 20%)
 	}
 
 	&.default {
@@ -245,7 +250,6 @@ a {
 	a {
 		min-width: 70px;
 		max-width: 160px;
-		display: inline-block;
 	}
 
 	img {
