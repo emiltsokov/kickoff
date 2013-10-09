@@ -24,7 +24,7 @@ Kickoff uses a bespoke naming scheme for classnames.
 	           e.g. .btn.btn--primary
 
 	.is-     element state
-	           e.g. .btn.btn--primary
+	           e.g. .is-active
 
 	aB       camel-case descriptors
 	           e.g. .form-controlGroup
