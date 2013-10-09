@@ -12,7 +12,7 @@ Once you have cloned or downloaded Kickoff, creating a site or app usually invol
 1. Set up the basic structure of the site.
 2. Add some content, style, and functionality.
 3. Run your site locally to see how it looks.
-4. (Optionally run a Grunt build script to automate the optimization of your site
+4. Optionally run a Grunt build script to automate the optimization of your site
 5. Deploy your site.
 
 
@@ -22,41 +22,71 @@ A basic Kickoff site initially looks something like this:
 
 	├── css
 	│   ├── kickoff.css
+	│   └── kickoff-old-ie.css
 	├── img
 	│   └── ui
 	├── js
 	│   ├── script.js
-	│   ├── plugins.js
-	│   ├── mobile-plugins.js
+	│   ├── helpers
+	│   │   ├── console.js
+	│   │   ├── cookies.js
+	│   │   └── helpers.js
+	│   ├── dist
+	│   │   └── app.min.js
 	│   └── libs
-	│       ├── [...]
+	│       ├── attach.js
+	│       ├── jquery.2.min.js
+	│       ├── jquery.min.js
+	│       ├── modernizr.min.js
+	│       ├── mobile
+	│       │   ├── fastclick.js
+	│       │   ├── normalized.addressbar.js
+	│       │   └── orientation.change.js
 	│       ├── plugins
 	│       │   ├── jquery.easie.min.js
 	│       │   ├── jquery.imagesLoaded.min.js
 	│       │   └── jquery.validatr.min.js
 	│       └── polyfills
 	│           ├── html5printshiv.js
-	│           ├── html5shiv.js
+	│           └── html5shiv.js
 	├── scss
-	│   ├── app.scss
-	│   ├── buttons.scss
-	│   ├── choreographic-grid.scss
-	│   ├── forms.scss
+	│   ├── functions
+	│   │   └── [...]
+	│   ├── helpers
+	│   │   └── [...]
+	│   ├── mixins
+	│   │   ├── _css3.scss
+	│   │   ├── _keyframes.scss
+	│   │   ├── _animation.scss
+	│   │   ├── _responsive.scss
+	│   │   └── [...]
+	│   ├── _app.scss
+	│   ├── _buttons.scss
+	│   ├── _choreographic-grid.scss
+	│   ├── _colour-palette.scss
+	│   ├── _components.scss
+	│   ├── _dependencies.scss
+	│   ├── _forms.scss
+	│   ├── _mobile.scss
+	│   ├── _normalize.scss
+	│   ├── _print.scss
+	│   ├── _responsive-utilities.scss
+	│   ├── _tables.scss
+	│   ├── _typography.scss
+	│   ├── _utilities.scss
+	│   ├── _variables.scss
 	│   ├── kickoff.scss
-	│   ├── mixins.scss
-	│   ├── normalize.scss
-	│   ├── print.scss
-	│   ├── typography.scss
-	│   ├── variables.scss
-	│   ├── wells.scss
+	│   ├── kickoff-old-ie.scss
 	│   └── [...]
+	├── .editorconfig
 	├── .htaccess
+	├── .jshintrc
 	├── 404.html
+	├── Gruntfile.js
+	├── package.json
 	├── index.html
 	├── humans.txt
-	├── robots.txt
-	├── favicon.ico
-	└── [apple-touch-icons]
+	└── robots.txt
 
 What follows is a general overview of each major part and how to use them.
 
@@ -72,20 +102,17 @@ This directory should contain all your project's JS files. Libraries, plugins,
 and custom code can all be included here. It includes some initial JS to help
 get you started. [About the JavaScript](js.html).
 
-### HTML
+## CSS Class naming scheme
+Kickoff uses a bespoke naming scheme for classnames.
 
+	-        child element
+	           e.g. .form-controlGroup > .form-controlGroup-label
 
-### .htaccess
+	--       modifier element
+	           e.g. .btn.btn--primary
 
-The default web server config is for Apache. [About the .htaccess](htaccess.html).
+	.is-     element state
+	           e.g. .btn.btn--primary
 
-Host your site on a server other than Apache? You're likely to find the corresponding configuration file in our [server configs repo](https://github.com/h5bp/server-configs). If you cannot find a configuration file for your setup, please consider contributing one so that others can benefit too.
-
-### humans.txt
-
-Edit this file to include the team that worked on your site/app, and the
-technology powering it.
-
-### robots.txt
-
-Edit this file to include any pages you need hidden from search engines.
+	aB       camel-case descriptors
+	           e.g. .form-controlGroup

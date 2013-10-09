@@ -16,10 +16,6 @@ By default, there is a `TMW` namespace, this can be changed to anything, perhaps
 
 If you need to add any 3rd party library code, we suggest placing them in the [js/libs/](https://github.com/tmwagency/kickoff/tree/master/js/libs) folder. The latest jQuery and Modernizr libraries are included by default. You may wish to create your own [custom Modernizr build](http://www.modernizr.com/download/). Other recommended libraries include:
 
-* [Yepnope](http://yepnopejs.com/) is an asynchronous conditional resource loader that's super-fast, and allows you to load only the scripts that your users need.
-* [Zepto](http://zeptojs.com/) is a minimalist JavaScript library for modern browsers with a largely jQuery-compatible API.
-* [Lazyload](https://github.com/rgrove/lazyload/) makes it easy and painless to lazily load one or more external JavaScript or CSS files on demand either during or after the rendering of a web page.
-
 ## Polyfills
 
 On most web projects, we use Modernizr, when that's not the case you might want to use the HTML5Shiv, it is located in [js/libs/polyfills](https://github.com/tmwagency/kickoff/tree/master/js/libs/polyfills)

@@ -15,9 +15,9 @@ There are a few easy ways to quickly get started with Kickoff, each one appealin
 * SVN checkout: `svn checkout https://github.com/tmwagency/kickoff your-project-folder`
 
 ## Using Grunt?
-[Ruby](https://www.ruby-lang.org/en/) v2 is needed. Update using [rvm](http://rvm.io/) or [brew](http://brew.sh) (if you use a Mac) then install the packages below
+[Ruby](https://www.ruby-lang.org/en/) v2 is needed. Update using [rvm](http://rvm.io/) or [brew](http://brew.sh) (if you use a Mac), Windows users can install Ruby via [the Windows installer](http://rubyinstaller.org/downloads/), and Linux users can install it via their package manager, then install the packages below:
 
-* Install Sass globally - `sudo gem install sass --pre`
+* Install Sass globally - `gem install sass --pre`
 * Install Node from [nodejs.org](http://nodejs.org/)
 * Install Grunt CLI - `npm install -g grunt-cli`
 * Navigate to (`cd`) your project directory and run `npm install` which will install all Grunt's dependencies

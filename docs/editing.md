@@ -25,7 +25,7 @@ Run `npm install` to install all Grunt's dependencies
 
 ### Step 4
 
-Run `jekyll build --watch` and `grunt watch`
+Run `grunt watch`
 
 #### Please note
 

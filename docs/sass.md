@@ -14,7 +14,7 @@ Sass has two syntaxes. The most commonly used syntax is known as “SCSS” (for
 
 ### What's included?
 
-As an extension of CSS, LESS includes variables, mixins for reusable snippets of code, operations for simple math, nesting, and even color functions.
+As an extension of CSS, Sass includes variables, mixins for reusable snippets of code, operations for simple math, nesting, and even color functions.
 
 ### Learn more
 
@@ -22,13 +22,7 @@ Visit the official website at [http://sass-lang.com/](http://sass-lang.com/) to 
 
 ## Installing Sass
 
-#### Install Ruby and Sass
-
-First of all, let’s get Sass up and running. If you’re using OS X, you’ll already have Ruby installed. Windows users can install Ruby via [the Windows installer](http://rubyinstaller.org/downloads/), and Linux users can install it via their package manager.
-
-Once you have Ruby installed, you can install Sass by running
-
-`gem install sass`
+See the instructions on the [Getting started page](index.html) to install Sass
 
 ## Compiling Kickoff with Sass
 
