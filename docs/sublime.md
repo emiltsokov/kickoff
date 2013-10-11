@@ -6,9 +6,19 @@ title: Sublime Text snippets for Kickoff
 
 If you use Sublime Text, we have created some snippets to use with the framework.
 
-## Installation
+## How to install
 
-Download them from [Github]()<!--  or install them with Package Control -->.
+If you experience problems or editor crashes please [fill an issue](https://github.com/sergeche/emmet-sublime/issues).
+
+With [Package Control](http://wbond.net/sublime_packages/package_control):
+
+1. Run “Package Control: Install Package” command, find and install `Kickoff Snippets` plugin.
+2. Restart ST editor (if required)
+
+Manually:
+
+1. Clone or [download](https://github.com/tmwagency/Kickoff-snippets/archive/master.zip) git repo into your packages folder (in ST, find Browse Packages... menu item to open this folder)
+2. Restart ST editor (if required)
 
 ##### Tab trigger for all items: 'ko' &#8677;
 
