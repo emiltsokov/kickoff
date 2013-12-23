@@ -36,7 +36,8 @@ module.exports = function (grunt) {
 					style: 'expanded',
 					lineNumbers: false,
 					debugInfo : false,
-					precision : 8
+					precision : 8,
+					sourcemap : true
 				},
 				files: {
 					'css/kickoff.css': 'scss/kickoff.scss',
@@ -45,11 +46,13 @@ module.exports = function (grunt) {
 			},
 			deploy: {
 				options: {
-					style: 'compressed'
+					style: 'compressed',
+					precision : 8,
+					sourcemap : true
 				},
 				files: {
-					'css/kickoff.min.css': 'scss/kickoff.scss',
-					'css/kickoff-old-ie.min.css': 'scss/kickoff-old-ie.scss'
+					'css/kickoff.css': 'scss/kickoff.scss',
+					'css/kickoff-old-ie.css': 'scss/kickoff-old-ie.scss'
 				}
 
 			},
@@ -83,12 +86,6 @@ module.exports = function (grunt) {
 				// sourceMappingURL: @string. The string that is printed to the final file
 				sourceMappingURL: '../../'+ jsFile +'.map'
 
-				// sourceMapRoot: @string. The location where your source files can be found. This sets the sourceRoot field in the source map.
-				// sourceMapRoot: 'js',
-
-				// sourceMapPrefix: @integer. The number of directories to drop from the path prefix when declaring files in the source map.
-				// sourceMapPrefix: 1,
-
 			},
 			js: {
 				src: jsFileList,
@@ -99,7 +96,7 @@ module.exports = function (grunt) {
 		watch: {
 			scss: {
 				files: ['scss/**/*.scss'],
-				tasks: ['sass:dev', 'sass:styleguide', 'copy:css']
+				tasks: ['sass:deploy', 'sass:styleguide', 'copy:css']
 			},
 
 			js: {
