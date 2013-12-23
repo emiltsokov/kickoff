@@ -14,7 +14,7 @@ $purple                       : #8e44ad;
 $gray                         : #7f8c8d;
 
 // Colour Scheme
-$color-primary                : #34495e;
+$color-primary                : $orange;
 $color-secondary              : $orange;
 $color-highlight              : #ff9600;
 
@@ -32,8 +32,8 @@ $color-selection-bg           : $color-primary;
 // Links
 $color-link-default           : $color-primary;
 $color-link-visited           : $color-primary;
-$color-link-hover             : darken($color-primary, 15%);
-$color-link-active            : darken($color-primary, 15%);
+$color-link-hover             : darken($color-primary, 10%);
+$color-link-active            : darken($color-primary, 10%);
 
 
 // Buttons
@@ -41,17 +41,17 @@ $btn-background               : #fff;
 $btn-background-highlight     : darken(#fff, 10%);
 $btn-border                   : #ccc;
 
-$btn-primary-background       : $orange;
-$btn-primary-background-highlight: darken($orange, 10%);
+$btn-primary-background       : $color-primary;
+$btn-primary-background-highlight: darken($color-primary, 10%);
 
 
 // Tabs
 $inactive-tab                 : #ddd;
-$active-tab                   : $orange;
+$active-tab                   : $color-primary;
 
 // Code
 $color-code                   : #fff;
-$color-code-background        : lighten($color-primary, 20%);
+$color-code-background        : #587CA0;
 $color-pre                    : #222;
 $color-pre-background         : #f7f7f9;
 
