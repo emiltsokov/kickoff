@@ -367,8 +367,8 @@ samp {
 }
 
 
-@include font-face(entypo, /kickoff/css/fonts/entypo, normal, false);
-@include font-face(entypo-social, /kickoff/css/fonts/entypo-social, normal, false);
+@include font-face(entypo, fonts/entypo, normal, false);
+@include font-face(entypo-social, fonts/entypo-social, normal, false);
 
 .asset-font {
 	font-family: 'entypo', 'entypo-social';
