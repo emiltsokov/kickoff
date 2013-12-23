@@ -216,6 +216,7 @@ img, object, embed, video{
 	display: block;
 	list-style-type: none;
 	@include clearfix;
+	margin-left: 0;
 
 	& li {
 		display: block;
