@@ -43,9 +43,9 @@ a {
 .masthead {
 	position: relative;
 	z-index: 100;
-	background-color: $orange;
+	background-color: $color-primary;
 	color: #fff;
-	border-bottom: 3px solid darken($orange, 10%);
+	border-bottom: 3px solid darken($color-primary, 10%);
 
 	a, h1, h2 {
 		color: #fff;
@@ -79,7 +79,7 @@ a {
 }
 
 .masthead-all {
-	background-color: $orange;
+	background-color: $color-primary;
 	color: #fff;
 	text-align: center;
 
@@ -107,9 +107,9 @@ a {
 		border: 2px solid transparent;
 
 		&:hover {
-			background-color: rgba(darken($orange, 10%), 0.5);
+			background-color: rgba(darken($color-primary, 10%), 0.5);
 			color: #fff;
-			border-color: darken($orange, 10%);
+			border-color: darken($color-primary, 10%);
 		}
 
 		&.is-active {
@@ -129,7 +129,7 @@ a {
 		position: relative;
 
 		&:hover {
-			// background-color: darken($orange, 10%);
+			// background-color: darken($color-primary, 10%);
 		}
 	}
 
@@ -143,12 +143,12 @@ a {
 	display: none;
 	top: 100%;
 	width: 200px;
-	background-color: $orange;
+	background-color: $color-primary;
 	@extend .unstyled;
 	@include border-radius(0 0 5px 5px);
 	padding: 5px 0;
 	z-index: 100;
-	background-color: darken($orange, 10%);
+	background-color: darken($color-primary, 10%);
 
 	li {
 		float: none;
@@ -160,13 +160,13 @@ a {
 		display: block;
 
 		&:hover {
-			border-color: darken($orange, 20%);
+			border-color: darken($color-primary, 20%);
 		}
 	}
 }
 
 .github-link {
-	background-color: darken($orange, 20%);
+	background-color: darken($color-primary, 20%);
 }
 
 // Footer
@@ -186,7 +186,7 @@ a {
    Home page
    ========================================================================== */
 .bigBoy {
-	background-color: $orange;
+	background-color: $color-primary;
 
 	h1 {
 		margin-bottom: 0;
@@ -210,11 +210,11 @@ a {
 
 	a:hover,
 	a:active {
-		color: darken($orange, 20%)
+		color: darken($color-primary, 20%)
 	}
 
 	&.default {
-		background-color: $orange;
+		background-color: $color-primary;
 	}
 }
 
@@ -233,7 +233,7 @@ a {
    Tech stack
    ========================================================================== */
 .techStack {
-	background-color: $gray;
+	background-color: #E26226;
 
 	:last-child {
 		margin-bottom: 0;
@@ -260,6 +260,51 @@ a {
 	}
 }
 
+/*
+   Showcase
+   ========================================================================== */
+.showcase {
+	background-color: #DF492A;
+
+	:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.showcaseList {
+	text-align: center;
+
+	.wideBoy & {
+		&, & a, &:visited {
+			color: $color-link-default;
+		}
+	}
+
+	figure {
+		background-color: #fff;
+		max-width: 475px;
+		margin: 0 auto;
+	}
+
+	li {
+		margin-bottom: 20px;
+	}
+
+	figcaption {
+		line-height: 2;
+	}
+
+	img {
+		display: block;
+	}
+
+	a {
+		&:hover {
+			color: $color-link-hover;
+		}
+	}
+}
+
 
 
 /* ==========================================================================
@@ -271,7 +316,7 @@ a {
 	text-align: center;
 
 	&:hover {
-		background-color: $orange;
+		background-color: $color-primary;
 		color: #fff;
 	}
 
@@ -319,7 +364,7 @@ a {
 	background-color: rgba($yellow, 0.3);
 }
 .show-grid .grid-test [class*="g-offset"] {
-	background-color: rgba($orange, 0.4);
+	background-color: rgba($color-primary, 0.4);
 }
 
 .grid-test .g-col.g-centered {
@@ -398,7 +443,7 @@ a {
 	}
 
 	.masthead-all {
-		background-color: $orange;
+		background-color: $color-primary;
 		color: #fff;
 		position: fixed;
 		top: 0; right: 0; left: 0;
@@ -454,6 +499,12 @@ a {
 		}
 		h2 {
 			@include font-size(28);
+		}
+	}
+
+	.showcaseList {
+		li {
+			margin-bottom: 0px;
 		}
 	}
 }
