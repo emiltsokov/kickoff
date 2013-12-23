@@ -114,7 +114,7 @@ select:focus {
 /* HiDPI */
 /* FORMS */
 /* BROWSER FIXES */
-/* 
+/*
    CSS Framework
    * Edit these
    ========================================================================== */
@@ -211,7 +211,7 @@ textarea {
   vertical-align: top;
 }
 
-/* 
+/*
    Grid System
    * Default: Choreographic Grid. Switch out for your own if you need
    ========================================================================== */
@@ -805,7 +805,7 @@ textarea {
    * Quotes
    * Links
    * Helper classes
-   
+
    Body font size, leadings etc have been set in _variables.scss.
    The default typography has been built using gridlover.net with these settings:
    * Body font size    : 16
@@ -833,7 +833,7 @@ body {
   background-color: white;
 }
 
-/* 
+/*
    Paragraphs
    ========================================================================== */
 p {
@@ -914,18 +914,18 @@ h6, .h6, .zeta {
    Links
    ========================================================================== */
 a {
-  color: #34495e;
+  color: #e67e22;
   text-decoration: none;
 }
 a:visited {
-  color: #34495e;
+  color: #e67e22;
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #19232d;
+  color: #bf6516;
 }
 a:active {
-  color: #19232d;
+  color: #bf6516;
 }
 
 /*
@@ -970,7 +970,7 @@ nav ul, nav ol {
   list-style-image: none;
 }
 
-/* 
+/*
    Definition lists
    ========================================================================== */
 dl {
@@ -994,7 +994,7 @@ dd {
   margin-left: 240px;
 }
 
-/* 
+/*
    Miscellaneous rules
    ========================================================================== */
 hr {
@@ -1026,7 +1026,7 @@ abbr.initialism {
   text-transform: uppercase;
 }
 
-/* 
+/*
    Blockquotes
    ========================================================================== */
 blockquote {
@@ -1110,7 +1110,7 @@ samp {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
-/* 
+/*
    Utilities
    ========================================================================== */
 .text-centre, .text-center {
@@ -1127,12 +1127,12 @@ samp {
 
 ::-moz-selection {
   color: white;
-  background: #34495e;
+  background: #e67e22;
 }
 
 ::selection {
   color: white;
-  background: #34495e;
+  background: #e67e22;
 }
 
 @font-face {
@@ -1854,7 +1854,7 @@ pre code {
   bottom: 0;
   width: 70px;
   padding: 10px 0;
-  background-color: #34495e;
+  background-color: #196090;
   display: block;
   text-align: center;
   -webkit-border-radius: 3px 0 0 3px;
@@ -2053,7 +2053,7 @@ input[type="button"].btn--block {
 .btn--link {
   border-color: transparent;
   cursor: pointer;
-  color: #34495e;
+  color: #e67e22;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -o-border-radius: 0;
@@ -2062,7 +2062,7 @@ input[type="button"].btn--block {
 
 .btn--link:hover,
 .btn--link:focus {
-  color: #19232d;
+  color: #bf6516;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -2085,7 +2085,7 @@ input[type="button"].btn--block {
   width: 20px;
   line-height: 17px;
   background: #000;
-  color: #34495e;
+  color: #e67e22;
   text-align: center;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -2326,6 +2326,7 @@ img, object, embed, video {
   display: block;
   list-style-type: none;
   zoom: 1;
+  margin-left: 0;
 }
 .l-blockGrid:before, .l-blockGrid:after {
   display: table;
@@ -2377,7 +2378,7 @@ img, object, embed, video {
   margin-bottom: 1.5%;
 }
 
-/* 
+/*
    Your app styles
    * Consider modularizing your code.
    * e.g. Create a partials directory with _header.scss, _footer.scss etc
@@ -2553,7 +2554,7 @@ a {
 
 .credits {
   margin: 50px auto;
-  border-top: 2px solid #34495e;
+  border-top: 2px solid #e67e22;
   padding-top: 20px;
 }
 
@@ -2607,7 +2608,7 @@ a {
    Tech stack
    ========================================================================== */
 .techStack {
-  background-color: #7f8c8d;
+  background-color: #E26226;
 }
 .techStack :last-child {
   margin-bottom: 0;
@@ -2640,6 +2641,40 @@ a {
   margin-bottom: 5px;
 }
 
+/*
+   Showcase
+   ========================================================================== */
+.showcase {
+  background-color: #DF492A;
+}
+.showcase :last-child {
+  margin-bottom: 0;
+}
+
+.showcaseList {
+  text-align: center;
+}
+.wideBoy .showcaseList, .wideBoy .showcaseList a, .wideBoy .showcaseList:visited {
+  color: #e67e22;
+}
+.showcaseList figure {
+  background-color: #fff;
+  max-width: 475px;
+  margin: 0 auto;
+}
+.showcaseList li {
+  margin-bottom: 20px;
+}
+.showcaseList figcaption {
+  line-height: 2;
+}
+.showcaseList img {
+  display: block;
+}
+.showcaseList a:hover {
+  color: #bf6516;
+}
+
 /* ==========================================================================
    Demos
    ========================================================================== */
@@ -2658,7 +2693,8 @@ a {
 .grid-block-link .asset-font, .grid-block-link [data-icon-before]:before, .grid-block-link [data-icon-after]:after {
   font-size: 150px;
   font-size: 7.5rem;
-  line-height: 0.6;
+  line-height: 60px;
+  height: 70px;
 }
 .grid-block-link :last-child {
   margin-bottom: 0;
@@ -2673,8 +2709,8 @@ a {
 }
 
 .show-grid .grid-test .g-col {
-  background-color: rgba(52, 73, 94, 0.1);
-  box-shadow: inset 0 1px 1px rgba(52, 73, 94, 0.25);
+  background-color: rgba(230, 126, 34, 0.1);
+  box-shadow: inset 0 1px 1px rgba(230, 126, 34, 0.25);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -o-border-radius: 5px;
@@ -2811,8 +2847,12 @@ body.page-home {
   font-size: 1.4rem;
 }
 
+.showcaseList li {
+  margin-bottom: 0px;
+}
+
 /* Examples */
-/* 
+/*
    Utility classes
    * Has to be last to override when necessary
    ========================================================================== */

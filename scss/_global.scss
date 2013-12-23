@@ -326,7 +326,8 @@ a {
 
 	.asset-font {
 		@include font-size(150);
-		line-height: 0.6;
+		line-height: 60px;
+		height: 70px;
 	}
 
 	:last-child {

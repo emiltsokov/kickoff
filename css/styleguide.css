@@ -778,7 +778,7 @@ textarea {
    * Quotes
    * Links
    * Helper classes
-   
+
    Body font size, leadings etc have been set in _variables.scss.
    The default typography has been built using gridlover.net with these settings:
    * Body font size    : 16
@@ -806,7 +806,7 @@ body {
   background-color: white;
 }
 
-/* 
+/*
    Paragraphs
    ========================================================================== */
 p {
@@ -895,10 +895,10 @@ a:visited {
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #a85913;
+  color: #bf6516;
 }
 a:active {
-  color: #a85913;
+  color: #bf6516;
 }
 
 /*
@@ -943,7 +943,7 @@ nav ul, nav ol {
   list-style-image: none;
 }
 
-/* 
+/*
    Definition lists
    ========================================================================== */
 dl {
@@ -967,7 +967,7 @@ dd {
   margin-left: 240px;
 }
 
-/* 
+/*
    Miscellaneous rules
    ========================================================================== */
 hr {
@@ -999,7 +999,7 @@ abbr.initialism {
   text-transform: uppercase;
 }
 
-/* 
+/*
    Blockquotes
    ========================================================================== */
 blockquote {
@@ -1083,7 +1083,7 @@ samp {
   font-family: Menlo, Monaco, "Courier New", monospace;
 }
 
-/* 
+/*
    Utilities
    ========================================================================== */
 .text-centre, .text-center {
@@ -1159,8 +1159,8 @@ pre {
 code {
   padding: 2px 4px;
   color: white;
-  text-shadow: 0 -1px 0 #217dbb;
-  background-color: #3498db;
+  text-shadow: 0 -1px 0 #46627f;
+  background-color: #587ca0;
 }
 
 pre code {
@@ -1392,7 +1392,7 @@ input[type="button"].btn--block {
 
 .btn--link:hover,
 .btn--link:focus {
-  color: #a85913;
+  color: #bf6516;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -1656,6 +1656,7 @@ img, object, embed, video {
   display: block;
   list-style-type: none;
   zoom: 1;
+  margin-left: 0;
 }
 .l-blockGrid:before, .l-blockGrid:after {
   display: table;
@@ -1932,7 +1933,7 @@ a {
    Tech stack
    ========================================================================== */
 .techStack {
-  background-color: #7f8c8d;
+  background-color: #E26226;
 }
 .techStack :last-child {
   margin-bottom: 0;
@@ -1965,6 +1966,40 @@ a {
   margin-bottom: 5px;
 }
 
+/*
+   Showcase
+   ========================================================================== */
+.showcase {
+  background-color: #DF492A;
+}
+.showcase :last-child {
+  margin-bottom: 0;
+}
+
+.showcaseList {
+  text-align: center;
+}
+.wideBoy .showcaseList, .wideBoy .showcaseList a, .wideBoy .showcaseList:visited {
+  color: #e67e22;
+}
+.showcaseList figure {
+  background-color: #fff;
+  max-width: 475px;
+  margin: 0 auto;
+}
+.showcaseList li {
+  margin-bottom: 20px;
+}
+.showcaseList figcaption {
+  line-height: 2;
+}
+.showcaseList img {
+  display: block;
+}
+.showcaseList a:hover {
+  color: #bf6516;
+}
+
 /* ==========================================================================
    Demos
    ========================================================================== */
@@ -1983,7 +2018,8 @@ a {
 .grid-block-link .asset-font, .grid-block-link [data-icon-before]:before, .grid-block-link [data-icon-after]:after {
   font-size: 150px;
   font-size: 7.5rem;
-  line-height: 0.6;
+  line-height: 60px;
+  height: 70px;
 }
 .grid-block-link :last-child {
   margin-bottom: 0;
@@ -2136,6 +2172,10 @@ a {
   .wideBoy h2 {
     font-size: 28px;
     font-size: 1.4rem;
+  }
+
+  .showcaseList li {
+    margin-bottom: 0px;
   }
 }
 /* ==========================================================================
@@ -2384,7 +2424,7 @@ body {
   color: #888;
 }
 
-.masthead h1 {
+header h1 {
   margin-bottom: 0;
 }
 
@@ -2462,14 +2502,14 @@ body {
 }
 
 .color-link-hover {
-  color: #a85913;
+  color: #bf6516;
 }
 .color-link-hover.bg {
-  background-color: #a85913;
+  background-color: #bf6516;
   color: #fff;
 }
 .color-link-hover.bg:after {
-  content: "#a85913";
+  content: "#bf6516";
 }
 
 .typography .info p {

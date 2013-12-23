@@ -9,7 +9,7 @@
    * Quotes
    * Links
    * Helper classes
-   
+
    Body font size, leadings etc have been set in _variables.scss.
    The default typography has been built using gridlover.net with these settings:
    * Body font size    : 16
@@ -49,7 +49,7 @@ body {
 	// @include opacity(99);
 }
 
-/* 
+/*
    Paragraphs
    ========================================================================== */
 p {
@@ -199,7 +199,7 @@ nav ul, nav ol {
 }
 
 
-/* 
+/*
    Definition lists
    ========================================================================== */
 dl {
@@ -228,7 +228,7 @@ dd {
 }
 
 
-/* 
+/*
    Miscellaneous rules
    ========================================================================== */
 // Horizontal rules
@@ -260,7 +260,7 @@ abbr.initialism {
 	text-transform: uppercase;
 }
 
-/* 
+/*
    Blockquotes
    ========================================================================== */
 blockquote {
@@ -350,7 +350,7 @@ samp {
 }
 
 
-/* 
+/*
    Utilities
    ========================================================================== */
 .text-centre, .text-center { text-align: center;}
@@ -369,6 +369,7 @@ samp {
 
 @include font-face(entypo, fonts/entypo, normal, false);
 @include font-face(entypo-social, fonts/entypo-social, normal, false);
+
 .asset-font {
 	font-family: 'entypo', 'entypo-social';
 }
