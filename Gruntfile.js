@@ -4,12 +4,16 @@ module.exports = function (grunt) {
 
 	// ====================
 	// == Edit this section
-	var jsFileList = [
-		'js/libs/plugins/skeleton.tabs.js',
-		'js/script.js'
-	];
-	var distDir = 'js/dist/';
-	var jsFile = 'app.min.js';
+	var
+		jsFileList = [
+			'js/libs/plugins/skeleton.tabs.js',
+			'js/script.js'
+		],
+		distDir = 'js/dist/',
+		jsFile = 'app.min.js',
+		jekyllBuildDir = 'kickoff'
+	;
+
 	// ====================
 	// ====================
 
@@ -48,6 +52,17 @@ module.exports = function (grunt) {
 					'css/kickoff-old-ie.min.css': 'scss/kickoff-old-ie.scss'
 				}
 
+			},
+			styleguide: {
+				options: {
+					unixNewlines: true,
+					style: 'expanded',
+					precision : 8,
+					sourcemap : true
+				},
+				files: {
+					'css/styleguide.css': 'scss/styleguide.scss'
+				}
 			}
 		},
 
@@ -84,7 +99,7 @@ module.exports = function (grunt) {
 		watch: {
 			scss: {
 				files: ['scss/**/*.scss'],
-				tasks: ['sass:dev', 'jekyll']
+				tasks: ['sass:dev', 'sass:styleguide', 'copy:css']
 			},
 
 			js: {
@@ -93,7 +108,7 @@ module.exports = function (grunt) {
 					'js/*.js',
 					'js/libs/**/*.js'
 				],
-				tasks: ['uglify', 'jekyll']
+				tasks: ['uglify', 'copy:js']
 			},
 
 			text: {
@@ -103,6 +118,16 @@ module.exports = function (grunt) {
 					'*.html'
 				],
 				tasks: ['jekyll']
+			},
+
+			img: {
+				files: [
+					'img/*.jpeg',
+					'img/*.gif',
+					'img/*.png',
+					'fonts/*.*'
+				],
+				tasks : 'copy:assets'
 			},
 
 			// copy: {
@@ -117,31 +142,66 @@ module.exports = function (grunt) {
 			livereload: {
 				options: { livereload: true },
 				files: [
-					'css/*.css'
+					jekyllBuildDir + '/css/*.css'
 				]
 			}
 		},
 
 		jekyll : {
 			src: '',
-			dest: 'kickoff'
+			dest: jekyllBuildDir
+		},
+
+
+		/**
+		 * Connect
+		 * https://github.com/gruntjs/grunt-contrib-connect
+		 * Start a static web server
+		 */
+		connect: {
+			server: {
+				options: {
+					// port: 9001,
+					open: true,
+					livereload: true,
+					base: './'
+				}
+			}
 		},
 
 		copy: {
-			main: {
-				src: 'src/*',
-				dest: 'dest/',
+			dist: {
+				files: [
+					{ expand: true, cwd: './img', src: ['./**/*.*'], dest: 'kickoff/img' },
+					{ expand: true, cwd: './css', src: ['./**/*.*'], dest: 'kickoff/css' },
+					{ expand: true, cwd: './js', src: ['./**/*.*'], dest: 'kickoff/js' }
+				]
 			},
+			assets : {
+				files: [
+					{ expand: true, cwd: './img', src: ['./**/*.*'], dest: 'kickoff/img' },
+					{ expand: true, cwd: './fonts', src: ['./**/*.*'], dest: 'kickoff/fonts' }
+				]
+			},
+			css : {
+				files: {
+					// Copy the sass-generated style file to
+					// the kickoff/ folder
+					'kickoff/css/kickoff.css': 'css/kickoff.css',
+					'kickoff/css/kickoff-old-ie.css': 'css/kickoff-old-ie.css',
+					'kickoff/css/styleguide.css': 'css/styleguide.css'
+				}
+			},
+			js: {
+				files: [
+					{ expand: true, cwd: './js', src: ['./**/*.*'], dest: 'kickoff/js' }
+				]
+			}
 		},
 	});
 
-	// Load some stuff
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-jekyll');
+	// Load all the grunt tasks
+	require('load-grunt-tasks')(grunt);
 
 	// =============
 	// === Tasks ===
@@ -154,5 +214,11 @@ module.exports = function (grunt) {
 
 	// Default task
 	grunt.registerTask('default', ['jshint', 'uglify', 'sass:dev']);
+
+	/**
+	 * A task for for a static server with a watch
+	 * run connect and watch
+	 */
+	grunt.registerTask("serve", ["jekyll", "connect", "watch"]);
 
 };
