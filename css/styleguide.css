@@ -87,12 +87,6 @@
 /* ==========================================================================
    Typography mixins
    ========================================================================== */
-.dl-horizontal dt {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 /* HiDPI */
 /* FORMS */
 /* BROWSER FIXES */
@@ -954,6 +948,9 @@ dt {
   font-weight: bold;
 }
 .dl-horizontal dt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   float: left;
   clear: left;
   width: 220px;
@@ -1722,6 +1719,13 @@ a {
   transition: all 150ms ease-in-out;
 }
 
+.g-container {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
 .g-container :first-child {
   margin-top: 0;
 }

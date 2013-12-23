@@ -12,7 +12,7 @@ a {
 }
 
 .g-container {
-	// padding-top: 50px;
+	@include transform(translateZ(0));
 
 	:first-child {
 		margin-top: 0;
