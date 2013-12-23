@@ -55,7 +55,7 @@
 			 url("#{$font-path}/#{$family-name}.woff")					format("woff"),
 			 url("#{$font-path}/#{$family-name}.ttf")					format("truetype")
 			 // @if $include-svg == true {
-				,url("#{$font-path}.svg##{$family-name}") format("svg");
+				,url("#{$font-path}/#{$family-name}.svg##{$family-name}") format("svg");
 			 // }
 		font-weight: $font-weight;
 		font-style: $font-style;
