@@ -1160,11 +1160,13 @@ samp {
 [data-icon-before]:before {
   content: attr(data-icon-before);
   margin-right: 4px;
+  font-weight: normal;
 }
 
 [data-icon-after]:after {
   content: attr(data-icon-after);
   margin-left: 4px;
+  font-weight: normal;
 }
 
 /* ==========================================================================

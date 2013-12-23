@@ -378,10 +378,12 @@ samp {
 	content: attr(data-icon-before);
 	margin-right: 4px;
 	@extend .asset-font;
+	font-weight: normal;
 }
 
 [data-icon-after]:after {
 	content: attr(data-icon-after);
 	margin-left: 4px;
 	@extend .asset-font;
+	font-weight: normal;
 }
