@@ -106,13 +106,13 @@
 // @include truncate(100%);
 @mixin truncate($truncation-boundary) {
 	max-width: $truncation-boundary;
-	@extend %text-overflow;
+	@include text-overflow();
 }
 
 // Text overflow
-// @extend %text-overflow;
+// @include text-overflow();
 // Requires inline-block or block for proper styling
-%text-overflow {
+@mixin text-overflow {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
