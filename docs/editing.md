@@ -25,7 +25,7 @@ Run `npm install` to install all Grunt's dependencies
 
 ### Step 4
 
-Run `grunt watch`
+Run `grunt serve` and go to /kickoff/ in the site url
 
 #### Please note
 

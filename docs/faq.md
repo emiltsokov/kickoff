@@ -6,7 +6,7 @@ title: Frequently asked questions
 
 ### Who maintains Kickoff
 
-[Zander Martineau](http://twitter.com/MrMartineau) and [Ashley Nolan](http://twitter.com/dragongraphics) maintain Kickoff. They created the framework while working at [TMW](http://tmw.co.uk) as Creative Technologists.
+[Zander Martineau](http://twitter.com/MrMartineau) and [Ashley Nolan](http://twitter.com/AshNolan_) maintain Kickoff. They created the framework while working at [TMW](http://tmw.co.uk) as Creative Technologists.
 
 ### Where can I get help for support questions?
 
