@@ -1,0 +1,25 @@
+{
+  "options": {
+    "plugins": [
+      {
+        "removeViewBox": false
+      },
+      {
+        "removeUselessStrokeAndFill": false
+      }
+    ]
+  },
+  "dist": {
+    "files": [
+      {
+        "expand": true,
+        "cwd": "img/src",
+        "src": [
+          "**/*.svg"
+        ],
+        "dest": "img/src-min",
+        "ext": ".svg"
+      }
+    ]
+  }
+}

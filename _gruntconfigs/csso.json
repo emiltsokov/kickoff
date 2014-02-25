@@ -1,0 +1,8 @@
+{
+  "dist": {
+    "files": {
+      "css/kickoff.css": "css/kickoff.css",
+      "css/kickoff-old-ie.css": "css/kickoff-old-ie.css"
+    }
+  }
+}

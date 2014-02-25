@@ -1,0 +1,11 @@
+{
+  "js": {
+    "distDir": "js/dist/",
+    "distFile": "app.min.js",
+    "fileList": [
+      "js/helpers/helpers.js",
+      "js/helpers/console.js",
+      "js/script.js"
+    ]
+  }
+}

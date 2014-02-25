@@ -1,0 +1,14 @@
+{
+  "build": {
+    "options": {
+      "prefix": "jquery-",
+      "minify": true
+    },
+    "output": "js/libs/jquery",
+    "versions": {
+      "1.10.2": [
+        "deprecated"
+      ]
+    }
+  }
+}

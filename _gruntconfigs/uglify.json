@@ -1,0 +1,13 @@
+{
+  "options": {
+    "mangle": true,
+    "beautify": false,
+    "compress": false,
+    "sourceMap": "<%=config.js.distDir%><%=config.js.distFile%>.map",
+    "sourceMappingURL": "/<%=config.js.distFile%>.map"
+  },
+  "js": {
+    "src": "<%=config.js.fileList%>",
+    "dest": "<%=config.js.distDir%><%=config.js.distFile%>"
+  }
+}

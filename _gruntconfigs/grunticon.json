@@ -1,0 +1,16 @@
+{
+  "myIcons": {
+    "files": [
+      {
+        "expand": true,
+        "cwd": "img/src-min",
+        "src": [
+          "*.svg",
+          "*.png"
+        ],
+        "dest": "img/icons"
+      }
+    ],
+    "options": {}
+  }
+}

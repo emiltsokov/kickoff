@@ -1,0 +1,8 @@
+{
+  "server": {
+    "options": {
+      "open": true,
+      "livereload": true
+    }
+  }
+}

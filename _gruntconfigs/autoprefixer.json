@@ -1,0 +1,18 @@
+{
+  "dist": {
+    "options": {
+      "browsers": [
+        "> 5%",
+        "last 4 versions",
+        "firefox > 3.6",
+        "ie > 6"
+      ],
+      "map": true
+    },
+    "files": {
+      "css/kickoff.css": "css/kickoff.css",
+      "css/kickoff-old-ie.css": "css/kickoff-old-ie.css",
+      "css/styleguide.css": "css/styleguide.css"
+    }
+  }
+}

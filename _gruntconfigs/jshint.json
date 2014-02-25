@@ -1,0 +1,6 @@
+{
+  "all": "<%=config.js.fileList%>",
+  "options": {
+    "jshintrc": ".jshintrc"
+  }
+}

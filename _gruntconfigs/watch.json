@@ -1,0 +1,39 @@
+{
+  "scss": {
+    "files": [
+      "scss/**/*.scss"
+    ],
+    "tasks": [
+      "sass:kickoff",
+      "sass:styleguide",
+      "autoprefixer:dist"
+    ]
+  },
+  "js": {
+    "files": [
+      "<%=config.js.fileList%>",
+      "Gruntfile.js"
+    ],
+    "tasks": [
+      "uglify"
+    ]
+  },
+  "livereload": {
+    "options": {
+      "livereload": true
+    },
+    "files": [
+      "css/*.css"
+    ]
+  },
+  "grunticon": {
+    "files": [
+      "img/src/*.svg",
+      "img/src/*.png"
+    ],
+    "tasks": [
+      "svgmin",
+      "grunticon"
+    ]
+  }
+}
