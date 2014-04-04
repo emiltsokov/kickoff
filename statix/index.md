@@ -62,7 +62,7 @@ Kickoff Statix is built by combining two tools; Kickoff and Assemble.  The docum
 * Install Node from [nodejs.org](http://nodejs.org/)
 * Install Grunt CLI - `npm install -g grunt-cli`
 
-Once these dependencies are installed, see 'Getting started with Statix' for instructions on runnign your project.
+Once these dependencies are installed, see 'Getting started with Statix' for instructions on running your project.
 
 ---
 
