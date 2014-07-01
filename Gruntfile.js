@@ -3,10 +3,10 @@ module.exports = function (grunt) {
 	'use strict';
 
 	// Load grunt tasks automatically
-    require('load-grunt-tasks')(grunt);
+	require('load-grunt-tasks')(grunt);
 
-    var options = {
-        pkg: require('./package'), // <%=pkg.name%>
+	var options = {
+		pkg: require('./package'), // <%=pkg.name%>
 
 		/**
 		 * Config - Edit this section
@@ -23,42 +23,34 @@ module.exports = function (grunt) {
 				// <%=config.js.distFile%>
 				distFile : 'app.min.js',
 
-				// <%=config.js.fileList%>
+				// <%=config.js.srcFile%>
+				srcFile : 'js/script.js',
+
+				// <%=config.js.watchList%>
 				fileList : [
-					'js/helpers/console.js',
-					'bower_components/trak/dist/trak.js',
-					'bower_components/swiftclick/js/libs/swiftclick.js',
-					'bower_components/cookies-js/src/cookies.js',
-					'js/script.js'
+					'js/**/*.js',
+					'!js/dist/**/*.js',
+					'bower_components/**/*.js',
 				]
 			}
 		}
 	};
 
 
-	/**
-	 * Config - Edit this section
-	 * ==========================
-	 * Choose javascript dist filename
-	 * Choose javascript dist location
-	 * Choose javascript files to be uglified
-	 */
+	// Load grunt configurations automatically
+	var configs = require('load-grunt-configs')(grunt, options);
 
-
-    // Load grunt configurations automatically
-    var configs = require('load-grunt-configs')(grunt, options);
-
-    // Define the configuration for all the tasks
-    grunt.initConfig(configs);
+	// Define the configuration for all the tasks
+	grunt.initConfig(configs);
 
 
 	/* ==========================================================================
 		Available tasks:
-* grunt            : run jshint, uglify and sass:kickoff
+* grunt            : run jshint, browserify and sass:kickoff
 * grunt start      : run this before starting development
-* grunt watch      : run sass:kickoff, uglify and livereload
-* grunt dev        : run uglify, sass:kickoff & autoprefixer:dist
-* grunt deploy     : run jshint, uglify, sass:kickoff and csso
+* grunt watch      : run sass:kickoff, browserify and livereload
+* grunt dev        : run browserify, sass:kickoff & autoprefixer:dist
+* grunt deploy     : run jshint, browserify, sass:kickoff and csso
 * grunt jquery     : build custom version of jquery
 * grunt styleguide : watch js & scss, run a local server for editing the styleguide
 * grunt serve      : watch js & scss and run a local server
@@ -69,22 +61,22 @@ module.exports = function (grunt) {
 
 	/**
 	* GRUNT * Default task
-	* run uglify, sass:kickoff and autoprefixer
+	* run browserify, sass:kickoff and autoprefixer
 	*/
 	grunt.registerTask('default', [
-		'newer:uglify',
+		'newer:browserify:prod',
 		'newer:sass:kickoff',
 		'autoprefixer:dist'
 	]);
 
 	/**
 	* GRUNT START * Run this to
-	* run jquery builder, uglify, sass and autoprefixer
+	* run jquery builder, browserify, sass and autoprefixer
 	*/
 	grunt.registerTask('start', [
 		'jquery',
 		'shell:bowerinstall',
-		'uglify',
+		'browserify:prod',
 		'sass:kickoff',
 		'sass:styleguide',
 		'autoprefixer:dist',
@@ -96,10 +88,10 @@ module.exports = function (grunt) {
 
 	/**
 	 * GRUNT DEV * A task for development
-	 * run uglify, sass:kickoff & autoprefixer:dist
+	 * run browserify, sass:kickoff & autoprefixer:dist
 	 */
 	grunt.registerTask('dev', [
-		'uglify',
+		'browserify:dev',
 		'sass:kickoff',
 		'autoprefixer:dist'
 	]);
@@ -107,10 +99,10 @@ module.exports = function (grunt) {
 
 	/**
 	* GRUNT DEPLOY * A task for your production environment
-	* run uglify, sass:kickoff, autoprefixer:dist and csso
+	* run browserify, sass:kickoff, autoprefixer:dist and csso
 	*/
 	grunt.registerTask('deploy', [
-		'newer:uglify',
+		'newer:browserify:prod',
 		'newer:sass:kickoff',
 		'newer:autoprefixer:dist',
 		'newer:csso'
@@ -119,10 +111,10 @@ module.exports = function (grunt) {
 
 	/**
 	 * GRUNT STYLEGUIDE * A task for the styleguide
-	 * run uglify, sass:kickoff, sass:styleguide, autoprefixer:dist, autoprefixer:styleguide, connect:styleguide & watch
+	 * run browserify, sass:kickoff, sass:styleguide, autoprefixer:dist, autoprefixer:styleguide, connect:styleguide & watch
 	 */
 	grunt.registerTask('styleguide', [
-		'uglify',
+		'browserify:prod',
 		'sass:kickoff',
 		'sass:styleguide',
 		'autoprefixer:dist',
@@ -137,7 +129,7 @@ module.exports = function (grunt) {
 	 * run connect and watch
 	 */
 	grunt.registerTask('serve', [
-		'uglify',
+		'browserify:prod',
 		'sass:kickoff',
 		'sass:styleguide',
 		'autoprefixer:dist',
@@ -171,7 +163,7 @@ module.exports = function (grunt) {
 	//Travis CI to test build
 	grunt.registerTask('travis', [
 		'jshint',
-		'uglify',
+		'browserify:prod',
 		'sass:kickoff',
 		'autoprefixer:dist'
 	]);

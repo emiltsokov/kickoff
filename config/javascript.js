@@ -1,23 +1,24 @@
 module.exports.tasks = {
 
 	/**
-	 * Uglify
-	 * https://github.com/gruntjs/grunt-contrib-uglify
-	 * Minifies and concatinates your JS
-	 * Also creates source maps
+	 * Browserify
+	 * https://github.com/jmreidy/grunt-browserify
+	 * Grutn task for node-browserify – allows CommonJS-style JS code and packages it for use in the browser
 	 */
-	uglify: {
-		options: {
-			mangle: true, // mangle: Turn on or off mangling
-			beautify: false, // beautify: beautify your code for debugging/troubleshooting purposes
-			compress: false,
-			// report: 'gzip', // report: Show file size report
-			sourceMap: '<%=config.js.distDir%><%=config.js.distFile%>.map',
-			sourceMappingURL: '/<%=config.js.distFile%>.map',
+	browserify: {
+		dev: {
+			src: ['<%=config.js.srcFile%>'],
+			dest: '<%=config.js.distDir%><%=config.js.distFile%>',
+			options : {
+				debug: true
+			}
 		},
-		js: {
-			src: '<%=config.js.fileList%>',
-			dest: '<%=config.js.distDir%><%=config.js.distFile%>'
+		prod: {
+			src: ['<%=config.js.srcFile%>'],
+			dest: '<%=config.js.distDir%><%=config.js.distFile%>',
+			options : {
+				transform: ['uglifyify']
+			}
 		}
 	},
 

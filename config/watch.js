@@ -15,8 +15,11 @@ module.exports.tasks = {
 		},
 
 		js: {
-			files: ['<%=config.js.fileList%>', 'Gruntfile.js'],
-			tasks: ['uglify']
+			files: [
+				'<%=config.js.fileList%>',
+				'Gruntfile.js'
+			],
+			tasks: ['browserify:dev']
 		},
 
 		livereload: {
