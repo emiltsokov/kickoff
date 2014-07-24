@@ -19,6 +19,7 @@
 }
 
 // CSS3 CONTENT COLUMNS
+// @include content-columns(2,30px);
 @mixin content-columns($columnCount:2, $columnGap: 20px) {
 	@include prefixer(column-count, $columnCount, moz webkit spec);
 	@include prefixer(column-gap, $columnGap, moz webkit spec);
@@ -33,6 +34,7 @@
 // Opacity
 // @include opacity(50);
 @mixin opacity($opacity: 100) {
+	@warn "DEPRECATION: If you are using autoprefixer there is no need for this mixin, this will be removed in the next version of Kickoff";
 	zoom: 1;
 	filter: alpha(opacity=$opacity);
 	opacity: $opacity / 100;
@@ -103,8 +105,9 @@
 }
 
 // ANIMATION
-@mixin animation($name, $duration: 300ms, $delay: 0, $ease: ease) {
-	@include prefixer(animation, $name $duration $delay $ease, webkit moz o ms spec);
+// @include animation(bounce 300ms 0 ease);
+@mixin animation($args...) {
+	@include prefixer(animation, $args, webkit moz o ms spec);
 }
 
 // HYPHENS
@@ -112,48 +115,4 @@
 @mixin hyphens($hyphenation: none) {
 // none | manual | auto
   @include prefixer(hyphens, $hyphenation, webkit moz ms spec);
-}
-// =================
-// === GRADIENTS ===
-// =================
-
-// Linear gradients
-// ================
-// Usage: Gradient position is optional, default is top. Position can be a degree. Color stops are optional as well.
-// @include linear-gradient(#1e5799, #2989d8);
-//
-// The fallback argument needs to be named if you're not using all arguments.
-// @include linear-gradient(#1e5799, #2989d8, $fallback:#2989d8);
-//
-// @include linear-gradient(top, #1e5799 0%, #2989d8 50%);
-// @include linear-gradient(top, #1e5799 0%, #2989d8 50%, #1e5799 100%);
-// @include linear-gradient(50deg, rgba(10, 10, 10, 0.5) 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
-
-// @include gradient-horizontal($blue, $red);
-@mixin gradient-horizontal($start-color, $end-color) {
-	@include linear-gradient(left, $start-color 0%, $end-color 100%, $fallback: $start-color);
-	@if $disable-filters == false {
-		filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=1)"; /* IE6 & IE7 */
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=1)"; /* IE8+ */
-	}
-}
-@mixin gradient-vertical($start-color, $end-color) {
-	@include linear-gradient(top, $start-color 0%, $end-color 100%, $fallback: $end-color);
-	@if $disable-filters == false {
-		filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=0)"; /* IE6 & IE7 */
-		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$start-color', endColorstr='$end-color', GradientType=0)"; /* IE8+ */
-	}
-}
-
-// @include gradient-directional($red, $blue, 45deg);
-@mixin gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg) {
-	@include linear-gradient($deg, $start-color 0%, $end-color 100%, $fallback: $start-color);
-}
-
-// Radial gradients
-// ================
-// @include gradient-radial($red, $blue);
-@mixin gradient-radial($inner-color: #555, $outer-color: #333) {
-	@include radial-gradient($inner-color 0%, $outer-color 100%, $fallback: $outer-color);
-	background-repeat: no-repeat;
 }

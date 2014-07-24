@@ -1,25 +1,27 @@
-// =======================
-// === APP.scss        ===
-// === Your app styles ===
-// =======================
-
+/**
+ * Global app/site styles
+ */
 html {
 	overflow-y: scroll;
 }
+body {
+	background-color: $color-bg;
+}
+
 
 a {
 	@include transition(all 150ms ease-in-out);
 }
 
 .g-container {
-	@include transform(translateZ(0));
+	transform: translateZ(0);
 
 	:first-child {
 		margin-top: 0;
 	}
 
 	p a:link, ul a:link {
-		font-weight: $bold-font-weight;
+		font-weight: $font-weight-bold;
 	}
 }
 
@@ -29,7 +31,7 @@ a {
 	top: 0px; left: 0;
 	z-index: -1;
 	text-align: center;
-	font-weight: $bold-font-weight;
+	font-weight: $font-weight-bold;
 	color: #fafafa;
 	@include square(0px);
 	@include transform-origin(0%, 0%);
@@ -99,10 +101,10 @@ a {
 	a {
 		display: inline-block;
 		padding: 3px 9px;
-		font-weight: $bold-font-weight;
+		font-weight: $font-weight-bold;
 		margin: 0 5px;
 		@include font-size(16);
-		@include border-radius(3px);
+		border-radius: 3px;
 		line-height: 1.3;
 		border: 2px solid transparent;
 
@@ -145,7 +147,7 @@ a {
 	width: 200px;
 	background-color: $color-primary;
 	@extend .unstyled;
-	@include border-radius(0 0 5px 5px);
+	border-radius: 0 0 5px 5px;
 	padding: 5px 0;
 	z-index: 100;
 	background-color: darken($color-primary, 10%);
@@ -170,10 +172,11 @@ a {
 }
 
 // Footer
-.credits {
-	margin: 50px auto;
-	border-top: 2px solid $color-primary;
+.footer {
 	padding-top: 20px;
+	padding: 40px 0;
+	// background-color: #E7CAA4;
+	// color: #ddd;
 }
 
 .social-links a {
@@ -228,12 +231,14 @@ a {
 	overflow: hidden;
 }
 
-
+.wideBoy--secondary {
+	background-color: adjust-hue($color-primary, -5deg);
+}
 /*
    Tech stack
    ========================================================================== */
-.techStack {
-	background-color: #E26226;
+.wideBoy--tertiary {
+	background-color: adjust-hue($color-primary, -10deg);
 
 	:last-child {
 		margin-bottom: 0;
@@ -245,7 +250,7 @@ a {
 	@include clearfix;
 	@extend .unstyled;
 	text-align: center;
-	font-weight: $bold-font-weight;
+	font-weight: $font-weight-bold;
 
 	a {
 		min-width: 70px;
@@ -253,7 +258,7 @@ a {
 	}
 
 	img {
-		@include border-radius(5px);
+		border-radius: 5px;
 		vertical-align: top;
 		max-height: 145px;
 		margin-bottom: 5px;
@@ -263,8 +268,8 @@ a {
 /*
    Showcase
    ========================================================================== */
-.showcase {
-	background-color: #DF492A;
+.wideBoy--quaternary {
+	background-color: adjust-hue($color-primary, -15deg);
 
 	:last-child {
 		margin-bottom: 0;
@@ -310,6 +315,36 @@ a {
 /* ==========================================================================
    Demos
    ========================================================================== */
+.media--link {
+	display: block;
+
+	.asset-font {
+		width: 200px;
+		@include font-size(100);
+	}
+}
+
+.demo {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.demo-visual {
+	padding: 20px;
+	line-height: 1.5;
+
+	h3 {
+		margin-bottom: 5px;
+	}
+}
+.demo-code {
+	pre {
+		margin-bottom: 0;
+		border-radius: 0;
+		max-height: 400px;
+		overflow: auto;
+	}
+}
 .grid-block-link {
 	display: block;
 	min-height: 130px;
@@ -343,11 +378,29 @@ a {
 }
 
 
+.sidebar-nav {
+	a {
+		padding: 1px 4px;
+		border-radius: 2px;
+	}
+	.is-active {
+		background-color: $color-primary;
+		color: #fff;
+	}
+}
+.docs-footer {
+	background-color: #FCFFB3;
+	padding: 15px;
+	text-align: center;
+	font-weight: bold;
+}
+
+
 // Choreographic Grid Demo
 .show-grid .grid-test .g-col {
 	background-color: rgba($color-primary,0.1);
 	box-shadow:inset 0 1px 1px rgba($color-primary,.25);
-	@include border-radius(5px);
+	border-radius: 5px;
 }
 .show-grid .grid-test .g-row {
 	margin-bottom: 20px;
