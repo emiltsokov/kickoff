@@ -7,16 +7,21 @@ layout: default
 		{% if page.subtitle %}<h2>{{ page.subtitle }}</h2>{% endif %}
 	</div>
 </section>
-
-<article class="g-container entry">
-	{{ content }}
-
-	<footer class="docs-footer alert">
-		These docs are still incomplete. If you have any questions, please <a href="https://github.com/tmwagency/kickoff/issues/new">file an issue</a> on Github.
-	</footer>
-</article>
-
-
+<div class="g-container">
+	<div class="g-row entry">
+		<div class="g-span3 g-col">
+			<ul class="sidebar-nav unstyled">
+				{% include docsnav.html %}
+			</ul>
+		</div>
+		<div class="g-span9 g-col">
+			<article>
+				{{ content }}
+			</article>
+		</div>
+	</div>
+</div>
+{% include docshelp.html %}
 
 <!-- Pagination links -->
 <div class="pagination">
