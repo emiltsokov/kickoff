@@ -1,10 +1,9 @@
 ---
 layout: home
 navgroup: home
-title: Kickoff – A lightweight front-end framework for creating scalable, responsive sites
 body-class: page-home
 ---
-<section class="bigBoy wideBoy text-centre">
+<section class="wideBoy wideBoy--primary bigBoy text-centre">
 
 	<div class="g-container">
 		<h1>Kickoff</h1>
@@ -17,21 +16,21 @@ body-class: page-home
 			<li><iframe src="http://ghbtns.com/github-btn.html?user=tmwagency&repo=kickoff&type=fork&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="80" height="30"></iframe></li>
 		</ul>
 
-		<a href="http://twitter.com/tmwkickoff">Follow @tmwkickoff for updates</a>
-
-		<h3>To get started, simply checkout the framework using Git:</h3>
 		<code class="code-lrg" data-before="GIT:">
 			git clone https://github.com/tmwagency/kickoff.git your-project-folder
 		</code>
-		<p>..or with the Github desktop app on <a href="github-mac://openRepo/https://github.com/tmwagency/kickoff">Mac</a> or <a href="github-windows://openRepo/https://github.com/tmwagency/kickoff">Windows</a>
-		</p>
+
 	</div>
 </section>
 
-<section class="techStack wideBoy text-centre">
+<section class="wideBoy wideBoy--secondary text-centre">
+	<a href="http://twitter.com/tmwkickoff">Follow @tmwkickoff for updates</a>
+</section>
+
+<section class="techStack wideBoy wideBoy--tertiary text-centre">
 	<div class="g-container" role="main">
 	<h2>Kickoff is built with:</h2>
-			<ul class="showcaseList l-blockGrid l-blockGrid--fourUp">
+			<ul class="showcaseList l-blockGrid l-blockGrid--4up">
 				<li>&nbsp;</li>
 				<li>
 					<a href="docs/sass.html" target="_blank">
@@ -56,57 +55,23 @@ body-class: page-home
 </div>
 </section>
 
-<section class="showcase wideBoy text-centre">
+<section class="showcase wideBoy wideBoy--quaternary text-centre">
 	<div class="g-container" role="main">
 	<h2>The Showcase</h2>
+	<p>Kickoff has been used on these fine websites</p>
 
-	<ul class="showcaseList l-blockGrid l-blockGrid--fourUp">
-		<li>
-			<a href="http://www.bbcgoodfood.com/" target="_blank">
-				<figure>
-					<img src="img/showcase/bbcgoodfood.jpg" alt="BBC Goodfood">
-					<figcaption>BBC Goodfood</figcaption>
-				</figure>
-			</a>
-		</li>
-		<li>
-			<a href="http://uk.thebar.com/" target="_blank">
-				<figure>
-					<img src="img/showcase/thebaruk.jpg" alt="The Bar UK">
-					<figcaption>The Bar UK</figcaption>
-				</figure>
-			</a>
-		</li>
-		<li>
-			<figure>
-				<img src="img/showcase/strepsilsxfactor.jpg" alt="Strepsils Xfactor">
-				<figcaption>Strepsils Xfactor</figcaption>
-			</figure>
-		</li>
-		<li>
-			<a href="http://labs.tmw.co.uk" target="_blank">
-				<figure>
-					<img src="img/showcase/labstmw.jpg" alt="labs@tmw">
-					<figcaption>labs@tmw</figcaption>
-				</figure>
-			</a>
-		</li>
+	<ul class="showcaseList l-blockGrid l-blockGrid--4up">
+		{% for item in site.data.showcase %}
+			<li>
+				{% if item.url != null %}<a href="{{ item.url }}" target="_blank">{% endif %}
+					<figure>
+						<img src="img/showcase/{{ item.img }}" alt="{{ item.name }}">
+						<figcaption>{{ item.name }}</figcaption>
+					</figure>
+				{% if item.url != null %}</a>{% endif %}
+			</li>
+		{% endfor %}
 	</ul>
 	<h3 class="text-centre">Have you used Kickoff on a project? Let us know so we can add it here.</h3>
 </div>
 </section>
-
-<!--<section class="contribute wideBoy text-centre">
-	<div class="g-container">
-		<h2>Kickoff is open source, contribute now</h2>
-
-				<ul class="stackLogos l-blockGrid l-blockGrid--twoUp">
-			<li>
-				File bugs
-			</li>
-			<li>
-
-			</li>
-		</ul>
-	</div>
-</section>-->
