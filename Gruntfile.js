@@ -2,220 +2,141 @@ module.exports = function (grunt) {
 
 	'use strict';
 
-	// ====================
-	// == Edit this section
-	var
-		jsFileList = [
-			'js/libs/plugins/skeleton.tabs.js',
-			'js/script.js'
-		],
-		distDir = 'js/dist/',
-		jsFile = 'app.min.js',
-		jekyllBuildDir = 'kickoff'
-	;
-
-	// ====================
-	// ====================
-
-	// Project configuration.
-	grunt.initConfig({
-		pkg: require('./package'),
-
-		jshint: {
-			all: jsFileList,
-			options: {
-				jshintrc: '.jshintrc'
-			}
-		},
-
-		// Choose Sass files below
-		sass: {
-			dev: {
-				options: {
-					unixNewlines: true,
-					style: 'expanded',
-					lineNumbers: false,
-					debugInfo : false,
-					precision : 8,
-					sourcemap : true
-				},
-				files: {
-					'css/kickoff.css': 'scss/kickoff.scss',
-					'css/kickoff-old-ie.css': 'scss/kickoff-old-ie.scss'
-				}
-			},
-			deploy: {
-				options: {
-					style: 'compressed',
-					precision : 8,
-					sourcemap : true
-				},
-				files: {
-					'css/kickoff.css': 'scss/kickoff.scss',
-					'css/kickoff-old-ie.css': 'scss/kickoff-old-ie.scss'
-				}
-
-			},
-			styleguide: {
-				options: {
-					unixNewlines: true,
-					style: 'expanded',
-					precision : 8,
-					sourcemap : true
-				},
-				files: {
-					'css/styleguide.css': 'scss/styleguide.scss'
-				}
-			}
-		},
-
-		uglify: {
-			options: {
-				// mangle: Turn on or off mangling
-				mangle: true,
-
-				// beautify: beautify your code for debugging/troubleshooting purposes
-				beautify: false,
-
-				// report: Show file size report
-				report: 'gzip',
-
-				// sourceMap: @string. The location of the source map, relative to the project
-				sourceMap: jsFile + '.map',
-
-				// sourceMappingURL: @string. The string that is printed to the final file
-				sourceMappingURL: '../../'+ jsFile +'.map'
-
-			},
-			js: {
-				src: jsFileList,
-				dest: distDir + jsFile
-			}
-		},
-
-		watch: {
-			scss: {
-				files: ['scss/**/*.scss'],
-				tasks: ['sass:deploy', 'sass:styleguide', 'copy:css']
-			},
-
-			js: {
-				files: [
-					'Gruntfile.js',
-					'js/*.js',
-					'js/libs/**/*.js'
-				],
-				tasks: ['uglify', 'copy:js']
-			},
-
-			text: {
-				files: [
-					'**/*.md',
-					'**/*.html',
-					'*.html'
-				],
-				tasks: ['jekyll']
-			},
-
-			img: {
-				files: [
-					'img/*.jpeg',
-					'img/*.gif',
-					'img/*.png',
-					'fonts/*.*'
-				],
-				tasks : 'copy:assets'
-			},
-
-			// copy: {
-			// 	files : [
-			// 		'css/*.css',
-			// 		'**/*.md',
-			// 		'**/*.html'
-			// 	],
-			// 	tasks: ['copy']
-			// },
-
-			livereload: {
-				options: { livereload: true },
-				files: [
-					jekyllBuildDir + '/css/*.css'
-				]
-			}
-		},
-
-		jekyll : {
-			src: '',
-			dest: jekyllBuildDir
-		},
-
-
-		/**
-		 * Connect
-		 * https://github.com/gruntjs/grunt-contrib-connect
-		 * Start a static web server
-		 */
-		connect: {
-			server: {
-				options: {
-					// port: 9001,
-					open: true,
-					livereload: true,
-					base: './'
-				}
-			}
-		},
-
-		copy: {
-			dist: {
-				files: [
-					{ expand: true, cwd: './img', src: ['./**/*.*'], dest: 'kickoff/img' },
-					{ expand: true, cwd: './css', src: ['./**/*.*'], dest: 'kickoff/css' },
-					{ expand: true, cwd: './js', src: ['./**/*.*'], dest: 'kickoff/js' }
-				]
-			},
-			assets : {
-				files: [
-					{ expand: true, cwd: './img', src: ['./**/*.*'], dest: 'kickoff/img' },
-					{ expand: true, cwd: './fonts', src: ['./**/*.*'], dest: 'kickoff/fonts' }
-				]
-			},
-			css : {
-				files: {
-					// Copy the sass-generated style file to
-					// the kickoff/ folder
-					'kickoff/css/kickoff.css': 'css/kickoff.css',
-					'kickoff/css/kickoff-old-ie.css': 'css/kickoff-old-ie.css',
-					'kickoff/css/styleguide.css': 'css/styleguide.css'
-				}
-			},
-			js: {
-				files: [
-					{ expand: true, cwd: './js', src: ['./**/*.*'], dest: 'kickoff/js' }
-				]
-			}
-		},
-	});
-
-	// Load all the grunt tasks
+	// Load grunt tasks automatically
 	require('load-grunt-tasks')(grunt);
 
-	// =============
-	// === Tasks ===
-	// =============
-	// A task for development
-	grunt.registerTask('dev', ['jshint', 'uglify', 'sass:dev']);
+	var options = {
+		pkg: require('./package'), // <%=pkg.name%>
 
-	// A task for deployment
-	grunt.registerTask('deploy', ['jshint', 'clean', 'modernizr', 'uglify', 'sass:deploy']);
+		/**
+		 * Config - Edit this section
+		 * ==========================
+		 * Choose javascript dist filename
+		 * Choose javascript dist location
+		 * Choose javascript files to be uglified
+		 */
+		config : {
+			scss : {
+				cssFile : 'kickoff' // <%=config.scss.cssFile%>
+			},
 
-	// Default task
-	grunt.registerTask('default', ['jshint', 'uglify', 'sass:dev']);
+			js : {
+				// <%=config.js.distDir%>
+				distDir  : 'js/dist/',
+
+				// <%=config.js.distFile%>
+				distFile : 'app.min.js',
+
+				// <%=config.js.fileList%>
+				fileList : [
+					'js/libs/plugins/skeleton.tabs.js',
+					'js/script.js'
+				]
+			},
+
+			jekyll : {
+				buildDirectory: 'kickoff' // <%=config.jekyll.buildDirectory%>
+			}
+		}
+	};
+
 
 	/**
-	 * A task for for a static server with a watch
+	 * Config - Edit this section
+	 * ==========================
+	 * Choose javascript dist filename
+	 * Choose javascript dist location
+	 * Choose javascript files to be uglified
+	 */
+
+
+	// Load grunt configurations automatically
+	var configs = require('load-grunt-configs')(grunt, options);
+
+	// Define the configuration for all the tasks
+	grunt.initConfig(configs);
+
+
+	/* ==========================================================================
+		Available tasks:
+* grunt            : run jshint, uglify and sass:kickoff
+* grunt watch      : run sass:kickoff, uglify and livereload
+* grunt dev        : run uglify, sass:kickoff & autoprefixer:kickoff
+* grunt deploy     : run jshint, uglify, sass:kickoff and csso
+* grunt jquery     : build custom version of jquery
+* grunt serve      : watch js & scss and run a local server
+* grunt icons      : generate the icons. uses svgmin and grunticon
+* grunt jscheck    : run jshint & jscs
+		 ========================================================================== */
+
+	/**
+	* GRUNT * Default task
+	* run uglify, sass:kickoff and autoprefixer
+	*/
+	grunt.registerTask('default', [
+		'newer:uglify',
+		'newer:sass:kickoff',
+		'autoprefixer:kickoff'
+	]);
+
+
+	/**
+	 * GRUNT DEV * A task for development
+	 * run uglify, sass:kickoff & autoprefixer:kickoff
+	 */
+	grunt.registerTask('dev', [
+		'uglify',
+		'sass:kickoff',
+		'autoprefixer:kickoff'
+	]);
+
+
+	/**
+	* GRUNT DEPLOY * A task for your production environment
+	* run uglify, sass:kickoff, autoprefixer:kickoff and csso
+	*/
+	grunt.registerTask('deploy', [
+		'newer:uglify',
+		'newer:sass:kickoff',
+		'newer:autoprefixer:kickoff',
+		'newer:csso'
+	]);
+
+
+	/**
+	 * GRUNT SERVE * A task for for a static server with a watch
 	 * run connect and watch
 	 */
-	grunt.registerTask("serve", ["jekyll", "connect", "watch"]);
+	grunt.registerTask('serve', [
+		'uglify',
+		'sass:kickoff',
+		'sass:styleguide',
+		'autoprefixer:kickoff',
+		'jekyll',
+		'connect:site',
+		'watch'
+	]);
+
+
+	/**
+	 * GRUNT ICONS * A task to create all icons using grunticon
+	 * run clean, svgmin and grunticon
+	 */
+	grunt.registerTask('icons', [
+		'clean:icons',
+		'svgmin',
+		'grunticon'
+	]);
+
+
+	/**
+	 * GRUNT JSCHECK * Check js for errors and style problems
+	 * run jshint, jscs
+	 */
+	// Default task
+	grunt.registerTask('jscheck', [
+		'jshint',
+		'jscs'
+	]);
 
 };
