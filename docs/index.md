@@ -1,29 +1,59 @@
 ---
 layout: docs
-title: Get started
+title: Principles
 subtitle:
 navgroup: docs
+navactive: docsindex
 ---
-## Download Kickoff
+Kickoff is a lightweight front-end framework for creating scalable, responsive sites; that might sound a bit vague but it is the essence of the framework. Due to the nature of agency work, the projects are hugely varied, but as developers, we always try to cut corners to normalise things as much as possible – basically because we're lazy and we don't want to have to repeat things very often! Kickoff aims to mitigate common problems found in web development by providing a strong starting point and a set of helpful defaults for use on almost any project.
 
-There are a few easy ways to quickly get started with Kickoff, each one appealing to a different skill level and use case. Read through to see what suits your particular needs.
+The key difference of Kickoff when compared with other similar frameworks – I'm looking at you Bootstrap and Foundation – is that it is not nearly as prescriptive. While those frameworks define almost every aspect of a website with CSS styles and JavaScript plugins that do everything, Kickoff has most of that but does not enable it by default. For example, we have a simple grid system, but if you need something more complex or, heaven forbid, not use one, that is not a problem; just don't include it.
 
-### Download from:
+### Get Kickoff
 
-* Github: [.zip](https://github.com/tmwagency/kickoff/archive/master.zip)
-* Git clone: `git clone https://github.com/tmwagency/kickoff.git your-project-folder`
-* SVN checkout: `svn checkout https://github.com/tmwagency/kickoff your-project-folder`
+Find out how to start using Kickoff on the [getting started page](get.html).
 
-## Using Grunt?
-[Ruby](https://www.ruby-lang.org/en/) v2 is needed. Update using [rvm](http://rvm.io/) or [brew](http://brew.sh) (if you use a Mac), Windows users can install Ruby via [the Windows installer](http://rubyinstaller.org/downloads/), and Linux users can install it via their package manager, then install the packages below:
+### Grunt
+Find out how Kickoff uses Grunt on the [grunt](grunt.html) page.
 
-* Install Sass globally - `gem install sass --pre`
-* Install Node from [nodejs.org](http://nodejs.org/)
-* Install Grunt CLI - `npm install -g grunt-cli`
-* Navigate to (`cd`) your project directory and run `npm install` which will install all Grunt's dependencies
-* Run `grunt watch` to watch for changes and compile Sass/Javascript
+### CSS naming scheme
+Kickoff uses a bespoke naming scheme for classnames.
 
-When using Grunt with Kickoff, source maps are created for both the Javascript and Sass. Javascript is compiled to the `/js/dist` and Sass is compiled to the `/css` folder.
+```scss
+/* Descriptors use camel-casing if more than one word: e.g. twoWords */
+.skipToContent {
+  ...
+}
+
+/* ========= */
+
+/* Child elements use single hyphens: - */
+.form-controlGroup {
+  ...
+}
+
+/* ========= */
+
+/* Modifier element use a double hyphen: -- */
+.btn.btn--primary {
+  ...
+}
+
+/* ========= */
+
+/* Element state: .is- */
+.is-active {
+  ...
+}
+
+/* ========= */
+
+/* Sass variables are dash-case */
+a {
+  color: $color-primary;
+}
+```
+
 
 ### Using Git?
 Kickoff's [.gitignore](https://github.com/tmwagency/kickoff/blob/master/.gitignore#L28) file ignores the `/dist` folder and `.map` files by default. You will want to uncomment these lines if you are compiling these on the server; think continuous integration.
@@ -32,18 +62,11 @@ Kickoff's [.gitignore](https://github.com/tmwagency/kickoff/blob/master/.gitigno
 ## Need more help?
 
 * [Usage](usage.html) — Overview of the project contents.
-<!-- * [FAQ](faq.html) — Frequently asked questions, along with their answers. -->
-
-<!-- ### Markup -->
-
-<!-- * [HTML](html.html) — A guide to the default HTML. -->
 
 ### Presentation
 
-<!-- * [CSS](css.html) — A guide to the default CSS -->
 * [Sass](sass.html) — A guide to the default Sass
 * [The Choreographic Grid](grid.html) — A guide to the Kickoff's grid framework
-<!-- * [Typography](typography.html) — A more in-depth guide to Kickoff's type styles -->
 
 ### Behaviour
 

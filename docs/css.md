@@ -1,6 +1,7 @@
 ---
 layout: docs
 navgroup: docs
+navactive: docscss
 title: CSS
 ---
 
@@ -13,21 +14,43 @@ The Kickoff starting CSS includes:
 * Print styles
 * A solid Sass framework for building sites or apps of all types
 
-
-## CSS Class naming scheme
+## CSS naming scheme
 Kickoff uses a bespoke naming scheme for classnames.
 
-	-        child element
-	           e.g. .form-controlGroup > .form-controlGroup-label
+```scss
+/* Descriptors use camel-casing if more than one word: e.g. twoWords */
+.skipToContent {
+  ...
+}
 
-	--       modifier element
-	           e.g. .btn.btn--primary
+/* ========= */
 
-	.is-     element state
-	           e.g. .is-active
+/* Child elements use single hyphens: - */
+.form-controlGroup {
+  ...
+}
 
-	aB       camel-case descriptors
-	           e.g. .form-controlGroup
+/* ========= */
+
+/* Modifier element use a double hyphen: -- */
+.btn.btn--primary {
+  ...
+}
+
+/* ========= */
+
+/* Element state: .is- */
+.is-active {
+  ...
+}
+
+/* ========= */
+
+/* Sass variables are dash-case */
+a {
+  color: $color-primary;
+}
+```
 
 
 ## Normalize.css

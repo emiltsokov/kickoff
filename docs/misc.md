@@ -1,6 +1,7 @@
 ---
 layout: docs
 navgroup: docs
+navactive: docsmisc
 ---
 
 # Miscellaneous

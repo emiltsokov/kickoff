@@ -1,6 +1,7 @@
 ---
 layout: docs
 navgroup: docs
+navactive: docssass
 title: Sass
 ---
 
@@ -41,32 +42,21 @@ CodeKit is a **Mac** app that compiles LESS, Sass, Stylus, CoffeeScript and many
 Scout is a cross-platform app that delivers the power of Sass & Compass into the hands of web designers.
 
 
-## Kickoff's default Sass files
+## Kickoff's Sass files
 
-The four most important .scss files in any Kickoff project are:
-
-#### 1. [kickoff.scss](https://github.com/tmwagency/kickoff/blob/master/scss/kickoff.scss) & [kickoff-old-ie.scss](https://github.com/tmwagency/kickoff/blob/master/scss/kickoff-old-ie.scss)
-All roads lead to here. `Kickoff.scss` is the starting point for any kickoff project. Here you choose which other `.scss` files your project needs. The order of the imported files is the same order that the CSS is compiled to.
+#### [dependencies.scss](https://github.com/tmwagency/kickoff/blob/master/scss/dependencies.scss)
+All roads lead to here. Here you choose which other `.scss` files your project needs. The order of the imported files is the same order that the CSS is compiled to.
 
 Exclude any existing items by using a javascript comment `//` at the start of the line or remove that line completely.
 
-#### 2. [variables.scss](https://github.com/tmwagency/kickoff/blob/master/scss/variables.scss)
+#### [variables.scss](https://github.com/tmwagency/kickoff/blob/master/scss/variables.scss)
 This file contains all your app/site's global variables. For example, you can set your background colours, fonts, base text size etc here & use the variable names throughout the rest of your project.
 
-#### 3. [mixins.scss](https://github.com/tmwagency/kickoff/blob/master/scss/mixins.scss)
+#### [mixins.scss](https://github.com/tmwagency/kickoff/blob/master/scss/mixins.scss)
 Mixins contains many useful items, but the most useful of which are the CSS3 mixins.
-
-#### 4. [app.scss](https://github.com/tmwagency/kickoff/blob/master/scss/app.scss)
-Here you add all your app-specific css/scss.
-
-### Other useful scss files
 
 #### [typography.scss](https://github.com/tmwagency/kickoff/blob/master/scss/typography.scss)
 You can use the brilliant [Gridlover](http://www.gridlover.net/) to work out your font sizings & spacings
-
-#### [choreographic-grid.scss](https://github.com/tmwagency/kickoff/blob/master/scss/choreographic-grid.scss)
-View the [example page](http://mrmartineau.github.com/Choreographic-Grid/test.html) for a demo then view the source to understand how it works.
-
 
 ## Useful Sass resources
 

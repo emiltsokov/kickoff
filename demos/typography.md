@@ -1,6 +1,7 @@
 ---
 layout: demo
 navgroup: demo
+navactive: demotype
 title: Typography
 ---
 <h1>Heading 1 <small>small</small></h1>
@@ -56,17 +57,23 @@ title: Typography
 
 <hr>
 
-<h3>Blockquote</h3>
-
+<div class="demo">
+	<div class="demo-visual">
+		<h3>Blockquote</h3>
+		<blockquote>
+			<p>Of all the gin joints in all the towns in all the world, she walks into mine.</p>
+			<small>Rick Blaine</small>
+		</blockquote>
+	</div>
+	<div class="demo-code">
+{% highlight html%}
 <blockquote>
 	<p>Of all the gin joints in all the towns in all the world, she walks into mine.</p>
 	<small>Rick Blaine</small>
 </blockquote>
-
-<pre><code>&lt;blockquote>
-&lt;p>Of all the gin joints in all the towns in all the world, she walks into mine.&lt;/p>
-&lt;small>Rick Blaine&lt;/small>
-&lt;/blockquote></code></pre>
+{% endhighlight %}
+	</div>
+</div>
 
 <hr>
 

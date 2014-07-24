@@ -2,13 +2,12 @@
 layout: demo
 body-class: show-grid
 navgroup: demo
-title: The Choreographic Grid
+navactive: demogrid
+title: The Kickoff Grid
 prettyprint: true
 ---
 
 <p>To view the grid documentation, please visit <a href="../docs/grid.html">here</a></p>
-
-
 
 <ul class="mt2 tabs is-g-centered">
 	<li>

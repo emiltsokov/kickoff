@@ -1,6 +1,7 @@
 ---
 layout: docs
 navgroup: docs
+navactive: docssublime
 title: Sublime Text snippets for Kickoff
 ---
 

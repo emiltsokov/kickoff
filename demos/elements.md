@@ -2,6 +2,7 @@
 layout: demo
 body-class: show-grid
 navgroup: demo
+navactive: elements
 title: Elements <small>all of them in one place</small>
 ---
 <h2>Embedded content</h2>
