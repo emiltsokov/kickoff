@@ -43,14 +43,14 @@ TMW.Demos = {
 		// });
 
 		// Show the grid
-		$('#show-grid-button').click(function() {
+		$('.show-grid-button').click(function() {
 			if ( $('body').hasClass('show-grid') ) {
 				$('body').removeClass('show-grid');
-				$(this).text('Show Grid');
+				$('.show-grid-button').text('Show Grid');
 				console.log('show grid');
 			} else {
 				$('body').addClass('show-grid');
-				$(this).text('Hide Grid');
+				$('.show-grid-button').text('Hide Grid');
 				console.log('hide grid');
 			}
 		});
