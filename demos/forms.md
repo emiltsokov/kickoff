@@ -7,6 +7,7 @@ title: Form styling
 ---
 <h2>Forms <small>with labels above inputs</small></h2>
 <p>Having forms styled like this depends on specific markup with specific class names. Please take the example code below as a guide.</p>
+
 <div class="demo">
 	<div class="demo-visual">
 		<form action="#" class="form">

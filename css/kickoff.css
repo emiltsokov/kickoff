@@ -2693,6 +2693,10 @@ a {
   border: 1px solid #ddd;
   border-radius: 5px;
   overflow: hidden;
+  position: relative;
+}
+.demo + .demo {
+  margin-top: 50px;
 }
 
 .demo-visual {
@@ -2708,6 +2712,12 @@ a {
   border-radius: 0;
   max-height: 400px;
   overflow: auto;
+}
+
+.show-grid-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .grid-block-link {
@@ -2786,23 +2796,12 @@ a {
   background-color: rgba(230, 126, 34, 0.4);
 }
 
-.grid-test .g-col.g-centered {
+.grid-test .g-col.g-col--centered {
   text-align: center;
 }
 
 .class-tag {
   display: none;
-}
-
-.show-grid .class-tag {
-  position: absolute;
-  top: -6px;
-  right: 0;
-  display: block;
-}
-.show-grid .class-tag code {
-  font-size: 11px;
-  font-size: 0.61111111rem;
 }
 
 /*

@@ -328,6 +328,11 @@ a {
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	overflow: hidden;
+	position: relative;
+
+	& + & {
+		margin-top: 50px;
+	}
 }
 .demo-visual {
 	padding: 20px;
@@ -345,6 +350,12 @@ a {
 		overflow: auto;
 	}
 }
+.show-grid-button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
 .grid-block-link {
 	display: block;
 	min-height: 130px;
@@ -421,22 +432,21 @@ a {
 	background-color: rgba($color-primary, 0.4);
 }
 
-.grid-test .g-col.g-centered {
+.grid-test .g-col.g-col--centered {
 	text-align: center;
 }
-
 .class-tag {
 	display: none;
 }
-.show-grid .class-tag {
-	position: absolute;
-	top: -6px; right: 0;
-	display: block;
+// .show-grid .class-tag {
+// 	position: absolute;
+// 	top: -6px; right: 0;
+// 	display: block;
 
-	code {
-		@include font-size(11);
-	}
-}
+// 	code {
+// 		@include font-size(11);
+// 	}
+// }
 
 /*
    Style Github Gist embeds
