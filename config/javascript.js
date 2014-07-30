@@ -17,7 +17,13 @@ module.exports.tasks = {
 			src: ['<%=config.js.srcFile%>'],
 			dest: '<%=config.js.distDir%><%=config.js.distFile%>',
 			options : {
-				transform: ['uglifyify']
+				transform: [
+					[
+						'uglifyify', {
+							"global" : true
+						}
+					]
+				],
 			}
 		}
 	},
