@@ -2,31 +2,31 @@
 		TMW - (Author Name Here)
 */
 
-
+// --------------------------------------------- //
+// DEFINE GLOBAL LIBS                            //
+// --------------------------------------------- //
 // Uncomment the line below to expose jQuery as a global object to the usual places
 // window.jQuery = window.$ = require('./libs/jquery/jquery-1.10.2.js');
 
-// include any globally accessible files here too:
-// require('.helpers/log');
+// force compilation of global libs that don't return a value.
+require("./helpers/log");
+require("./helpers/helpers");
+
+//initialise KO object
+var KO = {};
+
+KO.Config = {
+	variableX : '', // please don't keep me - only for example syntax!
+
+	init : function () {
+		console.debug('Kickoff is running');
+
+		// Example module include
+		KO.UI = require('./modules/UI');
+		KO.UI.init();
+	}
+};
 
 
-// Create a closure to maintain scope of the '$' and KO (Kickoff)
-;(function(KO) {
 
-	// follow a singleton pattern
-	// (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript)
-
-	KO.Config = {
-		variableX : '', // please don't keep me - only for example syntax!
-
-		init : function () {
-			console.debug('Kickoff is running');
-		}
-	};
-
-	// Example module include
-	// KO.UI = require('./modules/UI');
-
-	KO.Config.init();
-
-})(window.KO = window.KO || {});
+KO.Config.init();
