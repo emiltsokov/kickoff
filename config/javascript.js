@@ -3,7 +3,7 @@ module.exports.tasks = {
 	/**
 	 * Browserify
 	 * https://github.com/jmreidy/grunt-browserify
-	 * Grutn task for node-browserify – allows CommonJS-style JS code and packages it for use in the browser
+	 * Grunt task for node-browserify – allows CommonJS-style JS code and packages it for use in the browser
 	 */
 	browserify: {
 		dev: {

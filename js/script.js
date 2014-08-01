@@ -2,35 +2,19 @@
 		TMW - (Author Name Here)
 */
 
+
+// Uncomment the line below to expose jQuery as a global object to the usual places
+// window.jQuery = window.$ = require('./libs/jquery/jquery-1.10.2.js');
+
+// include any globally accessible files here too:
+// require('.helpers/log');
+
+
 // Create a closure to maintain scope of the '$' and KO (Kickoff)
-;(function(KO, $) {
+;(function(KO) {
 
-	$(function() {
-		// Any globals go here in CAPS (but avoid if possible)
-
-		// follow a singleton pattern
-		// (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript)
-
-		KO.Config.init();
-
-	});// END DOC READY
-
-
-	/* Optional triggers
-
-	// WINDOW.LOAD
-	$(window).load(function() {
-
-	});
-
-	// WINDOW.RESIZE
-	$(window).resize(function() {
-
-	});
-
-	*/
-
-
+	// follow a singleton pattern
+	// (http://addyosmani.com/resources/essentialjsdesignpatterns/book/#singletonpatternjavascript)
 
 	KO.Config = {
 		variableX : '', // please don't keep me - only for example syntax!
@@ -40,17 +24,9 @@
 		}
 	};
 
-	// Example module
-	/*
-	KO.Ui = {
-		init : function() {
-			KO.Ui.modal();
-		},
+	// Example module include
+	// KO.UI = require('./modules/UI');
 
-		modal : function() {
+	KO.Config.init();
 
-		}
-	};
-	*/
-
-})(window.KO = window.KO || {}, jQuery);
+})(window.KO = window.KO || {});
