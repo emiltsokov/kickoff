@@ -10,7 +10,7 @@
 
 // force compilation of global libs that don't return a value.
 require("./helpers/log");
-require("./helpers/helpers");
+require("./helpers/shims");
 
 //initialise KO object
 var KO = {};
@@ -26,7 +26,6 @@ KO.Config = {
 		KO.UI.init();
 	}
 };
-
 
 
 KO.Config.init();

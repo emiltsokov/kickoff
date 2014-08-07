@@ -16,6 +16,10 @@ module.exports = function (grunt) {
 		 * Choose javascript files to be uglified
 		 */
 		config : {
+			scss : {
+				cssFile : 'kickoff' // <%=config.scss.cssFile%>
+			},
+
 			js : {
 				// <%=config.js.distDir%>
 				distDir  : 'js/dist/',
@@ -64,9 +68,10 @@ module.exports = function (grunt) {
 	* run browserify, sass:kickoff and autoprefixer
 	*/
 	grunt.registerTask('default', [
+		'shimly',
 		'newer:browserify:prod',
 		'newer:sass:kickoff',
-		'autoprefixer:dist'
+		'autoprefixer:kickoff'
 	]);
 
 	/**
@@ -76,10 +81,11 @@ module.exports = function (grunt) {
 	grunt.registerTask('start', [
 		'jquery',
 		'shell:bowerinstall',
+		'shimly',
 		'browserify:prod',
 		'sass:kickoff',
 		'sass:styleguide',
-		'autoprefixer:dist',
+		'autoprefixer:kickoff',
 		'autoprefixer:styleguide',
 		'connect:start',
 		'watch'
@@ -91,9 +97,10 @@ module.exports = function (grunt) {
 	 * run browserify, sass:kickoff & autoprefixer:dist
 	 */
 	grunt.registerTask('dev', [
+		'shimly',
 		'browserify:dev',
 		'sass:kickoff',
-		'autoprefixer:dist'
+		'autoprefixer:kickoff'
 	]);
 
 
@@ -102,9 +109,10 @@ module.exports = function (grunt) {
 	* run browserify, sass:kickoff, autoprefixer:dist and csso
 	*/
 	grunt.registerTask('deploy', [
+		'shimly',
 		'newer:browserify:prod',
 		'newer:sass:kickoff',
-		'newer:autoprefixer:dist',
+		'newer:autoprefixer:kickoff',
 		'newer:csso'
 	]);
 
@@ -114,10 +122,11 @@ module.exports = function (grunt) {
 	 * run browserify, sass:kickoff, sass:styleguide, autoprefixer:dist, autoprefixer:styleguide, connect:styleguide & watch
 	 */
 	grunt.registerTask('styleguide', [
+		'shimly',
 		'browserify:prod',
 		'sass:kickoff',
 		'sass:styleguide',
-		'autoprefixer:dist',
+		'autoprefixer:kickoff',
 		'autoprefixer:styleguide',
 		'connect:styleguide',
 		'watch'
@@ -129,10 +138,11 @@ module.exports = function (grunt) {
 	 * run connect and watch
 	 */
 	grunt.registerTask('serve', [
+		'shimly',
 		'browserify:prod',
 		'sass:kickoff',
 		'sass:styleguide',
-		'autoprefixer:dist',
+		'autoprefixer:kickoff',
 		'connect:site',
 		'watch'
 	]);
@@ -165,7 +175,7 @@ module.exports = function (grunt) {
 		'jshint',
 		'browserify:prod',
 		'sass:kickoff',
-		'autoprefixer:dist'
+		'autoprefixer:kickoff'
 	]);
 
 

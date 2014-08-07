@@ -1,6 +1,23 @@
 module.exports.tasks = {
 
 	/**
+	 * Shimly
+	 *
+	 * Load in a base set of JS shims for use in a project
+	 *
+	 */
+	shimly: {
+      // things you would like to shim (an array of items from the list above)
+      shim: ['Array.forEach', 'Array.filter', 'Array.map', 'Function.bind', 'EventListener'],
+
+      // output location (relative to your grunt.js file location)
+      dest: 'js/helpers/shims.js',
+
+      // minify the output (true or false)
+      minify: false
+    },
+
+	/**
 	 * Browserify
 	 * https://github.com/jmreidy/grunt-browserify
 	 * Grunt task for node-browserify – allows CommonJS-style JS code and packages it for use in the browser
@@ -39,7 +56,7 @@ module.exports.tasks = {
 	jshint: {
 		all: '<%=config.js.fileList%>',
 		options: {
-			jshintrc: '.jshintrc'
+			jshintrc: 'config/.jshintrc'
 		}
 	},
 
@@ -52,7 +69,7 @@ module.exports.tasks = {
 	jscs: {
 		src: '<%=config.js.fileList%>',
 		options: {
-			config: ".jscs.json"
+			config: "config/.jscs.json"
 		}
 	},
 

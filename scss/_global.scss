@@ -1,49 +1,62 @@
-/* ==========================================================================
-   Global app/site styles
-   ========================================================================== */
+/**
+ * Global app/site styles
+ */
 body {
-	background-color: $color-background;
+	background-color: $color-bg;
+}
+
+/**
+ * Default layout container
+ */
+.l-container {
+	padding-left: #{$layout-margin}px;
+	padding-right: #{$layout-margin}px;
+	width: 95%;
+	max-width: #{$grid-max-width}px;
+	margin: 0 auto;
+
+	.lt-ie9 & {
+		min-width: #{$grid-min-width}px;
+	}
 }
 
 
 
-/* ==========================================================================
-   Media queries for responsive design
-   ========================================================================== */
-
-/*
-   Retina media query
-   ========================================================================== */
+/**
+ * Retina media query
+ */
 @include hidpi() {
 
 }
 
 
-
-// === $breakpoint-narrow> ===
-@include respond-min($breakpoint-narrow) {
-
-}
-// === end $breakpoint-narrow> ===
-
-
-
-// === $breakpoint-mid> ===
-@include respond-min($breakpoint-mid) {
+/**
+ * Media queries for responsive design
+ */
+// === $bp-narrow> ===
+@include respond-min($bp-narrow) {
 
 }
-// === end $breakpoint-mid> ===
+// === end $bp-narrow> ===
 
 
-// === $breakpoint-wide> ===
-@include respond-min($breakpoint-wide) {
 
-}
-// === end $breakpoint-wide> ===
-
-
-// === $breakpoint-huge> ===
-@include respond-min($breakpoint-huge) {
+// === $bp-mid> ===
+@include respond-min($bp-mid) {
 
 }
-// === end $breakpoint-huge> ===
+// === end $bp-mid> ===
+
+
+// === $bp-wide> ===
+@include respond-min($bp-wide) {
+
+}
+// === end $bp-wide> ===
+
+
+// === $bp-huge> ===
+@include respond-min($bp-huge) {
+
+}
+// === end $bp-huge> ===

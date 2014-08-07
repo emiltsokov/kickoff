@@ -41,7 +41,7 @@
  * Path vars
  */
 /**
- * Grid setup
+ * Layout setup
  * Settings here override & affect the output in scss/partials/components/grid.scss
  */
 /**
@@ -131,31 +131,23 @@
 /* HiDPI */
 /* FORMS */
 /* CSS Reset  */
-/* ==========================================================================
-   Normalize - CSS reset
-
-   http://github.com/necolas/normalize.css
-   Kickoff uses an amended version of this file.
-   ========================================================================== */
-*,
-*::before,
-*::after {
+/**
+ * Kickoff reset
+ */
+html {
   box-sizing: border-box;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary,
-main {
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/**
+ * Normalize - CSS reset
+ * http://github.com/necolas/normalize.css
+ * Kickoff uses an amended version of this file.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary, main {
   display: block;
 }
 
@@ -775,11 +767,6 @@ input[type="button"].btn--block {
    Kickoff Grid helpers
    ========================================================================== */
 /*
-	 Grid Setup Defaults
-	 * Choose your grid options.
-	 ** THESE WILL BE OVERRIDDEN BY THE SETTINGS IN _variables.scss **
-	 ========================================================================== */
-/*
    Grid columns width calcs
    ========================================================================== */
 /**
@@ -808,20 +795,6 @@ input[type="button"].btn--block {
 		<div class="g-col g-span8"></div>
 	</div>
  */
-/**
- * Default grid styles
- */
-.g-container {
-  padding-left: 0px;
-  padding-right: 0px;
-  width: 95%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.lt-ie9 .g-container {
-  min-width: 1000px;
-}
-
 .g-row {
   width: 100%;
   margin: 0 auto;
@@ -1131,10 +1104,10 @@ input[type="button"].btn--block {
   position: relative;
   overflow: hidden;
 }
-.form-input--fileWrapper--styled::before {
+.form-input--fileWrapper--styled:before {
   content: 'Choose file...';
 }
-.form-input--fileWrapper--styled::after {
+.form-input--fileWrapper--styled:after {
   content: 'Browse';
   cursor: pointer;
   display: inline-block;
@@ -1363,6 +1336,102 @@ input[type="submit"] {
 }
 .form--horizontal .form-actions {
   padding-left: 160px;
+}
+
+/**
+ * Custom Checkboxes and radios - modified from WTF forms – http://wtfforms.com/
+ *
+ * --------------------------------
+ *
+ * Checkbox button example HTML
+ *
+ *	 <label class="control control--custom control--checkbox">
+ *		<input type="checkbox" name="myCheckbox" />
+ *		<span class="control-indicator"></span>
+ *		My Checkbox Label Text
+ *	</label>
+ *
+ * -------------------------------
+ *
+ * Radio button example HTML
+ *
+ *	<label class="control control--custom control--radio">
+ *		<input type="radio" id="radio1" name="myRadioBtn" />
+ *		<span class="control-indicator"></span>
+ *		My Radio Button Label Text
+ * 	</label>
+ *
+ * ================================= */
+.control-indicator {
+  position: absolute;
+  top: .25rem;
+  left: 0;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 65%;
+  color: #eee;
+  text-align: center;
+  background-color: #ddd;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  user-select: none;
+}
+
+.control--custom input,
+.control-indicator {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.control--custom {
+  position: relative;
+  display: block;
+  padding-left: 2rem;
+  margin-left: 0;
+  line-height: 2.8;
+  color: #555;
+  cursor: pointer;
+  /* Focus */
+  /* Checked state */
+  /* Active */
+}
+.control--custom input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  /* Put the input behind the label so it doesn't overlay text */
+}
+.control--custom input:focus ~ .control-indicator {
+  box-shadow: 0 0 0 0.075rem white, 0 0 0 0.2rem #a3b1b2;
+}
+.control--custom input:checked ~ .control-indicator {
+  color: #fff;
+  background-color: #a3b1b2;
+}
+.control--custom input:active ~ .control-indicator {
+  color: #fff;
+  background-color: #ccd4d5;
+}
+
+/* Checkbox modifiers */
+.control--checkbox .control-indicator {
+  border-radius: .25rem;
+}
+
+.control--checkbox input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+/* Radio modifiers */
+.control--radio .control-indicator {
+  border-radius: 50%;
+}
+
+.control--radio input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
 }
 
 /*
@@ -1604,7 +1673,7 @@ img, object, embed, video {
  * Tables
  */
 table {
-  background-color: transparent;
+  background-color: #f1f1f1;
 }
 
 th {
@@ -1778,9 +1847,6 @@ pre {
   background-color: #dddddd;
   border-radius: 4px;
   white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
 }
 pre.prettyprint {
   margin-bottom: 28px;
@@ -1822,6 +1888,7 @@ pre code {
  */
 ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
   background-color: #d7d7d7;
 }
 
@@ -1843,6 +1910,20 @@ pre code {
  */
 body {
   background-color: #f1f1f1;
+}
+
+/**
+ * Default layout container
+ */
+.l-container {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.lt-ie9 .l-container {
+  min-width: 1000px;
 }
 
 /**
