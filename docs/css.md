@@ -52,13 +52,6 @@ a {
 }
 ```
 
-
-## Normalize.css
-
-Normalize.css is a modern, HTML5-ready alternative to CSS resets. It contains
-extensive inline documentation. Please refer to the [Normalize.css
-project](http://necolas.github.com/normalize.css/) for more information.
-
 ## Kickoff defaults
 
 This project includes a handful of base styles that build upon Normalize.css.
@@ -72,7 +65,28 @@ You are free to modify or add to these base styles as your project requires.
 
 
 ## Media Queries
+Media queries in Kickoff are typically handled with a [set of useful mixins](https://github.com/tmwagency/kickoff/blob/master/scss/mixins/_responsive.scss). These are used so that we can define separate media-query content for `< IE9` and browsers with support for media queries. These are directly related to the global `$fix-mqs` var defined in `kickoff-old-ie.scss`. `kickoff-old-ie.scss` ignores any content in media-queries with values less than the `$fix-mqs` var value.
 
+* `respond-min` for `min-width` media queries
+* `respond-max` for `max-width` media queries
+* `respond-min-max` for `min-width` & `max-width` media queries
+
+#### Media query example
+
+```sass
+/* This Sass mixin: */
+@include respond-min(800) {
+	a {
+		color: darkgoldenrod;
+	}
+}
+/* Is the same as: */
+@media screen and (min-width: 800px) {
+	a {
+		color: darkgoldenrod;
+	}
+}
+```
 
 
 ## Print styles
