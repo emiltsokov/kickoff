@@ -34,7 +34,7 @@ Grunt will not work without having installed it's dependencies. Kickoff's [packa
 Kickoff comes with many useful Grunt tasks. See below for an explanation for each of them.
 
 #### grunt - default task
-Run `grunt dev` to run [uglify](https://github.com/gruntjs/grunt-contrib-uglify) (to minify and concatinate javascript), sass:kickoff (to compile Sass) & autoprefixer:kickoff (to add vendor prefixes to the Sass)
+Run `grunt` to run [uglify](https://github.com/gruntjs/grunt-contrib-uglify) (to minify and concatinate javascript), sass:kickoff (to compile Sass) & autoprefixer:kickoff (to add vendor prefixes to the Sass)
 
 #### grunt dev - a task for development environments
 Run `grunt dev` to run uglify (to minify and concatinate javascript), sass:kickoff (to compile Sass) & autoprefixer:kickoff (to add vendor prefixes to the Sass)
