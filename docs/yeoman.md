@@ -5,42 +5,31 @@ navactive: docsyo
 title: Kickoff Yeoman Generator
 ---
 
-We have created a simple Yeoman generator to speed up the initial creation of a Kickoff project.
+We have created a Yeoman generator for Kickoff to make setting up new projects even faster. It will ask a few questions and them build a version of Kickoff for your needs.
 
-## Getting Started
+###The generator asks for:
+* The project's name
+* The names of the project's developers
+* The javascript namespace you would like to use (default is `KO`)
+* If you'd like to use [Statix](/kickoff/statix/)
+* Which javascript libraries to install. jQuery v1x/2x, Trak.js, Swiftclick & Cookies are the options
+* If you'd like to use Browserify
 
-### What is Yeoman?
+[![NPM](https://nodei.co/npm/generator-kickoff.png?downloads=true&stars=true)](https://nodei.co/npm/generator-kickoff/)
 
-Trick question. It's not a thing. It's this guy:
+[![NPM version](https://badge.fury.io/js/generator-kickoff.png)](http://badge.fury.io/js/generator-kickoff)
 
-![](https://github-camo.global.ssl.fastly.net/10c0f69d03b7ac184d77e8aaba4358a2d4791823/687474703a2f2f79656f6d616e2e696f2f6d656469612f79656f6d616e2d6d617374686561642e706e67)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```
-$ npm install -g yo
-```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
+## Install the generator
 To install generator-kickoff from npm, run:
 
-```
-$ npm install -g generator-kickoff
+```sh
+npm install -g generator-kickoff
 ```
 
 Finally, initiate the generator:
 
+```sh
+yo kickoff
 ```
-$ yo kickoff
-```
 
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+The repo and more information can be found at [github.com/tmwagency/generator-kickoff](https://github.com/tmwagency/generator-kickoff)
