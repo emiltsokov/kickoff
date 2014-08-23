@@ -1554,7 +1554,7 @@ img, object, embed, video {
  * </ul>
  *
  * Mobile Usage:
- * <ul class="l-blockGrid l-blockGrid--3up l-blockGrid--3up--narrow">
+ * <ul class="l-blockGrid l-blockGrid--4up l-blockGrid--2up--narrow">
  *     <li></li>
  * </ul>
  */
@@ -1573,79 +1573,79 @@ img, object, embed, video {
   height: auto;
   padding: 10px;
 }
-@media screen and (max-width: 48em) {
-  .l-blockGrid > li[class*="up--narrow"] {
+@media screen and (min-width: 25em) and (max-width: 48em) {
+  .l-blockGrid[class*="up--narrow"] > li {
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--1up--mobile > li {
+  .l-blockGrid.l-blockGrid--1up--narrow > li {
     width: 100%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--2up--mobile > li {
+  .l-blockGrid.l-blockGrid--2up--narrow > li {
     width: 50%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--3up--mobile > li {
+  .l-blockGrid.l-blockGrid--3up--narrow > li {
     width: 33.33333333%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--4up--mobile > li {
+  .l-blockGrid.l-blockGrid--4up--narrow > li {
     width: 25%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--5up--mobile > li {
+  .l-blockGrid.l-blockGrid--5up--narrow > li {
     width: 20%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--6up--mobile > li {
+  .l-blockGrid.l-blockGrid--6up--narrow > li {
     width: 16.66666667%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--7up--mobile > li {
+  .l-blockGrid.l-blockGrid--7up--narrow > li {
     width: 14.28571429%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--8up--mobile > li {
+  .l-blockGrid.l-blockGrid--8up--narrow > li {
     width: 12.5%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--9up--mobile > li {
+  .l-blockGrid.l-blockGrid--9up--narrow > li {
     width: 11.11111111%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--10up--mobile > li {
+  .l-blockGrid.l-blockGrid--10up--narrow > li {
     width: 10%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--11up--mobile > li {
+  .l-blockGrid.l-blockGrid--11up--narrow > li {
     width: 9.09090909%;
     display: block;
     height: auto;
     float: left;
   }
-  .l-blockGrid.l-blockGrid--12up--mobile > li {
+  .l-blockGrid.l-blockGrid--12up--narrow > li {
     width: 8.33333333%;
     display: block;
     height: auto;
