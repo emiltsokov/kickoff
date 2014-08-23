@@ -466,8 +466,8 @@ a {
 // === Media queries for responsive design ===
 // ===========================================
 
-// === $breakpoint-narrow> ===
-@include respond-min($breakpoint-narrow) {
+// === $bp-narrow> ===
+@include respond-min($bp-narrow) {
 	.bigBoy {
 		h2 {
 
@@ -477,12 +477,12 @@ a {
 		}
 	}
 }
-// === end $breakpoint-narrow> ===
+// === end $bp-narrow> ===
 
 
 
-// === $breakpoint-mid> ===
-@include respond-min($breakpoint-mid) {
+// === $bp-mid> ===
+@include respond-min($bp-mid) {
 	body {
 		padding-top: 50px;
 
@@ -572,4 +572,4 @@ a {
 		}
 	}
 }
-// === end $breakpoint-mid> ===
+// === end $bp-mid> ===

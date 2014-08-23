@@ -56,7 +56,7 @@
 		padding: paddingCalc();
 	}
 
-	@include respond-min($breakpoint-single-col) {
+	@include respond-min($bp-single-col) {
 		float: left;
 		min-height: 1px;
 		position: relative;
@@ -76,7 +76,7 @@
 }
 
 
-@include respond-min($breakpoint-single-col) {
+@include respond-min($bp-single-col) {
 	// Create the relevant classes
 	@for $i from 1 to $grid-column-count + 1 {
 		.g-span#{$i} {
