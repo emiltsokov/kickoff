@@ -63,6 +63,8 @@ title: Form styling
 <form action="#" class="form">
 	<fieldset class="form-fieldset">
 		<legend class="form-legend">Your form</legend>
+
+		<!-- Multi-column forms: 2 columns -->
 		<div class="g-row">
 			<div class="form-controlGroup g-col g-span6">
 				<label for="text" class="form-label">Text</label>
@@ -78,6 +80,7 @@ title: Form styling
 			</div>
 		</div>
 
+		<!-- Multi-column forms: 3 columns -->
 		<div class="g-row">
 			<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
 				<label for="text" class="form-label">Success</label>
@@ -99,6 +102,7 @@ title: Form styling
 			</div>
 		</div>
 
+		<!-- Single columns do not need .g-row containers -->
 		<div class="form-controlGroup">
 			<label for="comments" class="form-label">Textarea</label>
 			<div class="form-controlGroup-inputWrapper">
@@ -154,18 +158,21 @@ title: Form styling
 <form action="#" class="form form--horizontal">
 	<fieldset class="form-fieldset">
 		<legend class="form-legend">Your form</legend>
+
 		<div class="form-controlGroup">
 			<label for="text" class="form-label">Text</label>
 			<div class="form-controlGroup-inputWrapper">
 				<input type="text" id="text" placeholder="Zander Martineau" class="form-input" required/>
 			</div>
 		</div>
+
 		<div class="form-controlGroup">
 			<label for="email" class="form-label">Email</label>
 			<div class="form-controlGroup-inputWrapper">
 				<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" required/>
 			</div>
 		</div>
+
 		<div class="form-controlGroup">
 			<label for="password" class="form-label">Password</label>
 			<div class="form-controlGroup-inputWrapper">
