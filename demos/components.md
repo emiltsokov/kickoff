@@ -84,7 +84,7 @@ title: Components
 	<div class="demo-visual">
 		<div class="media">
 			<div class="media-img">
-				<img src="http://placekitten.com/100/100">
+				<img src="http://hhhhold.com/s">
 			</div>
 			<div class="media-body">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -95,7 +95,7 @@ title: Components
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 			<div class="media-img">
-				<img src="http://placekitten.com/100/200">
+				<img src="http://hhhhold.com/m">
 			</div>
 		</div>
 	</div>
@@ -104,7 +104,7 @@ title: Components
 <!-- Media element with left aligned image -->
 <div class="media">
 	<div class="media-img">
-		<img src="http://placekitten.com/100/100">
+		<img src="http://hhhhold.com/s">
 	</div>
 	<div class="media-body">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -117,7 +117,7 @@ title: Components
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 	</div>
 	<div class="media-img">
-		<img src="http://placekitten.com/100/200">
+		<img src="hhhhold.com/m">
 	</div>
 </div>
 {% endhighlight %}
