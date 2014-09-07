@@ -82,12 +82,14 @@ module.exports.tasks = {
 	},
 
 
-
+	/**
+	 * https://github.com/stefanjudis/grunt-photoBox
+	 */
 	photobox: {
 		task: {
 			options: {
-			screenSizes : [ '600', '1000', '1200' ],
-			urls        : [ 'http://yoursite.com', 'http://yoursite.com/blog', 'http://yoursite.com/catalog' ]
+			screenSizes : '<%=config.testing.visual.sizes%>',
+			urls        : '<%=config.testing.visual.urls%>'
 			}
 		}
 	}

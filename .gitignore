@@ -19,11 +19,13 @@ ehthumbs.db
 Thumbs.db
 
 
-# Random
+# Random #
+##########
 *.sublime-*
 
 node_modules
 js/vendor
+
 
 # Ignore these if we are building js/Sass on the server #
 #########################################################
@@ -32,5 +34,12 @@ js/dist/*.js
 css/temp/*.css
 **/*.map
 
-# Jekyll
+
+# Jekyll #
+##########
 _site/
+
+
+# Testing #
+###########
+photobox

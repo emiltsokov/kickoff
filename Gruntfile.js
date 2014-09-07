@@ -7,8 +7,6 @@ module.exports = function (grunt) {
 
 		/**
 		 * Config - Edit this section
-		 * ==========================
-		 * Choose sass & js vars
 		 */
 		config : {
 			scss : {
@@ -40,7 +38,20 @@ module.exports = function (grunt) {
 				]
 			},
 
-			localserver: 'kickoff.dev' // <%=config.localserver%>
+			localserver: 'kickoff.dev', // <%=config.localserver%>
+
+			testing: {
+				visual : {
+					sizes: [ '600', '1000', '1200' ], // <%=config.testing.visual.sizes%>
+
+					// <%=config.testing.visual.urls%>
+					urls : [
+						'http://localhost:3000',
+						'http://localhost:3000/_docs/',
+						'http://localhost:3000/_docs/styleguide.html'
+					]
+				}
+			}
 		}
 	};
 
