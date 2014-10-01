@@ -13,39 +13,16 @@ title: Form styling
 		<form action="#" class="form">
 			<fieldset class="form-fieldset">
 				<legend class="form-legend">Your form</legend>
-				<div class="g-row">
-					<div class="form-controlGroup g-col g-span6">
-						<label for="text" class="form-label">Text</label>
-						<div class="form-controlGroup-inputWrapper">
-							<input type="text" id="text" placeholder="Zander Martineau" class="form-input" required/>
-						</div>
-					</div>
-					<div class="form-controlGroup g-col g-span6">
-						<label for="email" class="form-label">Email</label>
-						<div class="form-controlGroup-inputWrapper">
-							<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" required/>
-						</div>
+				<div class="form-controlGroup">
+					<label for="text" class="form-label">Text</label>
+					<div class="form-controlGroup-inputWrapper">
+						<input type="text" id="text" placeholder="Zander Martineau" class="form-input" required/>
 					</div>
 				</div>
-
-				<div class="g-row">
-					<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
-						<label for="text" class="form-label">Success</label>
-						<div class="form-controlGroup-inputWrapper">
-							<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
-						</div>
-					</div>
-					<div class="form-controlGroup g-col g-span4 form-controlGroup--error">
-						<label for="email" class="form-label">Error</label>
-						<div class="form-controlGroup-inputWrapper">
-							<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
-						</div>
-					</div>
-					<div class="form-controlGroup g-col g-span4 form-controlGroup--warning">
-						<label for="password" class="form-label">Warning</label>
-						<div class="form-controlGroup-inputWrapper">
-							<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
-						</div>
+				<div class="form-controlGroup">
+					<label for="email" class="form-label">Email</label>
+					<div class="form-controlGroup-inputWrapper">
+						<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" required/>
 					</div>
 				</div>
 
@@ -63,39 +40,16 @@ title: Form styling
 <form action="#" class="form">
 	<fieldset class="form-fieldset">
 		<legend class="form-legend">Your form</legend>
-		<div class="g-row">
-			<div class="form-controlGroup g-col g-span6">
-				<label for="text" class="form-label">Text</label>
-				<div class="form-controlGroup-inputWrapper">
-					<input type="text" id="text" placeholder="Zander Martineau" class="form-input" required/>
-				</div>
-			</div>
-			<div class="form-controlGroup g-col g-span6">
-				<label for="email" class="form-label">Email</label>
-				<div class="form-controlGroup-inputWrapper">
-					<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" required/>
-				</div>
+		<div class="form-controlGroup">
+			<label for="text" class="form-label">Text</label>
+			<div class="form-controlGroup-inputWrapper">
+				<input type="text" id="text" placeholder="Zander Martineau" class="form-input" required/>
 			</div>
 		</div>
-
-		<div class="g-row">
-			<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
-				<label for="text" class="form-label">Success</label>
-				<div class="form-controlGroup-inputWrapper">
-					<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
-				</div>
-			</div>
-			<div class="form-controlGroup g-col g-span4 form-controlGroup--error">
-				<label for="email" class="form-label">Error</label>
-				<div class="form-controlGroup-inputWrapper">
-					<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
-				</div>
-			</div>
-			<div class="form-controlGroup g-col g-span4 form-controlGroup--warning">
-				<label for="password" class="form-label">Warning</label>
-				<div class="form-controlGroup-inputWrapper">
-					<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
-				</div>
+		<div class="form-controlGroup">
+			<label for="email" class="form-label">Email</label>
+			<div class="form-controlGroup-inputWrapper">
+				<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" required/>
 			</div>
 		</div>
 
@@ -188,28 +142,172 @@ title: Form styling
 
 <hr>
 
-<h2>Inline Form</h2>
-<p>This is a simplified form where everything is inline. It does not follow the same rules as the previous two examples but you will need to add a class of <code>.form--inline</code> to the <code>&lt;form></code> element so the inputs &amp; buttons play nicely.</p>
+<h2>Multi column forms <small>with labels above inputs</small></h2>
+<p>Multi-column forms are easy to achieve by using the existing grid. See the comments in the code below for implementation details.</p>
+
 <div class="demo">
 	<div class="demo-visual">
-		<form class="form form--inline">
-			<input type="email" class="input--medium" placeholder="Email">
-			<input type="text" class="input--medium" placeholder="Username">
-			<label class="checkbox">
-				<input type="checkbox"> Remember me
-			</label>
-			<input type="submit" class="btn btn--primary" value="Sign in"/>
+		<form action="#" class="form">
+			<fieldset class="form-fieldset">
+				<!-- Add a grid row: .g-row -->
+				<div class="g-row">
+					<!-- Add .g-col and .g-span# to the .form-controlGroup -->
+					<div class="form-controlGroup g-col g-span6">
+						<label for="text" class="form-label">Text</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="text" id="text" placeholder="Zander Martineau" class="form-input" required/>
+						</div>
+					</div>
+					<div class="form-controlGroup g-col g-span6">
+						<label for="email" class="form-label">Email</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" required/>
+						</div>
+					</div>
+				</div>
+
+				<!-- Add a grid row: .g-row -->
+				<div class="g-row">
+					<!-- Add .g-col and .g-span# to the .form-controlGroup -->
+					<div class="form-controlGroup g-col g-span4">
+						<label for="text" class="form-label">Label</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
+						</div>
+					</div>
+					<div class="form-controlGroup g-col g-span4">
+						<label for="email" class="form-label">Label</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
+						</div>
+					</div>
+					<div class="form-controlGroup g-col g-span4">
+						<label for="password" class="form-label">Label</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
+						</div>
+					</div>
+				</div>
+			</fieldset>
 		</form>
 	</div>
 	<div class="demo-code">
-{% highlight html%}
-<form class="well form--inline">
-	<input type="email" class="input--medium" placeholder="Email">
-	<input type="text" class="input--medium" placeholder="Username">
-	<label class="checkbox">
-		<input type="checkbox"> Remember me
-	</label>
-	<input type="submit" class="btn btn--primary" value="Sign in"/>
+{% highlight html %}
+<form action="#" class="form">
+	<fieldset class="form-fieldset">
+		<!-- Add a grid row: .g-row -->
+		<div class="g-row">
+			<!-- Add .g-col and .g-span# to the .form-controlGroup -->
+			<div class="form-controlGroup g-col g-span6">
+				<label for="text" class="form-label">Text</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="text" id="text" placeholder="Zander Martineau" class="form-input" required/>
+				</div>
+			</div>
+			<div class="form-controlGroup g-col g-span6">
+				<label for="email" class="form-label">Email</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" required/>
+				</div>
+			</div>
+		</div>
+
+		<!-- Add a grid row: .g-row -->
+		<div class="g-row">
+			<!-- Add .g-col and .g-span# to the .form-controlGroup -->
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
+				<label for="text" class="form-label">Label</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
+				</div>
+			</div>
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--error">
+				<label for="email" class="form-label">Error</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
+				</div>
+			</div>
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--warning">
+				<label for="password" class="form-label">Warning</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</form>
+{% endhighlight %}
+	</div>
+</div>
+<!-- END EXAMPLE -->
+
+<hr>
+
+<h2>Form field states <small>with labels above inputs</small></h2>
+<p>You can easily update field states by adding modifier classes to <code>.form-controlGroup</code>, see the comments in the code below for implementation details.</p>
+
+<div class="demo">
+	<div class="demo-visual">
+		<form action="#" class="form">
+			<fieldset class="form-fieldset">
+				<div class="g-row">
+					<!-- Add .form-controlGroup--success modifier class for valid or successful fields -->
+					<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
+						<label for="text" class="form-label">Success</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
+						</div>
+					</div>
+
+					<!-- Add .form-controlGroup--error modifier class for invalid or unsuccessful fields -->
+					<div class="form-controlGroup g-col g-span4 form-controlGroup--error">
+						<label for="email" class="form-label">Error</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
+						</div>
+					</div>
+
+					<!-- Add .form-controlGroup--warning modifier class to give warning -->
+					<div class="form-controlGroup g-col g-span4 form-controlGroup--warning">
+						<label for="password" class="form-label">Warning</label>
+						<div class="form-controlGroup-inputWrapper">
+							<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div class="demo-code">
+{% highlight html %}
+<form action="#" class="form">
+	<fieldset class="form-fieldset">
+		<div class="g-row">
+			<!-- Add .form-controlGroup--success modifier class for valid or successful fields -->
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
+				<label for="text" class="form-label">Success</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
+				</div>
+			</div>
+
+			<!-- Add .form-controlGroup--error modifier class for invalid or unsuccessful fields -->
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--error">
+				<label for="email" class="form-label">Error</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
+				</div>
+			</div>
+
+			<!-- Add .form-controlGroup--warning modifier class to give warning -->
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--warning">
+				<label for="password" class="form-label">Warning</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
+				</div>
+			</div>
+		</div>
+	</fieldset>
 </form>
 {% endhighlight %}
 	</div>
