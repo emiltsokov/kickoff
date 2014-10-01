@@ -6,7 +6,7 @@ navactive: democomponents
 title: Components
 ---
 
-<h2>Default Buttons</h2>
+<h2>Buttons</h2>
 <p>Button styles can be applied to anything with the <code>.btn</code> class applied. However, typically you'll want to apply these to only <code>&lt;a></code> and <code>&lt;button></code> elements for the best rendering.</p>
 
 <h4>Button sizes</h4>
@@ -84,7 +84,7 @@ title: Components
 	<div class="demo-visual">
 		<div class="media">
 			<div class="media-img">
-				<img src="http://placekitten.com/100/100">
+				<img src="http://hhhhold.com/s">
 			</div>
 			<div class="media-body">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -95,7 +95,7 @@ title: Components
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 			<div class="media-img">
-				<img src="http://placekitten.com/100/200">
+				<img src="http://hhhhold.com/m">
 			</div>
 		</div>
 	</div>
@@ -104,7 +104,7 @@ title: Components
 <!-- Media element with left aligned image -->
 <div class="media">
 	<div class="media-img">
-		<img src="http://placekitten.com/100/100">
+		<img src="http://hhhhold.com/s">
 	</div>
 	<div class="media-body">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -117,9 +117,232 @@ title: Components
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 	</div>
 	<div class="media-img">
-		<img src="http://placekitten.com/100/200">
+		<img src="hhhhold.com/m">
 	</div>
 </div>
+{% endhighlight %}
+	</div>
+</div>
+
+<hr>
+
+<h2>Fluid video</h2>
+<div class="demo">
+	<div class="demo-visual">
+		<div class="fluidVideo">
+			<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/CjB_oVeq8Lo" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+	<div class="demo-code">
+{% highlight html%}
+<div class="fluidVideo">
+	<iframe width="560" height="315" src="//www.youtube-nocookie.com/embed/CjB_oVeq8Lo" frameborder="0" allowfullscreen></iframe>
+</div>
+{% endhighlight %}
+	</div>
+</div>
+
+<hr>
+
+<h2>Block grids</h2>
+<div class="demo">
+	<div class="demo-visual">
+		<ul class="l-blockGrid l-blockGrid--4up l-blockGrid--2up--narrow">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
+			<li>Item 6</li>
+			<li>Item 7</li>
+			<li>Item 8</li>
+		</ul>
+	</div>
+	<div class="demo-code">
+{% highlight html%}
+<ul class="l-blockGrid l-blockGrid--4up l-blockGrid--2up--narrow">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+</ul>
+{% endhighlight %}
+	</div>
+</div>
+
+<hr>
+
+<h2>Lists</h2>
+<div class="demo">
+	<div class="demo-visual">
+		<h4>Centre-aligned lists</h4>
+		<ul class="l-list--centred">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+		<h4>Floated lists</h4>
+		<ul class="l-list--floated">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+		</ul>
+	</div>
+	<div class="demo-code">
+{% highlight html%}
+<!-- Centre-aligned lists -->
+<ul class="l-list--centred">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+</ul>
+
+<!-- Floated lists -->
+<ul class="l-list--floated">
+	<li>Item 1</li>
+	<li>Item 2</li>
+	<li>Item 3</li>
+	<li>Item 4</li>
+</ul>
+{% endhighlight %}
+	</div>
+</div>
+
+<hr>
+
+<h2>Tables</h2>
+<div class="demo">
+	<div class="demo-visual">
+		<table class="table table--bordered table--striped table--hover table--rounded" cellpadding="0" cellspacing="0">
+			<thead>
+				<th>Table head</th>
+				<th>Table head</th>
+				<th>Table head</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+				</tr>
+				<tr>
+					<td>Table cell</td>
+					<td>Table cell</td>
+					<td>Table cell</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<td>Table foot</td>
+				<td>Table foot</td>
+				<td>Table foot</td>
+			</tfoot>
+		</table>
+	</div>
+	<div class="demo-code">
+{% highlight html%}
+<table class="table table--bordered table--striped table--hover table--rounded" cellpadding="0" cellspacing="0">
+	<thead>
+		<th>Table head</th>
+		<th>Table head</th>
+		<th>Table head</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Table cell</td>
+			<td>Table cell</td>
+			<td>Table cell</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<td>Table foot</td>
+		<td>Table foot</td>
+		<td>Table foot</td>
+	</tfoot>
+</table>
+{% endhighlight %}
+	</div>
+</div>
+
+<hr>
+
+<h2>Responsive tables</h2>
+<div class="demo">
+	<div class="demo-visual">
+		<div class="tableResponsive">
+			<table class="table" cellpadding="0" cellspacing="0">
+				<thead>
+					<th>Table Cell</th>
+					<th>Table Cell</th>
+					<th>Table Cell</th>
+					<th>Table Cell</th>
+					<th>Table Cell</th>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+					</tr>
+					<tr>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+					</tr>
+					<tr>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+						<td>Table Cell</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<td>Table Cell</td>
+					<td>Table Cell</td>
+					<td>Table Cell</td>
+					<td>Table Cell</td>
+					<td>Table Cell</td>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+	<div class="demo-code">
+{% highlight html%}
+<div class="tableResponsive">
+	<table class="table" cellpadding="0" cellspacing="0">
+		<thead>
+			<th>Table Cell</th>
+			<th>Table Cell</th>
+			<th>Table Cell</th>
+			<th>Table Cell</th>
+			<th>Table Cell</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Table Cell</td>
+				<td>Table Cell</td>
+				<td>Table Cell</td>
+				<td>Table Cell</td>
+				<td>Table Cell</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<td>Table Cell</td>
+			<td>Table Cell</td>
+			<td>Table Cell</td>
+			<td>Table Cell</td>
+			<td>Table Cell</td>
+		</tfoot>
+	</table>
+</div>
+
 {% endhighlight %}
 	</div>
 </div>

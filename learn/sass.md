@@ -27,7 +27,7 @@ See the instructions on the [Getting started page](index.html) to install Sass
 
 ## Compiling Kickoff with Sass
 
-Since our CSS is written with Less and utilizes variables and mixins, it needs to be compiled for final production implementation. Here's how:
+Since our CSS is written with Sass and utilizes variables and mixins, it needs to be compiled for final production implementation. Here's how:
 
 ### Use the command line
 

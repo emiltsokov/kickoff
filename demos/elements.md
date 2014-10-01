@@ -8,8 +8,8 @@ title: Elements <small>all of them in one place</small>
 <h2>Embedded content</h2>
 
 <h3>img</h3>
-<img src="http://placekitten.com/100/100" alt="">
-<a href="#"><img src="http://placekitten.com/100/100" alt=""></a>
+<img src="http://hhhhold.com/m" alt="">
+<a href="#"><img src="http://hhhhold.com/s" alt=""></a>
 
 <h3>svg</h3>
 
