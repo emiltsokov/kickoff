@@ -41,7 +41,7 @@
  * Path vars
  */
 /**
- * Grid setup
+ * Layout setup
  * Settings here override & affect the output in scss/partials/components/grid.scss
  */
 /**
@@ -59,6 +59,15 @@
  * Most CSS3 vendor prefixed items have a mixin,
  * but we should not need them if autoprefixer is being used
  * See mixins/css3.scss for the full list
+ */
+/**
+ * Convert pixels to ems
+ * For a relational value of 12px write em(12) when the parent is 16px
+ * If the parent is another value say 24px write em(12, 24)
+ *
+ * Usage:
+ * font-size : em(12);
+ * font-size : em(12, 24);
  */
 /* ==========================================================================
    Sass Mixins
@@ -131,32 +140,25 @@
 /* HiDPI */
 /* FORMS */
 /* CSS Reset  */
-/* ==========================================================================
-   Normalize - CSS reset
-
-   http://github.com/necolas/normalize.css
-   Kickoff uses an amended version of this file.
-   ========================================================================== */
-*,
-*::before,
-*::after {
+/**
+ * Kickoff reset
+ */
+html {
   -moz-box-sizing: border-box;
        box-sizing: border-box;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary,
-main {
+*, *:before, *:after {
+  -moz-box-sizing: inherit;
+       box-sizing: inherit;
+}
+
+/**
+ * Normalize - CSS reset
+ * http://github.com/necolas/normalize.css
+ * Kickoff uses an amended version of this file.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary, main {
   display: block;
 }
 
@@ -226,14 +228,15 @@ textarea {
 /**
  * Typography
  * =================================
- * Body text
  * Base
  * Paragraphs
  * Headings
- * Lists
- * Quotes
  * Links
- * Helper classes
+ * Lists
+ * Definition lists
+ * Blockquotes
+ * Misc
+ * Utilities
  *
  * Body font size, leadings etc have been set in _variables.scss
  * Resources:
@@ -243,20 +246,20 @@ textarea {
  *
  */
 html {
-  font-size: 18px;
+  font-size: 16px;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 42.66666667em) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
 body {
   font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-size: 1rem;
   line-height: 1.4;
   color: #524549;
@@ -270,10 +273,10 @@ body {
  */
 p {
   font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-size: 1rem;
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
 /**
@@ -291,24 +294,24 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 }
 
 h1, .h1, .alpha {
-  font-size: 36px;
-  font-size: 1.8rem;
+  font-size: 35.15625px;
+  font-size: 1.953125rem;
   margin-top: 0;
-  margin-bottom: 56px;
+  margin-bottom: 50px;
 }
 
 h2, .h2, .beta {
-  font-size: 30px;
-  font-size: 1.5rem;
+  font-size: 28.125px;
+  font-size: 1.5625rem;
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
 h3, .h3, .gamma {
-  font-size: 24px;
-  font-size: 1.2rem;
+  font-size: 22.5px;
+  font-size: 1.25rem;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 25px;
 }
 
 h4, .h4, .delta,
@@ -316,35 +319,28 @@ h5, .h5, .epsilon,
 h6, .h6, .zeta {
   margin-top: 0;
   margin-bottom: 0;
-}
-
-h4, .h4, .delta {
-  font-size: 20px;
-  font-size: 1rem;
-}
-
-h5, .h5, .epsilon {
-  font-size: 16px;
+  font-size: 14.4px;
   font-size: 0.8rem;
 }
 
+h4, .h4, .delta {
+  font-size: 18px;
+  font-size: 1rem;
+}
+
 h6, .h6, .zeta {
-  font-size: 14px;
-  font-size: 0.7rem;
   text-transform: uppercase;
 }
 
 * + h1, * + .h1, * + .alpha,
 * + h2, * + .h2, * + .beta,
 * + h3, * + .h3, * + .gamma,
-* + h4, * + .h4, * + .delta,
-* + h5, * + .h5, * + .epsilon,
-* + h6, * + .h6, * + .zeta {
-  margin-top: 28px;
+* + h4, * + .h4, * + .delta {
+  margin-top: 25px;
 }
 
 small {
-  font-size: 75%;
+  font-size: 80%;
 }
 
 /**
@@ -378,10 +374,12 @@ ol {
 
 ul, ol {
   padding: 0;
-  margin: 0 0 28px 28px;
+  margin: 0 0 25px 25px;
 }
-ul ul, ul ol, ol ul, ol ol {
-  margin-left: 56px;
+ul ul,
+ul ol, ol ul,
+ol ol {
+  margin-left: 50px;
 }
 ul ul, ol ul {
   list-style-type: circle;
@@ -395,7 +393,9 @@ ul ol, ol ol {
 ul ol ol, ol ol ol {
   list-style-type: lower-roman;
 }
-ul ul, ul ol, ol ul, ol ol {
+ul ul,
+ul ol, ol ul,
+ol ol {
   margin-bottom: 0;
 }
 
@@ -414,7 +414,7 @@ nav ul, nav ol {
  * Definition lists
  */
 dl {
-  margin-bottom: 28px;
+  margin-bottom: 25px;
 }
 
 dt {
@@ -422,10 +422,10 @@ dt {
 }
 
 dd {
-  margin-left: 28px;
+  margin-left: 25px;
 }
 
-.dl-horizontal::after {
+.dl-horizontal:after {
   content: "";
   display: table;
   clear: both;
@@ -447,7 +447,7 @@ dd {
  * Miscellaneous
  */
 hr {
-  margin: 28px 0;
+  margin: 25px 0;
   border: 0;
   border-top: 1px solid #b3b3b3;
   border-bottom: 1px solid #fff;
@@ -471,12 +471,12 @@ abbr[title] {
  */
 blockquote {
   padding-left: 10px;
-  margin: 28px;
+  margin: 25px;
   border-left: 4px solid #cccccc;
 }
 blockquote p {
   margin-bottom: 0;
-  font-size: 20px;
+  font-size: 18px;
   font-size: 1rem;
   font-weight: 300;
 }
@@ -506,7 +506,7 @@ blockquote:after {
 
 address {
   display: block;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   font-style: normal;
 }
 
@@ -559,18 +559,6 @@ samp {
   text-align: right;
 }
 
-::-moz-selection {
-  color: #fff;
-  background: #e67e22;
-  text-shadow: none;
-}
-
-::selection {
-  color: #fff;
-  background: #e67e22;
-  text-shadow: none;
-}
-
 @font-face {
   font-family: 'entypo';
   src: url("fonts/entypo/entypo.eot");
@@ -601,6 +589,18 @@ samp {
   content: attr(data-icon-after);
   margin-left: 4px;
   font-weight: normal;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #e67e22;
+  text-shadow: none;
+}
+
+::selection {
+  color: #fff;
+  background: #e67e22;
+  text-shadow: none;
 }
 
 /**
@@ -720,18 +720,18 @@ samp {
 }
 
 .btn--large {
-  font-size: 23px;
-  font-size: 1.15rem;
-  line-height: 3.2;
-  height: 3.5em;
+  font-size: 22.5px;
+  font-size: 1.25rem;
+  line-height: 2.7;
+  height: 3em;
   padding-right: 2em;
   padding-left: 2em;
   border-radius: 6px;
 }
 
 .btn--small {
-  font-size: 13px;
-  font-size: 0.65rem;
+  font-size: 14.4px;
+  font-size: 0.8rem;
   line-height: 1.5;
   height: 1.5em;
   padding-right: 0.75em;
@@ -825,27 +825,16 @@ input[type="button"].btn--block {
 }
 
 /**
-  The Kickoff Grid
-  * Default grid styles
-  * Media queries
-  * Centred columns
+ * The Kickoff Grid
+ * =================================
+ * Default grid styles
+ * Media queries
+ * Centred columns
  */
-/*
-	 Basic Usage:
-	 <div class="g-row">
-			 <div class="g-col g-span4"></div>
-			 <div class="g-col g-span8"></div>
-	 </div>
-	 ========================================================================== */
 /* Import Grid helpers and mixins */
 /* ==========================================================================
    Kickoff Grid helpers
    ========================================================================== */
-/*
-	 Grid Setup Defaults
-	 * Choose your grid options.
-	 ** THESE WILL BE OVERRIDDEN BY THE SETTINGS IN _variables.scss **
-	 ========================================================================== */
 /*
    Grid columns width calcs
    ========================================================================== */
@@ -868,24 +857,18 @@ input[type="button"].btn--block {
    Shunts, offset columns, column source order calculations
    ========================================================================== */
 /**
- * Default grid styles
+ * Basic Usage:
+ * =================================
+	<div class="g-row">
+		<div class="g-col g-span4"></div>
+		<div class="g-col g-span8"></div>
+	</div>
  */
-.g-container {
-  padding-left: 0px;
-  padding-right: 0px;
-  width: 95%;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.lt-ie9 .g-container {
-  min-width: 1000px;
-}
-
 .g-row {
   width: 100%;
   margin: 0 auto;
 }
-.g-row::after {
+.g-row:after {
   content: "";
   display: table;
   clear: both;
@@ -900,7 +883,7 @@ input[type="button"].btn--block {
 .g-col {
   padding: 10px;
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 42.66666667em) {
   .g-col {
     float: left;
     min-height: 1px;
@@ -908,7 +891,7 @@ input[type="button"].btn--block {
     clear: none;
     -moz-box-sizing: border-box;
          box-sizing: border-box;
-    margin-left: 2.22222222%;
+    margin-left: 2%;
   }
   .g-col:first-child {
     margin-left: 0;
@@ -921,49 +904,49 @@ input[type="button"].btn--block {
   }
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 42.66666667em) {
   .g-span1 {
-    width: 6.2962963%;
+    width: 6.5%;
   }
 
   .g-span2 {
-    width: 14.81481481%;
+    width: 15%;
   }
 
   .g-span3 {
-    width: 23.33333333%;
+    width: 23.5%;
   }
 
   .g-span4 {
-    width: 31.85185185%;
+    width: 32%;
   }
 
   .g-span5 {
-    width: 40.37037037%;
+    width: 40.5%;
   }
 
   .g-span6 {
-    width: 48.88888889%;
+    width: 49%;
   }
 
   .g-span7 {
-    width: 57.40740741%;
+    width: 57.5%;
   }
 
   .g-span8 {
-    width: 65.92592593%;
+    width: 66%;
   }
 
   .g-span9 {
-    width: 74.44444444%;
+    width: 74.5%;
   }
 
   .g-span10 {
-    width: 82.96296296%;
+    width: 83%;
   }
 
   .g-span11 {
-    width: 91.48148148%;
+    width: 91.5%;
   }
 
   .g-span12 {
@@ -1009,7 +992,7 @@ input[type="button"].btn--block {
 		<li></li>
 	</ul>
 	========================================================================== */
-.l-list--floated::after {
+.l-list--floated:after {
   content: "";
   display: table;
   clear: both;
@@ -1019,28 +1002,30 @@ input[type="button"].btn--block {
   display: inline-block;
 }
 
-/* ==========================================================================
-   Forms
-   * Generic form styles
-   * Form inputs and groups
-   * Form field feedback states
-   * Horizontal & vertical forms
-   * Horizontal-specific styles
-   ========================================================================== */
-/* ==========================================================================
-   Generic form styles
-   * Demo: http://tmwagency.github.io/kickoff/demos/forms.html#layout-example-labels-above
-   * Code: https://gist.github.com/mrmartineau/6712577#file-labels-above-inputs-html
-   Usage:
+/**
+ * Forms
+ * =================================
+ * Generic form styles
+ * Form inputs and groups
+ * Form field feedback states
+ * Horizontal & vertical forms
+ * Horizontal-specific styles
+ */
+/**
+ * Generic form styles
+ * =================================
+ * Demo: http://tmwagency.github.io/kickoff/demos/forms.html#layout-example-labels-above
+ * Code: https://gist.github.com/mrmartineau/6712577#file-labels-above-inputs-html
+ * Usage:
   	<div class="form-controlGroup">
   		<label for="name" class="form-label">Name</label>
   		<div class="form-controlGroup-inputWrapper">
   			<input type="text" id="name" placeholder="Zander Martineau" class="form-input"/>
   		</div>
   	</div>
-   ========================================================================== */
+ */
 .form {
-  margin: 0 0 28px;
+  margin: 0 0 25px;
 }
 
 .form-fieldset {
@@ -1053,9 +1038,9 @@ input[type="button"].btn--block {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 28px;
-  font-size: 30px;
-  font-size: 1.5rem;
+  margin-bottom: 25px;
+  font-size: 22.5px;
+  font-size: 1.25rem;
   line-height: 1.4;
   color: #524549;
   border: 0;
@@ -1063,28 +1048,27 @@ input[type="button"].btn--block {
   white-space: normal;
 }
 .form-legend small {
-  font-size: 15px;
-  font-size: 0.75rem;
+  font-size: 14.4px;
+  font-size: 0.8rem;
   color: #b3b3b3;
 }
 
-/* ==========================================================================
-   Form inputs and groups
-   ========================================================================== */
+/**
+ * Form inputs and groups
+ */
 .form-controlGroup {
-  margin-top: 14px;
-  margin-bottom: 9px;
+  margin-top: 12.5px;
+  margin-bottom: 12.5px;
   list-style-type: none;
 }
 
 .form-legend + .form-controlGroup {
-  margin-top: 28px;
+  margin-top: 25px;
   -webkit-margin-top-collapse: separate;
 }
 
 .form-label {
   display: block;
-  margin-bottom: 5px;
   color: #524549;
   font-weight: bold;
 }
@@ -1098,7 +1082,7 @@ input[type="button"].btn--block {
   width: 100%;
   height: 2.5em;
   padding: 0.5em;
-  font-size: 20px;
+  font-size: 18px;
   font-size: 1rem;
   font-family: "freight-sans-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.4;
@@ -1163,13 +1147,6 @@ input[type="button"].btn--block {
   border-color: #ccc;
   cursor: not-allowed;
 }
-.form-input:focus:required:invalid {
-  color: #b94a48;
-  border-color: #ee5f5b;
-}
-.form-input:focus:required:invalid:focus {
-  border-color: #e9322d;
-}
 
 .form-input--textarea {
   height: auto;
@@ -1191,7 +1168,7 @@ input[type="button"].btn--block {
 .form-input-file {
   display: inline-block;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   font-size: 1rem;
   margin: 0;
   vertical-align: middle;
@@ -1205,10 +1182,10 @@ input[type="button"].btn--block {
   position: relative;
   overflow: hidden;
 }
-.form-input--fileWrapper--styled::before {
+.form-input--fileWrapper--styled:before {
   content: 'Choose file...';
 }
-.form-input--fileWrapper--styled::after {
+.form-input--fileWrapper--styled:after {
   content: 'Browse';
   cursor: pointer;
   display: inline-block;
@@ -1224,9 +1201,9 @@ input[type="button"].btn--block {
   position: absolute;
 }
 
-/* ==========================================================================
-   Unedited code below here
-   ========================================================================== */
+/*
+ * Unedited code below here
+ */
 button,
 input[type="button"],
 input[type="reset"],
@@ -1236,29 +1213,9 @@ input[type="submit"] {
   -webkit-appearance: button;
 }
 
-.form-legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 28px;
-  font-size: 30px;
-  font-size: 1.5rem;
-  line-height: 1.4;
-  color: #524549;
-  border: 0;
-  border-bottom: 1px solid #eee;
-  white-space: normal;
-}
-.form-legend small {
-  font-size: 15px;
-  font-size: 0.75rem;
-  color: #b3b3b3;
-}
-
-/*
-	Checkboxes & Radios
-
-	Checkboxes:
+/**
+ * Checkboxes:
+ * =================================
 	<label class="control">
 		<input type="checkbox" value="check1">
 		This is a checkbox
@@ -1268,7 +1225,8 @@ input[type="submit"] {
 		This is a checkbox
 	</label>
 
-	Radios:
+ * Radios:
+ * =================================
 	<label class="control">
 		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
 		This is a radio
@@ -1277,7 +1235,7 @@ input[type="submit"] {
 		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option2" checked>
 		This is a radio
 	</label>
-   ========================================================================== */
+ */
 .control {
   display: block;
 }
@@ -1296,9 +1254,9 @@ input[type="submit"] {
   margin-right: 1.5em;
 }
 
-/*
-   Search input
-   ========================================================================== */
+/**
+ * Search input
+ */
 .form-input--search {
   padding-left: 14px;
   padding-right: 14px;
@@ -1306,13 +1264,13 @@ input[type="submit"] {
   border-radius: 100px;
 }
 
-/*
-   Form actions
-   ========================================================================== */
+/**
+ * Form actions
+ */
 .form-actions {
-  padding: 27px 20px 28px;
-  margin-top: 28px;
-  margin-bottom: 28px;
+  padding: 25px 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   background-color: #f5f5f5;
   border-top: 1px solid #ddd;
 }
@@ -1323,9 +1281,9 @@ input[type="submit"] {
   margin-right: 0;
 }
 
-/*
-   Form field feedback states
-   ========================================================================== */
+/**
+ * Form field feedback states
+ */
 .form-controlGroup--warning .form-label,
 .form-controlGroup--warning .help-block,
 .form-controlGroup--warning .help-inline {
@@ -1368,10 +1326,11 @@ input[type="submit"] {
   border-color: #25a25a;
 }
 
-/*
-   Placeholder text
-   * Gets special styles; can't be bundled together though for some reason
-   ========================================================================== */
+/**
+ * Placeholder text
+ * =================================
+ * Gets special styles; can't be bundled together though for some reason
+ */
 :-ms-input-placeholder {
   color: #b3b3b3;
 }
@@ -1391,7 +1350,7 @@ input[type="submit"] {
 
 .form-helpBlock {
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 12.5px;
 }
 
 .form-helpInline {
@@ -1400,17 +1359,18 @@ input[type="submit"] {
   padding-left: 5px;
 }
 
-@media screen and (min-width: 48em) {
-  /* ==========================================================================
-     Horizontal-specific styles
-     * add .form--horizontal to the <form> element
-     * Demo: http://tmwagency.github.io/kickoff/demos/forms.html#layout-example-labels-inline
-     * Code: https://gist.github.com/mrmartineau/6712577#file-labels-inline-html
-     ========================================================================== */
+@media screen and (min-width: 42.66666667em) {
+  /**
+   * Horizontal-specific styles
+   * =================================
+   * add .form--horizontal to the <form> element
+   * Demo: http://tmwagency.github.io/kickoff/demos/forms.html#layout-example-labels-inline
+   * Code: https://gist.github.com/mrmartineau/6712577#file-labels-inline-html
+   */
   .form--horizontal .form-controlGroup {
-    margin-bottom: 28px;
+    margin-bottom: 25px;
   }
-  .form--horizontal .form-controlGroup::after {
+  .form--horizontal .form-controlGroup:after {
     content: "";
     display: table;
     clear: both;
@@ -1431,13 +1391,112 @@ input[type="submit"] {
     margin-left: 0;
   }
   .form--horizontal .form-helpBlock {
-    margin-top: 14px;
+    margin-top: 12.5px;
     margin-bottom: 0;
   }
   .form--horizontal .form-actions {
     padding-left: 160px;
   }
 }
+/**
+ * Custom Checkboxes and radios - modified from WTF forms – http://wtfforms.com/
+ *
+ * --------------------------------
+ *
+ * Checkbox button example HTML
+ *
+ *	 <label class="control control--custom control--checkbox">
+ *		<input type="checkbox" name="myCheckbox" />
+ *		<span class="control-indicator"></span>
+ *		My Checkbox Label Text
+ *	</label>
+ *
+ * -------------------------------
+ *
+ * Radio button example HTML
+ *
+ *	<label class="control control--custom control--radio">
+ *		<input type="radio" id="radio1" name="myRadioBtn" />
+ *		<span class="control-indicator"></span>
+ *		My Radio Button Label Text
+ * 	</label>
+ *
+ * ================================= */
+.control-indicator {
+  position: absolute;
+  top: .25rem;
+  left: 0;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  line-height: 1rem;
+  font-size: 65%;
+  color: #eee;
+  text-align: center;
+  background-color: #ddd;
+  background-size: 50% 50%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.control--custom input,
+.control-indicator {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.control--custom {
+  position: relative;
+  display: block;
+  padding-left: 2rem;
+  margin-left: 0;
+  line-height: 2.8;
+  color: #555;
+  cursor: pointer;
+  /* Focus */
+  /* Checked state */
+  /* Active */
+}
+.control--custom input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  /* Put the input behind the label so it doesn't overlay text */
+}
+.control--custom input:focus ~ .control-indicator {
+  box-shadow: 0 0 0 0.075rem #fff, 0 0 0 0.2rem #a3b1b2;
+}
+.control--custom input:checked ~ .control-indicator {
+  color: #fff;
+  background-color: #a3b1b2;
+}
+.control--custom input:active ~ .control-indicator {
+  color: #fff;
+  background-color: #ccd4d5;
+}
+
+/* Checkbox modifiers */
+.control--checkbox .control-indicator {
+  border-radius: .25rem;
+}
+
+.control--checkbox input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+/* Radio modifiers */
+.control--radio .control-indicator {
+  border-radius: 50%;
+}
+
+.control--radio input:checked ~ .control-indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}
+
 /*
 	Embedded content
 	========================================================================== */
@@ -1489,7 +1548,7 @@ img, object, embed, video {
   width: 100%;
 }
 
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 22.22222222em) {
   .media-img,
   .media-body {
     display: table-cell;
@@ -1528,7 +1587,7 @@ img, object, embed, video {
    Fluid width video
    * 16:9 aspect ratio by default
    * Usage:
-   * <div class="fluidVideo"><iframe src="..."/></div
+   * <div class="fluidVideo"><iframe src="..."/></div>
    ========================================================================== */
 .fluidVideo {
   position: relative;
@@ -1563,7 +1622,7 @@ img, object, embed, video {
   list-style-type: none;
   margin: 0;
 }
-.l-blockGrid::after {
+.l-blockGrid:after {
   content: "";
   display: table;
   clear: both;
@@ -1573,7 +1632,7 @@ img, object, embed, video {
   height: auto;
   padding: 10px;
 }
-@media screen and (min-width: 25em) and (max-width: 48em) {
+@media screen and (min-width: 42.66666667em) and (max-width: 42.66666667em) {
   .l-blockGrid[class*="up--narrow"] > li {
     display: block;
     height: auto;
@@ -1652,7 +1711,7 @@ img, object, embed, video {
     float: left;
   }
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 42.66666667em) {
   .l-blockGrid > li {
     display: block;
     height: auto;
@@ -1717,10 +1776,10 @@ img, object, embed, video {
 	</ul>
 	========================================================================== */
 .tabs {
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   border-bottom: 2px solid #e67e22;
 }
-.tabs::after {
+.tabs:after {
   content: "";
   display: table;
   clear: both;
@@ -1759,7 +1818,7 @@ img, object, embed, video {
  * Tables
  */
 table {
-  background-color: transparent;
+  background-color: #fff;
 }
 
 th {
@@ -1769,7 +1828,9 @@ th {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 28px;
+  margin-bottom: 25px;
+  border-padding: 0;
+  border-spacing: 0;
 }
 .table > thead > tr > th,
 .table > thead > tr > td,
@@ -1778,7 +1839,7 @@ th {
 .table > tfoot > tr > th,
 .table > tfoot > tr > td {
   padding: 8px;
-  line-height: 28px;
+  line-height: 25px;
   vertical-align: top;
   border-top: 1px solid #ddd;
 }
@@ -1819,7 +1880,7 @@ th {
  * Add borders all around the table and between all the columns.
  */
 .table--bordered {
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
 }
 .table--bordered > thead > tr > th,
 .table--bordered > thead > tr > td,
@@ -1901,12 +1962,15 @@ table th[class*="col-"] {
 
 /**
  * Responsive tables
- * Wrap your tables in `.table-responsive` and we'll make them mobile friendly by enabling horizontal scrolling. Only applies <768px. Everything above that will display normally.
+ * Wrap your tables in `.tableResponsive` and we'll make them mobile friendly by enabling horizontal scrolling. Only applies <768px. Everything above that will display normally.
+ *
+ * If you need more responsive tables, consider Tablesaw by the Filament Group:
+ * https://github.com/filamentgroup/tablesaw
  */
-@media screen and (max-width: 48em) {
+@media screen and (max-width: 42.66666667em) {
   .tableResponsive {
     width: 100%;
-    margin-bottom: 21px;
+    margin-bottom: 18.75px;
     overflow-y: hidden;
     overflow-x: auto;
     -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -1959,7 +2023,7 @@ code,
 pre {
   padding: 0 3px 2px;
   font-family: Menlo, Monaco, "Courier New", monospace;
-  font-size: 16px;
+  font-size: 14.4px;
   font-size: 0.8rem;
   color: #222;
   border-radius: 3px;
@@ -1976,7 +2040,7 @@ code {
 .code-lrg {
   line-height: 1.5;
   font-size: 13px;
-  font-size: 0.65rem;
+  font-size: 0.72222222rem;
   display: block;
   text-align: left;
   padding: 10px 10px 10px 90px;
@@ -2003,16 +2067,12 @@ code {
 
 pre {
   display: block;
-  padding: 13.5px;
-  margin: 0 0 14px;
-  line-height: 1.4;
+  padding: 12.5px;
+  margin: 0 0 25px;
   color: #222;
   background-color: #f7f7f9;
   border-radius: 4px;
   white-space: pre;
-}
-pre.prettyprint {
-  margin-bottom: 28px;
 }
 pre code {
   padding: 0;
@@ -2404,25 +2464,33 @@ body {
 
 a {
   -webkit-transition: all 150ms ease-in-out;
-  -moz-transition: all 150ms ease-in-out;
-  transition: all 150ms ease-in-out;
+     -moz-transition: all 150ms ease-in-out;
+          transition: all 150ms ease-in-out;
 }
 
-.g-container {
+/**
+ * Default layout container
+ */
+.l-container {
+  padding-left: 0px;
+  padding-right: 0px;
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
   -webkit-transform: translateZ(0);
      -moz-transform: translateZ(0);
           transform: translateZ(0);
 }
-.g-container :first-child {
-  margin-top: 0;
+.lt-ie9 .l-container {
+  min-width: 1000px;
 }
-.g-container p a:link, .g-container ul a:link {
+.l-container p a:link, .l-container ul a:link {
   font-weight: bold;
 }
 
 .giant-logo {
   font-size: 1000px;
-  font-size: 50rem;
+  font-size: 55.55555556rem;
   position: fixed;
   top: 0px;
   left: 0;
@@ -2432,18 +2500,18 @@ a {
   color: #fafafa;
   height: 0px;
   width: 0px;
-  -webkit-transform-origin: 0%, 0%;
-  -moz-transform-origin: 0%, 0%;
-  -ms-transform-origin: 0%, 0%;
-  transform-origin: 0%, 0%;
+  -webkit-transform-origin: 0% 0%;
+     -moz-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
   -webkit-transform: rotate(44deg);
-  -moz-transform: rotate(44deg);
-  -ms-transform: rotate(44deg);
-  transform: rotate(44deg);
+     -moz-transform: rotate(44deg);
+      -ms-transform: rotate(44deg);
+          transform: rotate(44deg);
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /* ==========================================================================
@@ -2455,6 +2523,8 @@ a {
   background-color: #e67e22;
   color: #fff;
   border-bottom: 3px solid #bf6516;
+  height: 50px;
+  line-height: 45px;
 }
 .masthead a, .masthead h1, .masthead h2 {
   color: #fff;
@@ -2476,7 +2546,7 @@ a {
   margin-top: 10px;
   margin-bottom: 10px;
   font-size: 20px;
-  font-size: 1rem;
+  font-size: 1.11111111rem;
   line-height: 1.1;
 }
 
@@ -2488,7 +2558,7 @@ a {
 .masthead-all .logo {
   margin: 0;
   font-size: 30px;
-  font-size: 1.5rem;
+  font-size: 1.66666667rem;
   text-align: center;
   line-height: 1.5;
 }
@@ -2497,14 +2567,12 @@ a {
 }
 
 .nav a {
-  display: inline-block;
   padding: 3px 9px;
   font-weight: bold;
   margin: 0 5px;
   font-size: 16px;
-  font-size: 0.8rem;
+  font-size: 0.88888889rem;
   border-radius: 3px;
-  line-height: 1.3;
   border: 2px solid transparent;
 }
 .nav a:hover {
@@ -2517,7 +2585,7 @@ a {
   border-color: #fff;
 }
 
-.main-nav::after {
+.main-nav:after {
   content: "";
   display: table;
   clear: both;
@@ -2579,7 +2647,7 @@ a {
 .bigBoy h2 {
   margin-top: 0;
   font-size: 20px;
-  font-size: 1rem;
+  font-size: 1.11111111rem;
 }
 .bigBoy h2 br {
   display: none;
@@ -2627,7 +2695,7 @@ a {
   text-align: center;
   font-weight: bold;
 }
-.stackLogos::after {
+.stackLogos:after {
   content: "";
   display: table;
   clear: both;
@@ -2686,7 +2754,7 @@ a {
 .media--link .asset-font, .media--link [data-icon-before]:before, .media--link [data-icon-after]:after {
   width: 200px;
   font-size: 100px;
-  font-size: 5rem;
+  font-size: 5.55555556rem;
 }
 
 .demo {
@@ -2734,7 +2802,7 @@ a {
 }
 .grid-block-link .asset-font, .grid-block-link [data-icon-before]:before, .grid-block-link [data-icon-after]:after {
   font-size: 150px;
-  font-size: 7.5rem;
+  font-size: 8.33333333rem;
   line-height: 60px;
   height: 70px;
 }
@@ -2814,12 +2882,12 @@ a {
   text-align: left;
 }
 
-@media screen and (min-width: 25em) {
+@media screen and (min-width: 22.22222222em) {
   .bigBoy h2 br {
     display: inherit;
   }
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 42.66666667em) {
   body {
     padding-top: 50px;
   }
@@ -2837,7 +2905,7 @@ a {
   .masthead-home h2 {
     margin-top: 20px;
     font-size: 28px;
-    font-size: 1.4rem;
+    font-size: 1.55555556rem;
     line-height: 1.5;
   }
 
@@ -2853,7 +2921,7 @@ a {
     float: left;
     margin: 0;
     font-size: 30px;
-    font-size: 1.5rem;
+    font-size: 1.66666667rem;
     text-align: left;
   }
   .masthead-all .nav {
@@ -2870,28 +2938,28 @@ a {
   .main-nav a:after {
     display: inherit;
     font-size: 22px;
-    font-size: 1.1rem;
+    font-size: 1.22222222rem;
     vertical-align: baseline;
     line-height: 0.4;
   }
 
   .bigBoy.wideBoy h1 {
     font-size: 80px;
-    font-size: 4rem;
+    font-size: 4.44444444rem;
     line-height: 3;
   }
   .bigBoy.wideBoy h2 {
     font-size: 28px;
-    font-size: 1.4rem;
+    font-size: 1.55555556rem;
   }
 
   .wideBoy h1 {
     font-size: 51px;
-    font-size: 2.55rem;
+    font-size: 2.83333333rem;
   }
   .wideBoy h2 {
     font-size: 28px;
-    font-size: 1.4rem;
+    font-size: 1.55555556rem;
   }
 
   .showcaseList li {
@@ -2935,7 +3003,7 @@ a {
  * http://www.cssmojo.com/latest_new_clearfix_so_far/
  * See mixins/_utility.scss for a mixin version of this
  */
-.clearfix::after {
+.clearfix:after {
   content: "";
   display: table;
   clear: both;
