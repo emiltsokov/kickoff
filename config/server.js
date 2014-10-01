@@ -8,7 +8,9 @@ module.exports.tasks = {
 	connect: {
 		site: {
 			options: {
-				open: true,
+				open: {
+					target: 'http://0.0.0.0:8000/kickoff'
+				},
 				livereload: true
 			}
 		},
