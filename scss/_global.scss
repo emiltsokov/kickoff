@@ -13,8 +13,21 @@ a {
 	@include transition(all 150ms ease-in-out);
 }
 
-.g-container {
+
+/**
+ * Default layout container
+ */
+.l-container {
+	padding-left: #{$layout-margin}px;
+	padding-right: #{$layout-margin}px;
+	width: 95%;
+	max-width: #{$layout-max-width}px;
+	margin: 0 auto;
 	transform: translateZ(0);
+
+	.lt-ie9 & {
+		min-width: #{$layout-min-width}px;
+	}
 
 	:first-child {
 		margin-top: 0;
