@@ -327,9 +327,11 @@ title: Form styling
 		<form action="#" class="form">
 			<fieldset class="form-fieldset">
 				<div class="g-row">
+					<!-- Custom checkboxes -->
 					<div class="form-controlGroup g-span6 g-col">
 						<label for="comments" class="form-label">Checkboxes</label>
 						<div class="form-controlGroup-inputWrapper">
+							<!-- Wrap checkbox elements with .control.control--custom.control--checkbox <label> -->
 							<label class="control control--custom control--checkbox">
 								<input type="checkbox" value="check4">
 								<span class="control-indicator"></span>
@@ -348,9 +350,11 @@ title: Form styling
 						</div>
 					</div>
 
+					<!-- Custom radio buttons -->
 					<div class="form-controlGroup g-span6 g-col">
 						<label for="comments" class="form-label">Radio buttons</label>
 						<div class="form-controlGroup-inputWrapper">
+							<!-- Wrap radio elements with .control.control--custom.control--radio <label> -->
 							<label class="control control--custom control--radio">
 								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
 								<span class="control-indicator"></span>
@@ -370,21 +374,25 @@ title: Form styling
 					</div>
 				</div>
 
+				<!-- Custom file uploads -->
 				<div class="form-controlGroup">
 					<label for="file" class="form-label">File upload (alt)<br>
 						<small>This version hides the default file input, you will need js to change the 'Choose file..' copy </small>
 					</label>
 
 					<div class="form-controlGroup-inputWrapper">
+						<!-- Wrap a input[type=file] element with .form-input--fileWrapper--styled -->
 						<label class="form-input form-input--fileWrapper--styled">
 							<input type="file" id="file" accept="image/*" size="14" class="form-input-file" />
 						</label>
 					</div>
 				</div>
 
+				<!-- Custom select elements -->
 				<div class="form-controlGroup">
 					<label for="choice" class="form-label">Custom select element</label>
 					<div class="form-controlGroup-inputWrapper">
+						<!-- Wrap a select element with .form-input--selectWrapper -->
 						<label class="form-input form-input--selectWrapper">
 							<select id="choice2" class="form-input">
 								<option>1</option>
@@ -404,28 +412,81 @@ title: Form styling
 <form action="#" class="form">
 	<fieldset class="form-fieldset">
 		<div class="g-row">
-			<!-- Add .form-controlGroup--success modifier class for valid or successful fields -->
-			<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
-				<label for="text" class="form-label">Success</label>
+			<!-- Custom checkboxes -->
+			<div class="form-controlGroup g-span6 g-col">
+				<label for="comments" class="form-label">Checkboxes</label>
 				<div class="form-controlGroup-inputWrapper">
-					<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
+					<!-- Wrap checkbox elements with .control.control--custom.control--checkbox <label> -->
+					<label class="control control--custom control--checkbox">
+						<input type="checkbox" value="check4">
+						<span class="control-indicator"></span>
+						This is a custom checkbox
+					</label>
+					<label class="control control--custom control--checkbox">
+						<input type="checkbox" value="check4">
+						<span class="control-indicator"></span>
+						This is a custom checkbox
+					</label>
+					<label class="control control--custom control--checkbox">
+						<input type="checkbox" value="check4">
+						<span class="control-indicator"></span>
+						This is a custom checkbox
+					</label>
 				</div>
 			</div>
 
-			<!-- Add .form-controlGroup--error modifier class for invalid or unsuccessful fields -->
-			<div class="form-controlGroup g-col g-span4 form-controlGroup--error">
-				<label for="email" class="form-label">Error</label>
+			<!-- Custom radio buttons -->
+			<div class="form-controlGroup g-span6 g-col">
+				<label for="comments" class="form-label">Radio buttons</label>
 				<div class="form-controlGroup-inputWrapper">
-					<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
+					<!-- Wrap radio elements with .control.control--custom.control--radio <label> -->
+					<label class="control control--custom control--radio">
+						<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+						<span class="control-indicator"></span>
+						This is a custom radio button
+					</label>
+					<label class="control control--custom control--radio">
+						<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+						<span class="control-indicator"></span>
+						This is a custom radio button
+					</label>
+					<label class="control control--custom control--radio">
+						<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+						<span class="control-indicator"></span>
+						This is a custom radio button
+					</label>
 				</div>
 			</div>
+		</div>
 
-			<!-- Add .form-controlGroup--warning modifier class to give warning -->
-			<div class="form-controlGroup g-col g-span4 form-controlGroup--warning">
-				<label for="password" class="form-label">Warning</label>
-				<div class="form-controlGroup-inputWrapper">
-					<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
-				</div>
+		<!-- Custom file uploads -->
+		<div class="form-controlGroup">
+			<label for="file" class="form-label">File upload (alt)<br>
+				<small>This version hides the default file input, you will need js to change the 'Choose file..' copy </small>
+			</label>
+
+			<div class="form-controlGroup-inputWrapper">
+				<!-- Wrap a input[type=file] element with .form-input--fileWrapper--styled -->
+				<label class="form-input form-input--fileWrapper--styled">
+					<input type="file" id="file" accept="image/*" size="14" class="form-input-file" />
+				</label>
+			</div>
+		</div>
+
+		<!-- Custom select elements -->
+		<div class="form-controlGroup">
+			<label for="choice" class="form-label">Custom select element</label>
+			<div class="form-controlGroup-inputWrapper">
+				<!-- Wrap a select element with .form-input--selectWrapper -->
+				<label class="form-input form-input--selectWrapper">
+					<select id="choice2" class="form-input">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</label>
 			</div>
 		</div>
 	</fieldset>
