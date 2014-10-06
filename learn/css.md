@@ -20,35 +20,35 @@ Kickoff uses a bespoke naming scheme for classnames.
 ```scss
 /* Descriptors use camel-casing if more than one word: e.g. twoWords */
 .skipToContent {
-  ...
+	...
 }
 
 /* ========= */
 
 /* Child elements use single hyphens: - */
 .form-controlGroup {
-  ...
+	...
 }
 
 /* ========= */
 
 /* Modifier element use a double hyphen: -- */
 .btn.btn--primary {
-  ...
+	...
 }
 
 /* ========= */
 
 /* Element state: .is- */
 .is-active {
-  ...
+	...
 }
 
 /* ========= */
 
 /* Sass variables are dash-case */
 a {
-  color: $color-primary;
+	color: $color-primary;
 }
 ```
 
@@ -102,8 +102,8 @@ Media queries in Kickoff are typically handled with a [set of useful mixins](htt
 * Paged media is supported only in a [few browsers](http://en.wikipedia.org/wiki/Comparison_of_layout_engines_%28Cascading_Style_Sheets%29#Grammar_and_rules).
 * Paged media support means browsers would know how to interpret instructions on breaking content into pages and on orphans/widows.
 * We use `page-break-inside: avoid;` to prevent an image and table row from being split into two different pages, so use the same `page-break-inside:
-  avoid;` for that as well.
+	avoid;` for that as well.
 * Headings should always appear with the text they are titles for. So, we ensure headings never appear in a different page than the text they describe
-  by using `page-break-after: avoid;`.
+	by using `page-break-after: avoid;`.
 * We also apply a default margin for the page specified in `cm`.
 * We do not want [orphans and widows](http://en.wikipedia.org/wiki/Widows_and_orphans) to appear on pages you print. So, by defining `orphans: 3` and `widows: 3` you define the minimal  number of words that every line should contain.
