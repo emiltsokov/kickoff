@@ -2,6 +2,7 @@ markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript"]
 highlighter: rouge
+
 relative_permalinks: false
 include: ['.htaccess']
 exclude: ['node_modules', 'scss', 'Gruntfile.js', 'package.json', '*.sublime-project', '*.sublime-workspace']
@@ -11,3 +12,4 @@ paginate: 8
 paginate_path: /page:num
 
 destination: ./kickoff
+encoding: "utf-8"
