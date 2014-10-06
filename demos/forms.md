@@ -320,6 +320,123 @@ title: Form styling
 
 <hr>
 
+<h2>Custom field elements</h2>
+<p>Improved styling for checkboxes, radios &amp; file upload</p>
+<div class="demo">
+	<div class="demo-visual">
+		<form action="#" class="form">
+			<fieldset class="form-fieldset">
+				<div class="g-row">
+					<div class="form-controlGroup g-span6 g-col">
+						<label for="comments" class="form-label">Checkboxes</label>
+						<div class="form-controlGroup-inputWrapper">
+							<label class="control control--custom control--checkbox">
+								<input type="checkbox" value="check4">
+								<span class="control-indicator"></span>
+								This is a custom checkbox
+							</label>
+							<label class="control control--custom control--checkbox">
+								<input type="checkbox" value="check4">
+								<span class="control-indicator"></span>
+								This is a custom checkbox
+							</label>
+							<label class="control control--custom control--checkbox">
+								<input type="checkbox" value="check4">
+								<span class="control-indicator"></span>
+								This is a custom checkbox
+							</label>
+						</div>
+					</div>
+
+					<div class="form-controlGroup g-span6 g-col">
+						<label for="comments" class="form-label">Radio buttons</label>
+						<div class="form-controlGroup-inputWrapper">
+							<label class="control control--custom control--radio">
+								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+								<span class="control-indicator"></span>
+								This is a custom radio button
+							</label>
+							<label class="control control--custom control--radio">
+								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+								<span class="control-indicator"></span>
+								This is a custom radio button
+							</label>
+							<label class="control control--custom control--radio">
+								<input type="radio" name="optionsRadios" id="optionsRadios4" value="option4">
+								<span class="control-indicator"></span>
+								This is a custom radio button
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-controlGroup">
+					<label for="file" class="form-label">File upload (alt)<br>
+						<small>This version hides the default file input, you will need js to change the 'Choose file..' copy </small>
+					</label>
+
+					<div class="form-controlGroup-inputWrapper">
+						<label class="form-input form-input--fileWrapper--styled">
+							<input type="file" id="file" accept="image/*" size="14" class="form-input-file" />
+						</label>
+					</div>
+				</div>
+
+				<div class="form-controlGroup">
+					<label for="choice" class="form-label">Custom select element</label>
+					<div class="form-controlGroup-inputWrapper">
+						<label class="form-input form-input--selectWrapper">
+							<select id="choice2" class="form-input">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</label>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<div class="demo-code">
+{% highlight html %}
+<form action="#" class="form">
+	<fieldset class="form-fieldset">
+		<div class="g-row">
+			<!-- Add .form-controlGroup--success modifier class for valid or successful fields -->
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--success">
+				<label for="text" class="form-label">Success</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="text" id="text" placeholder="Zander Martineau" class="form-input" value="A value" required/>
+				</div>
+			</div>
+
+			<!-- Add .form-controlGroup--error modifier class for invalid or unsuccessful fields -->
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--error">
+				<label for="email" class="form-label">Error</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="email" id="email" placeholder="zander@martineau.tv" class="form-input" value="A value" required/>
+				</div>
+			</div>
+
+			<!-- Add .form-controlGroup--warning modifier class to give warning -->
+			<div class="form-controlGroup g-col g-span4 form-controlGroup--warning">
+				<label for="password" class="form-label">Warning</label>
+				<div class="form-controlGroup-inputWrapper">
+					<input type="password" id="password" placeholder="Your password" class="form-input" value="A value" />
+				</div>
+			</div>
+		</div>
+	</fieldset>
+</form>
+{% endhighlight %}
+	</div>
+</div>
+<!-- END EXAMPLE -->
+
+<hr>
+
 <h2>All Form Elements</h2>
 <p>All the form elements you could need.</p>
 <div class="demo">
