@@ -6,9 +6,10 @@
 /* Font stacks */
 /** Breakpoints ================================= There are no common breakpoints so these are just a suggestion You'll need to define your own breakpoints to suit your design */
 /** Path vars */
-/** Grid setup Settings here override & affect the output in scss/partials/components/grid.scss */
+/** Layout setup Settings here override & affect the output in scss/partials/components/grid.scss */
 /** Tables Customizes the `.table` component with basic values, each used across all table variations. */
 /** App-specific variables ================================= Add common vars below here */
+/** Convert pixels to ems For a relational value of 12px write em(12) when the parent is 16px If the parent is another value say 24px write em(12, 24)  Usage: font-size : em(12); font-size : em(12, 24); */
 /* ========================================================================== Sass Mixins Vendor Prefixer Responsive CSS3 Utility Mixins hiDpi Forms ========================================================================== */
 /* Vendor prefixer */
 /* Responsive mixins */
@@ -39,14 +40,14 @@ body { background-color: #f1f1f1; }
 
 .well--inner { margin-left: 0; margin-right: 0; }
 
-.interfaceType, .section-heading, .typeSpecimen::after { font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.interfaceType, .section-heading, .typeSpecimen:after { font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .section-heading { border-bottom: 1px solid rgba(0, 0, 0, 0.2); padding-bottom: .3em; margin-top: 1em; }
 
-.interfaceType-subtle, .typeSpecimen::after { color: #888; }
+.interfaceType-subtle, .typeSpecimen:after { color: #888; }
 
 /** Masthead */
-.masthead, .footer { background-color: slategray; color: #fff; padding: 30px; margin: -30px -30px 30px; }
+.masthead, .footer { background-color: slategray; color: #fff; padding: 30px; margin: 0 -30px 30px; }
 .masthead h1, .footer h1 { margin-bottom: 0.2em; }
 .masthead a, .footer a { color: #fff; border-bottom: 2px dashed rgba(255, 255, 255, 0.3); }
 .masthead a:hover, .footer a:hover { border-bottom: 2px solid #fff; }
@@ -63,53 +64,53 @@ body { background-color: #f1f1f1; }
 
 .color-text { color: #524549; }
 .color-text.bg { background-color: #524549; color: #fff; }
-.color-text.bg::after { content: "#524549"; }
+.color-text.bg:after { content: "#524549"; }
 
 .color-background { color: #fff; }
 .color-background.bg { background-color: #fff; color: #444; }
-.color-background.bg::after { content: "#fff"; }
+.color-background.bg:after { content: "#fff"; }
 
 .color-link { color: #e67e22; }
 .color-link.bg { background-color: #e67e22; color: #fff; }
-.color-link.bg::after { content: "#e67e22"; }
+.color-link.bg:after { content: "#e67e22"; }
 
 .color-link-hover { color: #924d10; }
 .color-link-hover.bg { background-color: #924d10; color: #fff; }
-.color-link-hover.bg::after { content: "#924d10"; }
+.color-link-hover.bg:after { content: "#924d10"; }
 
 .color-primary { color: #e67e22; }
 .color-primary.bg { background-color: #e67e22; color: #fff; }
-.color-primary.bg::after { content: "#e67e22"; }
+.color-primary.bg:after { content: "#e67e22"; }
 
 .color-secondary { color: #351330; }
 .color-secondary.bg { background-color: #351330; color: #fff; }
-.color-secondary.bg::after { content: "#351330"; }
+.color-secondary.bg:after { content: "#351330"; }
 
 .color-highlight { color: #ff9600; }
 .color-highlight.bg { background-color: #ff9600; color: #fff; }
-.color-highlight.bg::after { content: "#ff9600"; }
+.color-highlight.bg:after { content: "#ff9600"; }
 
 .typography .info p { -ms-word-wrap: break-word; word-wrap: break-word; }
 .typography .example { margin: 1em 0; }
-.typography .example h1::after { content: " - 36px"; }
-.typography .example h2::after { content: " - 30px"; }
-.typography .example h3::after { content: " - 24px"; }
-.typography .example h4::after { content: " - 20px"; }
-.typography .example h5::after { content: " - 16px"; }
-.typography .example h6::after { content: " - 14px"; }
-.typography .example h1::after, .typography .example h2::after, .typography .example h3::after, .typography .example h4::after, .typography .example h5::after, .typography .example h6::after { text-transform: lowercase; }
-.typography .example .interfaceType::after, .typography .example .section-heading::after, .typography .example .typeSpecimen::after { content: ""; }
+.typography .example h1:after { content: " - 35.15625px"; }
+.typography .example h2:after { content: " - 28.125px"; }
+.typography .example h3:after { content: " - 22.5px"; }
+.typography .example h4:after { content: " - 18px"; }
+.typography .example h5:after { content: " - 14.4px"; }
+.typography .example h6:after { content: " - 14.4px"; }
+.typography .example h1:after, .typography .example h2:after, .typography .example h3:after, .typography .example h4:after, .typography .example h5:after, .typography .example h6:after { text-transform: lowercase; }
+.typography .example .interfaceType:after, .typography .example .section-heading:after, .typography .example .typeSpecimen:after { content: ""; }
 
 .typeSpecimen { margin-bottom: 0; margin-top: 0; -ms-word-wrap: break-word; word-wrap: break-word; }
-.typeSpecimen::after { display: block; font-size: 16px; font-size: 0.8rem; margin-top: 5px; border-top: 1px solid #ddd; font-weight: normal; }
+.typeSpecimen:after { display: block; font-size: 16px; font-size: 0.88888889rem; margin-top: 5px; border-top: 1px solid #ddd; font-weight: normal; }
 
-h1.typeSpecimen::after { content: "Font stack: inherit"; }
+h1.typeSpecimen:after { content: "Font stack: inherit"; }
 
-p.typeSpecimen::after { content: "Font stack: freight-sans-pro, Helvetica Neue, Helvetica, Arial, sans-serif"; }
+p.typeSpecimen:after { content: "Font stack: freight-sans-pro, Helvetica Neue, Helvetica, Arial, sans-serif"; }
 
 /** Starter page */
-.checklistInfo { margin-bottom: 15px; margin-left: 30px; font-size: 17px; }
+.checklistInfo { margin-bottom: 15px; margin-left: 30px; font-size: 15px; }
 .checklistInfo li { margin-bottom: 0.2em; }
-.checklistInfo code, .checklistInfo pre { font-size: 14px; font-size: 0.7rem; background-color: #CACACA; }
+.checklistInfo code, .checklistInfo pre { font-size: 14px; font-size: 0.77777778rem; background-color: #cacaca; /* alpha: 1 */ }
 
 /*# sourceMappingURL=styleguide.css.map */
